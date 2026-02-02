@@ -38,8 +38,8 @@
         </button>
       </div>
 
-      <div class="flex justify-start md:justify-end items-end mt-auto pt-6 md:pt-8 xl:pt-10">
-        <div class="w-full md:max-w-[540px] xl:max-w-[580px]">
+      <div class="flex justify-start md:justify-end items-end mt-auto pt-6 md:pt-8 xl:pt-10 pb-4 md:pb-6">
+        <div class="w-full md:max-w-[540px] xl:max-w-[580px] md:pr-8 lg:pr-12">
           <div class="min-h-[60px] md:min-h-[50px] xl:min-h-[55px] mb-3 md:mb-4">
             <p class="font-family-jakarta font-normal text-white text-sm md:text-base xl:text-base text-left md:text-right tracking-normal leading-[1.5] drop-shadow-sm">
               <span class="font-bold">{{ currentHighlight.title }}</span>
