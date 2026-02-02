@@ -1,5 +1,14 @@
 <template>
   <div class="relative w-full">
+    <button
+      @click="$emit('close')"
+      class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
+      aria-label="Schließen"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
     <div class="flex flex-col gap-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col gap-2">
@@ -104,55 +113,6 @@
         </p>
       </div>
 
-      <div class="flex flex-col gap-2">
-        <label class="font-family-jakarta font-medium text-[#1e1d1b] text-sm">
-          Ziel / Erfolgskriterium *
-        </label>
-        <input
-          v-model="formData.goal"
-          type="text"
-          required
-          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
-          placeholder="Wir wollen X automatisieren, Erfolg = Y% weniger Aufwand / schnellere Reports / bessere Entscheidungen."
-        />
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="flex flex-col gap-2">
-          <label class="font-family-jakarta font-medium text-[#1e1d1b] text-sm">
-            Zeithorizont *
-          </label>
-          <select
-            v-model="formData.timeline"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base appearance-none bg-white cursor-pointer"
-          >
-            <option value="">Bitte wählen...</option>
-            <option value="asap">ASAP (0–4 Wochen)</option>
-            <option value="1-3">1–3 Monate</option>
-            <option value="3-6">3–6 Monate</option>
-            <option value="6+">6+ Monate / noch offen</option>
-          </select>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <label class="font-family-jakarta font-medium text-[#1e1d1b] text-sm">
-            Budgetrahmen
-          </label>
-          <select
-            v-model="formData.budget"
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base appearance-none bg-white cursor-pointer"
-          >
-            <option value="">Bitte wählen...</option>
-            <option value="<10k">< 10k €</option>
-            <option value="10-25k">10–25k €</option>
-            <option value="25-50k">25–50k €</option>
-            <option value="50k+">50k+ €</option>
-            <option value="open">Noch offen / erst scoping</option>
-          </select>
-        </div>
-      </div>
-
       <div class="flex items-start gap-3">
         <input
           v-model="formData.consent"
@@ -218,9 +178,6 @@ const formData = reactive({
   phone: '',
   topic: '',
   description: '',
-  goal: '',
-  timeline: '',
-  budget: '',
   consent: false,
   honeypot: ''
 });
@@ -233,7 +190,7 @@ const handleSubmit = async () => {
     return;
   }
 
-  if (!formData.firstName || !formData.lastName || !formData.company || !formData.email || !formData.topic || !formData.description || !formData.goal || !formData.timeline || !formData.consent) {
+  if (!formData.firstName || !formData.lastName || !formData.company || !formData.email || !formData.topic || !formData.description || !formData.consent) {
     alert('Bitte füllen Sie alle Pflichtfelder aus.');
     return;
   }

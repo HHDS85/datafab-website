@@ -38,7 +38,11 @@
           </div>
         </div>
 
-        <div class="relative w-full h-[600px] md:h-[700px] lg:h-[800px] order-1 lg:order-2" style="perspective: 2000px;">
+        <div
+          class="relative w-full order-1 lg:order-2 transition-all duration-700 ease-out"
+          :class="showForm ? 'h-[700px] md:h-[800px] lg:h-[900px]' : 'h-[420px] md:h-[520px] lg:h-[600px]'"
+          style="perspective: 2000px;"
+        >
           <div
             class="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
             :style="{ transform: showForm ? 'rotateY(180deg)' : 'rotateY(0deg)' }"
