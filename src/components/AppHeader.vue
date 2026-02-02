@@ -2,17 +2,16 @@
   <header
     class="fixed z-50 transition-all duration-300 ease-out"
     :class="isScrolled
-      ? 'top-0 left-0 right-0 bg-[#071B3A]/60 backdrop-blur-md shadow-sm px-6 md:px-8 lg:px-12 py-2.5 md:py-3'
-      : 'top-4 md:top-6 left-0 right-0 bg-transparent py-5 md:py-6 lg:py-8'"
+      ? 'top-0 left-0 right-0 bg-[#071B3A]/70 backdrop-blur-md shadow-sm px-6 md:px-8 lg:px-12 xl:px-16 py-3 md:py-3.5'
+      : 'top-0 left-0 right-0 bg-[#071B3A]/30 backdrop-blur-sm px-6 md:px-8 lg:px-12 xl:px-16 py-4 md:py-5'"
   >
     <div
-      class="flex items-center justify-between gap-4 md:gap-[50px]"
-      :class="!isScrolled ? 'max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16' : 'max-w-[1400px] mx-auto'"
+      class="flex items-center justify-between gap-4 md:gap-[50px] max-w-[1600px] mx-auto"
     >
     <div class="flex items-center gap-4 md:gap-[92px] flex-1">
       <img
         class="transition-all duration-300 ease-out transform hover:scale-105"
-        :class="isScrolled ? 'w-[120px] md:w-[150px] lg:w-[180px]' : 'w-[180px] md:w-[240px] lg:w-[300px]'"
+        :class="isScrolled ? 'w-[100px] md:w-[130px] lg:w-[150px]' : 'w-[130px] md:w-[170px] lg:w-[200px]'"
         alt="Logo datafabrictor"
         src="/logo-datafabrictor.svg"
       />
