@@ -122,15 +122,6 @@
                 Informationen zur Verarbeitung personenbezogener Daten findest du in unserer Datenschutzerklärung.
               </p>
             </div>
-
-            <div>
-              <h3 class="font-family-roboto font-medium text-[#1e1d1b] text-base md:text-lg tracking-tight leading-[1.2] mb-2">
-                Verbraucherstreitbeilegung
-              </h3>
-              <p class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7]">
-                Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-              </p>
-            </div>
           </div>
         </section>
 

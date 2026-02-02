@@ -41,13 +41,13 @@
             :key="index"
             class="bg-[#273248] rounded-[9px] min-h-[400px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
-            <div class="p-8 flex flex-col h-full">
-              <div class="mb-auto">
+            <div class="p-8 pb-10 flex flex-col h-full">
+              <div class="mb-4">
                 <span class="font-family-jakarta font-normal text-white/60 text-lg tracking-normal leading-normal">
                   {{ service.number }}
                 </span>
               </div>
-              <div class="flex flex-col gap-5 mt-10">
+              <div class="flex flex-col gap-5">
                 <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4] whitespace-pre-line h-[64px] flex items-start">
                   {{ service.title }}
                 </h3>
@@ -75,13 +75,13 @@
                 :class="slideClass"
               >
                 <div class="bg-[#273248] rounded-[9px] min-h-[400px] flex flex-col">
-                  <div class="p-8 flex flex-col h-full">
-                    <div class="mb-auto">
+                  <div class="p-8 pb-10 flex flex-col h-full">
+                    <div class="mb-4">
                       <span class="font-family-jakarta font-normal text-white/60 text-lg tracking-normal leading-normal">
                         {{ service.number }}
                       </span>
                     </div>
-                    <div class="flex flex-col gap-5 mt-10">
+                    <div class="flex flex-col gap-5">
                       <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4]">
                         {{ service.title }}
                       </h3>

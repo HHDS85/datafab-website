@@ -35,11 +35,11 @@
             class="border-0 shadow-none bg-transparent"
           >
             <div class="p-0">
-              <h4 class="font-family-roboto font-semibold text-[#1e1d1b] text-xl md:text-2xl tracking-normal leading-[1.3] mb-4">
+              <h4 class="font-family-roboto font-medium text-[#1e1d1b] text-[22px] md:text-[26px] tracking-tight leading-[1.35] mb-4 md:mb-5">
                 {{ section.title }}
               </h4>
 
-              <p class="font-family-jakarta font-normal text-[#1e1d1b]/80 text-base md:text-lg leading-[1.7] tracking-normal">
+              <p class="font-family-jakarta font-normal text-[#1e1d1b]/75 text-[15px] md:text-[17px] leading-[1.75] tracking-[-0.01em]">
                 {{ section.content }}
               </p>
 
