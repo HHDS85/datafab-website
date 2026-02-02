@@ -38,23 +38,18 @@
                 </div>
               </button>
 
-              <Transition
-                name="accordion"
-                @enter="enter"
-                @after-enter="afterEnter"
-                @leave="leave"
+              <div
+                class="accordion-content"
+                :class="{ 'accordion-open': openItem === item.id }"
               >
-                <div
-                  v-show="openItem === item.id"
-                  class="overflow-hidden"
-                >
+                <div class="accordion-inner">
                   <div class="pb-5 md:pb-6 pr-12">
                     <p class="font-family-jakarta font-normal text-[#1e1d1b]/80 text-sm md:text-base tracking-[-0.01em] leading-[1.65]">
                       {{ item.answer }}
                     </p>
                   </div>
                 </div>
-              </Transition>
+              </div>
             </div>
           </div>
         </div>
@@ -76,38 +71,6 @@ const openItem = ref(faqsData.find(item => item.defaultOpen)?.id || null);
 const toggleItem = (id) => {
   openItem.value = openItem.value === id ? null : id;
 };
-
-const enter = (element) => {
-  const width = getComputedStyle(element).width;
-  element.style.width = width;
-  element.style.position = 'absolute';
-  element.style.visibility = 'hidden';
-  element.style.height = 'auto';
-
-  const height = getComputedStyle(element).height;
-
-  element.style.width = null;
-  element.style.position = null;
-  element.style.visibility = null;
-  element.style.height = 0;
-
-  requestAnimationFrame(() => {
-    element.style.height = height;
-  });
-};
-
-const afterEnter = (element) => {
-  element.style.height = 'auto';
-};
-
-const leave = (element) => {
-  const height = getComputedStyle(element).height;
-  element.style.height = height;
-
-  requestAnimationFrame(() => {
-    element.style.height = 0;
-  });
-};
 </script>
 
 <style scoped>
@@ -119,28 +82,24 @@ const leave = (element) => {
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
-.font-family-inter {
-  font-family: 'Inter', Helvetica, sans-serif;
-}
-
-.accordion-enter-active {
-  transition: height 0.45s cubic-bezier(0.34, 1.26, 0.64, 1), opacity 0.35s ease-in;
+.accordion-content {
+  max-height: 0;
   overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.accordion-leave-active {
-  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out;
-  overflow: hidden;
+.accordion-open {
+  max-height: 500px;
 }
 
-.accordion-enter-from,
-.accordion-leave-to {
-  height: 0 !important;
+.accordion-inner {
   opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out 0.1s, transform 0.3s ease-out 0.1s;
 }
 
-.accordion-enter-to,
-.accordion-leave-from {
+.accordion-open .accordion-inner {
   opacity: 1;
+  transform: translateY(0);
 }
 </style>

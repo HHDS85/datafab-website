@@ -1,9 +1,9 @@
 <template>
   <header
-    class="fixed z-50 transition-all duration-200 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    class="fixed z-50 transition-all duration-300 ease-out"
     :class="isScrolled
-      ? 'top-2 left-4 md:left-8 lg:left-12 right-4 md:right-8 lg:right-12 bg-[#071B3A]/95 backdrop-blur-md shadow-xl rounded-[20px] md:rounded-[28px] px-6 md:px-8 lg:px-12 py-2 md:py-2.5'
-      : 'top-4 md:top-6 left-0 right-0 py-5 md:py-6 lg:py-8'"
+      ? 'top-0 left-0 right-0 bg-[#071B3A]/90 backdrop-blur-lg shadow-md px-6 md:px-8 lg:px-12 py-3 md:py-3.5'
+      : 'top-4 md:top-6 left-0 right-0 bg-transparent py-5 md:py-6 lg:py-8'"
   >
     <div
       class="flex items-center justify-between gap-4 md:gap-[50px]"
@@ -83,7 +83,7 @@
     <Transition name="slide-fade">
       <div
         v-if="isMenuOpen"
-        class="lg:hidden absolute top-full left-0 right-0 mt-4 bg-[#071B3A]/98 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-white/10"
+        class="lg:hidden absolute top-full left-0 right-0 mt-2 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10"
       >
         <nav class="flex flex-col p-6">
           <a
@@ -179,20 +179,20 @@ onUnmounted(() => {
 }
 
 .slide-fade-enter-active {
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.3s ease-out;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease-in;
 }
 
 .slide-fade-enter-from {
-  transform: translateY(-15px) scale(0.95);
+  transform: translateY(-10px);
   opacity: 0;
 }
 
 .slide-fade-leave-to {
-  transform: translateY(-10px) scale(0.97);
+  transform: translateY(-5px);
   opacity: 0;
 }
 </style>

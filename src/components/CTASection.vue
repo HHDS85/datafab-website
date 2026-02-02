@@ -38,10 +38,10 @@
           </div>
         </div>
 
-        <div class="relative w-full min-h-[320px] md:min-h-[420px] lg:min-h-[600px] order-1 lg:order-2" style="perspective: 1000px;">
+        <div class="relative w-full h-[600px] md:h-[700px] lg:h-[800px] order-1 lg:order-2" style="perspective: 2000px;">
           <div
-            class="relative w-full h-full transition-all duration-700 ease-out"
-            :class="{ 'rotate-y-180': showForm }"
+            class="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
+            :style="{ transform: showForm ? 'rotateY(180deg)' : 'rotateY(0deg)' }"
             style="transform-style: preserve-3d;"
           >
             <div
@@ -56,10 +56,12 @@
             </div>
 
             <div
-              class="absolute inset-0 w-full h-full bg-white rounded-xl shadow-md p-6 md:p-8 overflow-y-auto"
+              class="absolute inset-0 w-full h-full bg-white rounded-xl shadow-md overflow-hidden"
               style="backface-visibility: hidden; transform: rotateY(180deg);"
             >
-              <ContactForm @close="showForm = false" />
+              <div class="w-full h-full overflow-y-auto p-6 md:p-8">
+                <ContactForm @close="showForm = false" />
+              </div>
             </div>
           </div>
         </div>

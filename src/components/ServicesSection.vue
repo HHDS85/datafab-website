@@ -39,7 +39,7 @@
           <div
             v-for="(service, index) in servicesData"
             :key="index"
-            class="bg-[#273248] rounded-[9px] min-h-[340px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+            class="bg-[#273248] rounded-[9px] min-h-[400px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
             <div class="p-8 flex flex-col h-full">
               <div class="mb-auto">
@@ -47,11 +47,11 @@
                   {{ service.number }}
                 </span>
               </div>
-              <div class="flex flex-col gap-4 mt-8">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3] whitespace-pre-line h-[56px] flex items-start">
+              <div class="flex flex-col gap-5 mt-10">
+                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4] whitespace-pre-line h-[64px] flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal h-[96px]">
+                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.7] tracking-normal h-[120px]">
                   {{ service.description }}
                 </p>
               </div>
@@ -74,18 +74,18 @@
                 class="flex-shrink-0 px-3"
                 :class="slideClass"
               >
-                <div class="bg-[#273248] rounded-[9px] min-h-[340px] flex flex-col">
+                <div class="bg-[#273248] rounded-[9px] min-h-[400px] flex flex-col">
                   <div class="p-8 flex flex-col h-full">
                     <div class="mb-auto">
                       <span class="font-family-jakarta font-normal text-white/60 text-lg tracking-normal leading-normal">
                         {{ service.number }}
                       </span>
                     </div>
-                    <div class="flex flex-col gap-4 mt-8">
-                      <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3]">
+                    <div class="flex flex-col gap-5 mt-10">
+                      <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4]">
                         {{ service.title }}
                       </h3>
-                      <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal">
+                      <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.7] tracking-normal">
                         {{ service.description }}
                       </p>
                     </div>
