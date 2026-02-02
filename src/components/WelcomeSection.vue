@@ -1,0 +1,60 @@
+<template>
+  <section ref="sectionRef" class="relative w-full bg-[#F4F5F7] py-16 md:py-20 lg:py-24 scroll-animate">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
+      <div class="mb-8 md:mb-10">
+        <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px]">
+          WILLKOMMEN
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
+        <div class="flex flex-col justify-start">
+          <h2 class="font-family-roboto font-normal text-[#273247] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">
+            Herzlich Willkommen
+            <br />
+            bei Data Fabricator
+          </h2>
+        </div>
+
+        <div class="flex flex-col justify-start gap-6">
+          <p class="font-family-jakarta font-normal text-[#1e1d1b] text-base md:text-lg leading-[1.75] tracking-normal">
+            Data Fabricator ist Ihr Partner für innovative und
+            maßgeschneiderte Digitalisierungsstrategien.
+            Wir setzen auf eine enge Zusammenarbeit, um Ihre Ideen in
+            erfolgreiche digitale Lösungen zu verwandeln.
+          </p>
+
+          <p class="font-family-jakarta font-normal text-[#1e1d1b] text-base md:text-lg leading-[1.75] tracking-normal">
+            Unser Leistungsspektrum reicht von der umfassenden
+            Digitalisierungsberatung über die Entwicklung individueller
+            Anwendungen bis hin zur Visualisierung komplexer Daten.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 md:mt-14 lg:mt-16">
+        <button class="bg-[#242528] hover:bg-[#242528]/90 text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[140px]">
+          Über uns
+        </button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { useScrollAnimation } from '@/composables/useScrollAnimation';
+
+const sectionRef = ref(null);
+useScrollAnimation(sectionRef);
+</script>
+
+<style scoped>
+.font-family-jakarta {
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+}
+
+.font-family-roboto {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+</style>
