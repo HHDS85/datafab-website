@@ -12,24 +12,18 @@
             im Überblick
           </h2>
         </div>
-        <div class="hidden lg:flex gap-2.5 mt-auto mb-1">
+        <div class="hidden lg:flex items-center justify-between gap-[55px] mt-auto mb-1">
           <button
             @click="scrollLeft"
-            class="w-11 h-11 rounded-[8px] border border-[#d4d4d4] hover:bg-[#f5f5f5] hover:border-[#a3a3a3] flex items-center justify-center transition-all duration-200"
+            class="nav-arrow nav-arrow-left w-[42px] h-[42px] flex items-center justify-center transition-all duration-300"
             aria-label="Scroll left"
           >
-            <svg class="w-4 h-4 text-[#404040]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-            </svg>
           </button>
           <button
             @click="scrollRight"
-            class="w-11 h-11 rounded-[8px] border border-[#d4d4d4] hover:bg-[#f5f5f5] hover:border-[#a3a3a3] flex items-center justify-center transition-all duration-200"
+            class="nav-arrow nav-arrow-right w-[42px] h-[42px] flex items-center justify-center transition-all duration-300"
             aria-label="Scroll right"
           >
-            <svg class="w-4 h-4 text-[#404040]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-            </svg>
           </button>
         </div>
       </div>
@@ -253,5 +247,46 @@ const handleTouchEnd = () => {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.nav-arrow {
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow-left::before {
+  border-width: 8px 14px 8px 0;
+  border-color: transparent #1E1D1B transparent transparent;
+  margin-left: -2px;
+}
+
+.nav-arrow-right::before {
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #9C9689;
+  margin-left: 2px;
+}
+
+.nav-arrow-left:hover::before {
+  border-color: transparent #000000 transparent transparent;
+  transform: translate(-55%, -50%);
+}
+
+.nav-arrow-right:hover::before {
+  border-color: transparent transparent transparent #7a7369;
+  transform: translate(-45%, -50%);
 }
 </style>
