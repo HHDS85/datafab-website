@@ -39,8 +39,7 @@
         </div>
 
         <div
-          class="relative w-full order-1 lg:order-2 transition-all duration-700 ease-out"
-          :class="showForm ? 'h-[700px] md:h-[800px] lg:h-[900px]' : 'h-[420px] md:h-[520px] lg:h-[600px]'"
+          class="relative w-full h-[420px] md:h-[520px] lg:h-[600px] order-1 lg:order-2"
           style="perspective: 2000px;"
         >
           <div

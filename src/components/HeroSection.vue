@@ -1,6 +1,6 @@
 <template>
-  <section class="relative w-full px-4 md:px-8 lg:px-12 pt-4 md:pt-6 pb-8 md:pb-12 lg:pb-16">
-    <div class="relative w-full min-h-[90vh] md:min-h-[85vh] lg:min-h-[90vh] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-2xl">
+  <section class="relative w-full">
+    <div class="relative w-full h-[100vh] overflow-hidden">
       <div class="absolute inset-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
         <img
