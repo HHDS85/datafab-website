@@ -1,8 +1,8 @@
 <template>
   <section ref="sectionRef" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
     <div class="max-w-[1100px] mx-auto px-6 md:px-8 lg:px-12">
-      <div class="mb-10 md:mb-12">
-        <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-6 md:mb-8">
+      <div class="mb-12 md:mb-14">
+        <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-5 md:mb-6">
           TESTIMONIAL
         </p>
         <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">
@@ -49,23 +49,23 @@
             </span>
           </div>
 
-          <div class="flex gap-3">
+          <div class="flex gap-2.5">
             <button
               @click="previousSlide"
-              class="w-11 md:w-12 h-11 md:h-12 rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 flex items-center justify-center transition-all"
+              class="w-11 h-11 rounded-[8px] border border-[#d4d4d4] hover:bg-[#f5f5f5] hover:border-[#a3a3a3] flex items-center justify-center transition-all duration-200"
               aria-label="Previous testimonial"
             >
-              <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              <svg class="w-4 h-4 text-[#404040]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
               </svg>
             </button>
             <button
               @click="nextSlide"
-              class="w-11 md:w-12 h-11 md:h-12 rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 flex items-center justify-center transition-all"
+              class="w-11 h-11 rounded-[8px] border border-[#d4d4d4] hover:bg-[#f5f5f5] hover:border-[#a3a3a3] flex items-center justify-center transition-all duration-200"
               aria-label="Next testimonial"
             >
-              <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              <svg class="w-4 h-4 text-[#404040]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
               </svg>
             </button>
           </div>

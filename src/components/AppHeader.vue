@@ -1,9 +1,18 @@
 <template>
-  <header class="fixed top-4 md:top-6 left-4 md:left-8 lg:left-12 right-4 md:right-8 lg:right-12 flex items-center justify-between gap-4 md:gap-[50px] z-50 px-6 md:px-8 lg:px-12 py-5 md:py-6 lg:py-8 transition-all duration-300 ease-out rounded-[20px] md:rounded-[28px]" :class="{ 'bg-[#071B3A]/95 backdrop-blur-md shadow-xl py-2 md:py-3 top-2': isScrolled }">
+  <header
+    class="fixed z-50 transition-all duration-300 ease-out"
+    :class="isScrolled
+      ? 'top-2 left-4 md:left-8 lg:left-12 right-4 md:right-8 lg:right-12 bg-[#071B3A]/95 backdrop-blur-md shadow-xl rounded-[20px] md:rounded-[28px] px-6 md:px-8 lg:px-12 py-2 md:py-2.5'
+      : 'top-4 md:top-6 left-0 right-0 py-5 md:py-6 lg:py-8'"
+  >
+    <div
+      class="flex items-center justify-between gap-4 md:gap-[50px]"
+      :class="!isScrolled ? 'max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12' : ''"
+    >
     <div class="flex items-center gap-4 md:gap-[92px] flex-1">
       <img
-        class="transition-all duration-300 ease-out"
-        :class="isScrolled ? 'w-[120px] md:w-[160px] lg:w-[200px]' : 'w-[180px] md:w-[240px] lg:w-[300px]'"
+        class="transition-all duration-300 ease-out transform hover:scale-105"
+        :class="isScrolled ? 'w-[120px] md:w-[150px] lg:w-[180px]' : 'w-[180px] md:w-[240px] lg:w-[300px]'"
         alt="Logo datafabrictor"
         src="/logo-datafabrictor.svg"
       />
@@ -107,6 +116,7 @@
         </nav>
       </div>
     </Transition>
+    </div>
   </header>
 </template>
 

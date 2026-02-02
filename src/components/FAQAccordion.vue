@@ -123,9 +123,13 @@ const leave = (element) => {
   font-family: 'Inter', Helvetica, sans-serif;
 }
 
-.accordion-enter-active,
+.accordion-enter-active {
+  transition: height 0.45s cubic-bezier(0.34, 1.26, 0.64, 1), opacity 0.35s ease-in;
+  overflow: hidden;
+}
+
 .accordion-leave-active {
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out;
   overflow: hidden;
 }
 

@@ -38,6 +38,7 @@
     font-feature-settings: "kern" 1;
     font-synthesis: none;
     color: #1e1d1b;
+    overflow-x: hidden;
   }
 
   * {
