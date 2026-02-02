@@ -88,14 +88,16 @@
           Copyright {{ currentYear }} Data Fabricator GmbH. All rights reserved.
         </p>
         <nav class="flex items-center flex-wrap justify-center gap-3 md:gap-5">
-          <a
+          <component
             v-for="(link, index) in legalLinks"
             :key="`legal-${index}`"
-            href="#"
+            :is="link.to ? 'router-link' : 'a'"
+            :to="link.to"
+            :href="link.href"
             class="font-family-jakarta font-normal text-[#1e1e1e]/80 text-xs md:text-sm tracking-[-0.01em] leading-[1.5] hover:text-[#1e1e1e] transition-colors"
           >
             {{ link.label }}
-          </a>
+          </component>
         </nav>
       </div>
     </div>
@@ -121,9 +123,9 @@ const servicesLinks = [
 ];
 
 const legalLinks = [
-  { label: 'Impressum' },
-  { label: 'AGB' },
-  { label: 'Kontakt' }
+  { label: 'Impressum', to: '/impressum' },
+  { label: 'AGB', href: '#' },
+  { label: 'Kontakt', href: '#kontakt' }
 ];
 </script>
 

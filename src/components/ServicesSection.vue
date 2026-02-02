@@ -48,10 +48,10 @@
                 </span>
               </div>
               <div class="flex flex-col gap-4 mt-8">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3] whitespace-pre-line min-h-[56px] flex items-start">
+                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3] whitespace-pre-line h-[56px] flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal min-h-[96px]">
+                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal h-[96px]">
                   {{ service.description }}
                 </p>
               </div>
@@ -129,12 +129,6 @@
             </button>
           </div>
         </div>
-      </div>
-
-      <div class="flex justify-start">
-        <button class="bg-[#242528] hover:bg-[#242528]/90 text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[180px]">
-          Leistungskatalog
-        </button>
       </div>
     </div>
   </section>

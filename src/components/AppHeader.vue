@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed z-50 transition-all duration-300 ease-out"
+    class="fixed z-50 transition-all duration-200 ease-[cubic-bezier(0.4,0,0.2,1)]"
     :class="isScrolled
       ? 'top-2 left-4 md:left-8 lg:left-12 right-4 md:right-8 lg:right-12 bg-[#071B3A]/95 backdrop-blur-md shadow-xl rounded-[20px] md:rounded-[28px] px-6 md:px-8 lg:px-12 py-2 md:py-2.5'
       : 'top-4 md:top-6 left-0 right-0 py-5 md:py-6 lg:py-8'"
@@ -121,14 +121,38 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { navigationItems } from '@/data/navigation';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { navigationItems as originalNavigationItems } from '@/data/navigation';
 
 const isMenuOpen = ref(false);
 const isScrolled = ref(false);
+const activeSection = ref('');
+
+const navigationItems = computed(() => {
+  return originalNavigationItems.map(item => ({
+    ...item,
+    active: activeSection.value === item.href.substring(1)
+  }));
+});
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
+
+  const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
+  let currentSection = '';
+
+  for (const section of sections) {
+    const element = document.getElementById(section);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        currentSection = section;
+        break;
+      }
+    }
+  }
+
+  activeSection.value = currentSection;
 };
 
 const toggleMenu = () => {

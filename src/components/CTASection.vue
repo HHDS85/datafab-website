@@ -1,7 +1,7 @@
 <template>
   <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] py-16 md:py-20 lg:py-24 scroll-animate">
     <div class="container mx-auto max-w-[1200px] px-6 md:px-8 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
         <div class="flex flex-col gap-8 md:gap-10 order-2 lg:order-1">
           <div class="space-y-5 md:space-y-6">
             <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
@@ -16,13 +16,17 @@
 
           <div class="flex flex-col sm:flex-row gap-4">
             <button
-              class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] hover:bg-[#242528]/90 text-white transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[180px]"
+              @click="showForm = true"
+              class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] hover:bg-[#242528]/90 text-white transition-all duration-300 hover:shadow-lg hover:scale-[1.02] min-w-[180px]"
             >
               Kontaktformular
             </button>
 
-            <button
-              class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[180px]"
+            <a
+              href="https://wa.me/4940609272772"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] min-w-[180px]"
             >
               <img
                 class="w-5 h-5"
@@ -30,16 +34,34 @@
                 src="/whatsappicon.svg"
               />
               WhatsApp
-            </button>
+            </a>
           </div>
         </div>
 
-        <div class="relative w-full h-[320px] md:h-[420px] lg:h-[480px] order-1 lg:order-2">
-          <img
-            class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-md"
-            alt="Kontakt img"
-            src="/kontakt-img.png"
-          />
+        <div class="relative w-full min-h-[320px] md:min-h-[420px] lg:min-h-[600px] order-1 lg:order-2" style="perspective: 1000px;">
+          <div
+            class="relative w-full h-full transition-all duration-700 ease-out"
+            :class="{ 'rotate-y-180': showForm }"
+            style="transform-style: preserve-3d;"
+          >
+            <div
+              class="absolute inset-0 w-full h-full rounded-xl shadow-md overflow-hidden"
+              style="backface-visibility: hidden;"
+            >
+              <img
+                class="w-full h-full object-cover"
+                alt="Kontakt img"
+                src="/kontakt-img.png"
+              />
+            </div>
+
+            <div
+              class="absolute inset-0 w-full h-full bg-white rounded-xl shadow-md p-6 md:p-8 overflow-y-auto"
+              style="backface-visibility: hidden; transform: rotateY(180deg);"
+            >
+              <ContactForm @close="showForm = false" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -49,8 +71,11 @@
 <script setup>
 import { ref } from 'vue';
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import ContactForm from './ContactForm.vue';
 
 const sectionRef = ref(null);
+const showForm = ref(false);
+
 useScrollAnimation(sectionRef);
 </script>
 
@@ -61,5 +86,9 @@ useScrollAnimation(sectionRef);
 
 .font-family-roboto {
   font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
 </style>

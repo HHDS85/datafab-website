@@ -1,10 +1,10 @@
 <template>
-  <section class="relative w-full px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
-    <div class="relative w-full min-h-[500px] md:min-h-[650px] lg:min-h-[780px] rounded-[20px] md:rounded-[28px] overflow-hidden">
+  <section class="relative w-full px-4 md:px-8 lg:px-12 pt-4 md:pt-6 pb-8 md:pb-12 lg:pb-16">
+    <div class="relative w-full min-h-[90vh] md:min-h-[85vh] lg:min-h-[90vh] rounded-[20px] md:rounded-[28px] overflow-hidden shadow-2xl">
       <div class="absolute inset-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
         <img
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover object-[75%_center] md:object-[65%_center] lg:object-center"
           alt="Hero background"
           src="/datafabricator-header-desktop-01-1.png"
         />
@@ -26,13 +26,13 @@
 
       <div class="flex flex-col sm:flex-row gap-4 mb-20 md:mb-28 lg:mb-32">
         <button
-          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border border-white text-white hover:bg-white/10 transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[200px]"
+          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
         >
           Alle Services ansehen
         </button>
 
         <button
-          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] text-white hover:bg-[#242528]/90 transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[200px]"
+          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] text-white hover:bg-white hover:text-[#242528] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
         >
           Termin vereinbaren
         </button>

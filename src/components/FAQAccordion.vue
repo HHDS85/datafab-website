@@ -91,7 +91,7 @@ const enter = (element) => {
   element.style.visibility = null;
   element.style.height = 0;
 
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     element.style.height = height;
   });
 };
@@ -104,7 +104,7 @@ const leave = (element) => {
   const height = getComputedStyle(element).height;
   element.style.height = height;
 
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     element.style.height = 0;
   });
 };
