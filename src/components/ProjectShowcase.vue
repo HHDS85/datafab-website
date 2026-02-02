@@ -1,6 +1,6 @@
 <template>
   <section ref="sectionRef" id="referenzen" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
-    <div class="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
       <div class="text-left mb-5 md:mb-6">
         <span class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px]">
           REFERENZEN

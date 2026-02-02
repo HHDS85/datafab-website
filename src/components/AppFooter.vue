@@ -1,6 +1,6 @@
 <template>
-  <footer class="relative w-full bg-[#F9F9F9] py-10 md:py-12 px-4 md:px-6">
-    <div class="max-w-[1200px] mx-auto">
+  <footer class="relative w-full bg-[#F9F9F9] py-10 md:py-12">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
         <div class="flex flex-col gap-2">
           <img

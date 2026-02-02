@@ -1,6 +1,6 @@
 <template>
   <section ref="sectionRef" id="faq" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
-    <div class="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
         <div class="flex flex-col gap-8">
           <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">

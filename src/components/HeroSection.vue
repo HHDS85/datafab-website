@@ -1,6 +1,6 @@
 <template>
   <section class="relative w-full">
-    <div class="relative w-full h-[90vh] overflow-hidden">
+    <div class="relative w-full h-[90vh] max-h-[900px] overflow-hidden">
       <div class="absolute inset-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
         <img
@@ -10,14 +10,14 @@
         />
       </div>
 
-      <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 pt-36 md:pt-44 lg:pt-52 pb-12 md:pb-16 z-10 h-full flex flex-col">
+      <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 pt-32 md:pt-40 lg:pt-48 xl:pt-52 pb-10 md:pb-14 lg:pb-16 z-10 h-full flex flex-col">
       <div class="mb-3 md:mb-4">
-        <p class="font-family-jakarta font-medium text-white/90 text-xs md:text-sm tracking-[0.08em] uppercase leading-[27.9px]">
+        <p class="font-family-jakarta font-medium text-white/90 text-xs md:text-sm xl:text-sm tracking-[0.08em] uppercase leading-[27.9px]">
           HERZLICH WILLKOMMEN
         </p>
       </div>
 
-      <h1 class="font-family-roboto font-light text-white text-3xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-8 md:mb-10 max-w-[680px] drop-shadow-sm">
+      <h1 class="font-family-roboto font-light text-white text-3xl md:text-5xl lg:text-6xl xl:text-6xl tracking-tight leading-[1.1] mb-8 md:mb-10 xl:mb-12 max-w-[680px] drop-shadow-sm">
         Wir transformieren
         technische
         Herausforderungen in
@@ -26,22 +26,22 @@
 
       <div class="flex flex-col sm:flex-row gap-4 mb-auto">
         <button
-          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] text-white hover:bg-[#242528]/80 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
+          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal bg-[#242528] text-white hover:bg-[#242528]/80 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
         >
           Alle Cases einsehen
         </button>
 
         <button
-          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
+          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal border border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
         >
           Termin buchen
         </button>
       </div>
 
-      <div class="flex justify-start md:justify-end items-end mt-auto pt-8">
-        <div class="w-full md:max-w-[540px]">
-          <div class="min-h-[60px] md:min-h-[50px] mb-3 md:mb-4">
-            <p class="font-family-jakarta font-normal text-white text-sm md:text-base text-left md:text-right tracking-normal leading-[1.5] drop-shadow-sm">
+      <div class="flex justify-start md:justify-end items-end mt-auto pt-6 md:pt-8 xl:pt-10">
+        <div class="w-full md:max-w-[540px] xl:max-w-[580px]">
+          <div class="min-h-[60px] md:min-h-[50px] xl:min-h-[55px] mb-3 md:mb-4">
+            <p class="font-family-jakarta font-normal text-white text-sm md:text-base xl:text-base text-left md:text-right tracking-normal leading-[1.5] drop-shadow-sm">
               <span class="font-bold">{{ currentHighlight.title }}</span>
               <span> {{ currentHighlight.text }}</span>
             </p>

@@ -1,6 +1,6 @@
 <template>
   <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] py-16 md:py-20 lg:py-24 scroll-animate">
-    <div class="container mx-auto max-w-[1200px] px-6 md:px-8 lg:px-12">
+    <div class="container mx-auto max-w-[1220px] px-6 md:px-8 lg:px-12 xl:px-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
         <div class="flex flex-col gap-8 md:gap-10 order-2 lg:order-1">
           <div class="space-y-5 md:space-y-6">

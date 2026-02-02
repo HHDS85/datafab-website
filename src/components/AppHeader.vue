@@ -7,7 +7,7 @@
   >
     <div
       class="flex items-center justify-between gap-4 md:gap-[50px]"
-      :class="!isScrolled ? 'max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12' : ''"
+      :class="!isScrolled ? 'max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16' : 'max-w-[1400px] mx-auto'"
     >
     <div class="flex items-center gap-4 md:gap-[92px] flex-1">
       <img

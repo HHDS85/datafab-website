@@ -1,6 +1,6 @@
 <template>
   <section ref="sectionRef" id="leistungen" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
-    <div class="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
       <div class="mb-12 md:mb-14 flex items-start justify-between">
         <div>
           <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-5 md:mb-6">
