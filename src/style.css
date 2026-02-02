@@ -23,6 +23,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -35,11 +36,23 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
+    font-synthesis: none;
+    color: #1e1d1b;
   }
 
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  p, span, a {
+    letter-spacing: -0.01em;
   }
 }
 
@@ -132,13 +145,17 @@
 
   .scroll-animate {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-animate.in-view {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  * {
+    scroll-behavior: smooth;
   }
 
   .stagger-1 {

@@ -1,19 +1,41 @@
 <template>
   <section ref="sectionRef" id="leistungen" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
     <div class="max-w-[1200px] mx-auto px-6 md:px-8 lg:px-12">
-      <div class="mb-10 md:mb-12">
-        <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-6 md:mb-8">
-          SERVICES
-        </p>
-        <h2 class="font-family-roboto font-normal text-[#273247] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">
-          Unsere Leistungen
-          <br />
-          im Überblick
-        </h2>
+      <div class="mb-10 md:mb-12 flex items-start justify-between">
+        <div>
+          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-6 md:mb-8">
+            SERVICES
+          </p>
+          <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">
+            Unsere Leistungen
+            <br />
+            im Überblick
+          </h2>
+        </div>
+        <div class="hidden lg:flex gap-3 mt-auto mb-2">
+          <button
+            @click="scrollLeft"
+            class="w-11 md:w-12 h-11 md:h-12 rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 flex items-center justify-center transition-all"
+            aria-label="Scroll left"
+          >
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button
+            @click="scrollRight"
+            class="w-11 md:w-12 h-11 md:h-12 rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 flex items-center justify-center transition-all"
+            aria-label="Scroll right"
+          >
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="relative mb-12 md:mb-14 -mr-6 md:-mr-8 lg:-mr-12">
-        <div class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide">
+        <div ref="scrollContainer" class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
           <div
             v-for="(service, index) in servicesData"
             :key="index"
@@ -26,10 +48,10 @@
                 </span>
               </div>
               <div class="flex flex-col gap-4 mt-8">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3] whitespace-pre-line">
+                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.3] whitespace-pre-line min-h-[56px] flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal">
+                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal min-h-[96px]">
                   {{ service.description }}
                 </p>
               </div>
@@ -126,10 +148,23 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation';
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 
+const scrollContainer = ref(null);
 const currentSlide = ref(0);
 const slidesPerView = ref(1);
 const touchStartX = ref(0);
 const touchEndX = ref(0);
+
+const scrollLeft = () => {
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+};
+
+const scrollRight = () => {
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+};
 
 const updateSlidesPerView = () => {
   if (window.innerWidth >= 768 && window.innerWidth < 1024) {

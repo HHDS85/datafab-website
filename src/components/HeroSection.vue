@@ -1,15 +1,16 @@
 <template>
-  <section class="relative w-full min-h-[500px] md:min-h-[650px] lg:min-h-[780px]">
-    <div class="absolute inset-0 w-full h-full">
-      <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
-      <img
-        class="w-full h-full object-cover"
-        alt="Hero background"
-        src="/datafabricator-header-desktop-01-1.png"
-      />
-    </div>
+  <section class="relative w-full px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+    <div class="relative w-full min-h-[500px] md:min-h-[650px] lg:min-h-[780px] rounded-[20px] md:rounded-[28px] overflow-hidden">
+      <div class="absolute inset-0 w-full h-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
+        <img
+          class="w-full h-full object-cover"
+          alt="Hero background"
+          src="/datafabricator-header-desktop-01-1.png"
+        />
+      </div>
 
-    <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 pt-40 md:pt-48 lg:pt-56 pb-16 md:pb-20 z-10">
+      <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 pt-40 md:pt-48 lg:pt-56 pb-16 md:pb-20 z-10">
       <div class="mb-4 md:mb-6">
         <p class="font-family-jakarta font-medium text-white/90 text-xs md:text-sm tracking-[0.08em] uppercase leading-[27.9px]">
           SPEZIALISIERUNGEN
@@ -60,6 +61,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </template>

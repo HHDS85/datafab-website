@@ -1,8 +1,8 @@
 import { onMounted, onUnmounted } from 'vue';
 
 export function useScrollAnimation(elementRefs, options = {}) {
-  const threshold = options.threshold || 0.1;
-  const rootMargin = options.rootMargin || '0px 0px -100px 0px';
+  const threshold = options.threshold || 0.15;
+  const rootMargin = options.rootMargin || '0px 0px -80px 0px';
 
   let observer = null;
 
