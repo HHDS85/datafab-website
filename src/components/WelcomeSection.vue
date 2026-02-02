@@ -33,8 +33,8 @@
       </div>
 
       <div class="mt-12 md:mt-14 lg:mt-16">
-        <button class="bg-[#242528] hover:bg-[#242528]/90 text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[140px]">
-          Über uns
+        <button class="relative bg-[#242528] text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[140px] overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500">
+          <span class="relative z-10">Über uns</span>
         </button>
       </div>
     </div>

@@ -140,15 +140,15 @@
           @click="handleSubmit"
           type="submit"
           :disabled="isSubmitting"
-          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] hover:bg-[#242528]/90 text-white transition-all duration-300 hover:shadow-lg hover:scale-[1.02] min-w-[200px] disabled:opacity-50 disabled:cursor-not-allowed"
+          class="relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] text-white transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
         >
-          {{ isSubmitting ? 'Wird gesendet...' : 'Unverbindlich anfragen' }}
+          <span class="relative z-10">{{ isSubmitting ? 'Wird gesendet...' : 'Unverbindlich anfragen' }}</span>
         </button>
 
         <button
           @click="$emit('close')"
           type="button"
-          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] min-w-[180px]"
+          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 transition-all duration-500 ease-out hover:shadow-[0_6px_20px_rgba(39,50,71,0.15)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[180px]"
         >
           Zurück
         </button>

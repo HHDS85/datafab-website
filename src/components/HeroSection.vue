@@ -1,16 +1,16 @@
 <template>
   <section class="relative w-full">
-    <div class="relative w-full h-[90vh] max-h-[900px] overflow-hidden">
+    <div class="relative w-full h-[90vh] min-h-[600px] max-h-[900px] overflow-hidden">
       <div class="absolute inset-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
         <img
-          class="w-full h-full object-cover object-[75%_center] md:object-[65%_center] lg:object-center"
+          class="w-full h-full object-cover object-[75%_center] md:object-[65%_center] lg:object-center xl:object-[55%_center]"
           alt="Hero background"
           src="/datafabricator-header-desktop-01-1.png"
         />
       </div>
 
-      <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 pt-32 md:pt-40 lg:pt-48 xl:pt-52 pb-10 md:pb-14 lg:pb-16 z-10 h-full flex flex-col">
+      <div class="relative max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 pt-28 md:pt-36 lg:pt-40 xl:pt-44 pb-8 md:pb-10 lg:pb-12 z-10 h-full flex flex-col">
       <div class="mb-3 md:mb-4">
         <p class="font-family-jakarta font-medium text-white/90 text-xs md:text-sm xl:text-sm tracking-[0.08em] uppercase leading-[27.9px]">
           HERZLICH WILLKOMMEN
@@ -26,15 +26,15 @@
 
       <div class="flex flex-col sm:flex-row gap-4 mb-auto">
         <button
-          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal bg-[#242528] text-white hover:bg-[#242528]/80 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
+          class="group relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal bg-[#242528] text-white transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
         >
-          Alle Cases einsehen
+          <span class="relative z-10">Alle Cases einsehen</span>
         </button>
 
         <button
-          class="group h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal border border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] min-w-[200px]"
+          class="group relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(255,255,255,0.4)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] backdrop-blur-sm hover:backdrop-blur-0"
         >
-          Termin buchen
+          <span class="relative z-10">Termin buchen</span>
         </button>
       </div>
 
@@ -62,6 +62,7 @@
         </div>
       </div>
     </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-[#F4F5F7]/50 pointer-events-none"></div>
     </div>
   </section>
 </template>

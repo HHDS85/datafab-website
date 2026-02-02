@@ -2,7 +2,7 @@
   <header
     class="fixed z-50 transition-all duration-300 ease-out"
     :class="isScrolled
-      ? 'top-0 left-0 right-0 bg-[#071B3A]/90 backdrop-blur-lg shadow-md px-6 md:px-8 lg:px-12 py-3 md:py-3.5'
+      ? 'top-0 left-0 right-0 bg-[#071B3A]/60 backdrop-blur-md shadow-sm px-6 md:px-8 lg:px-12 py-2.5 md:py-3'
       : 'top-4 md:top-6 left-0 right-0 bg-transparent py-5 md:py-6 lg:py-8'"
   >
     <div
@@ -61,20 +61,20 @@
 
     <button
       @click="toggleMenu"
-      class="lg:hidden flex flex-col items-center justify-center w-10 h-10 text-white z-30 group"
+      class="lg:hidden flex flex-col items-center justify-center w-10 h-10 z-30 group relative"
       aria-label="Toggle menu"
     >
       <span class="flex flex-col gap-1.5 w-6">
         <span
-          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out transform origin-center"
+          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out transform origin-center shadow-sm"
           :class="isMenuOpen ? 'rotate-45 translate-y-2' : ''"
         ></span>
         <span
-          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out"
+          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out shadow-sm"
           :class="isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'"
         ></span>
         <span
-          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out transform origin-center"
+          class="h-0.5 w-full bg-white rounded-full transition-all duration-300 ease-out transform origin-center shadow-sm"
           :class="isMenuOpen ? '-rotate-45 -translate-y-2' : ''"
         ></span>
       </span>

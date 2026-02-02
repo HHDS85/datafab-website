@@ -11,14 +11,14 @@
         Letzte Projekte
       </h2>
 
-      <h3 class="font-family-roboto font-normal text-[#1e1d1b] text-2xl md:text-3xl lg:text-[40px] tracking-tight leading-[1.2] mb-12 md:mb-16 max-w-full md:max-w-[620px]">
+      <h3 class="font-family-roboto font-semibold text-[#1e1d1b] text-3xl md:text-4xl lg:text-[44px] tracking-tight leading-[1.2] mb-12 md:mb-16 max-w-full md:max-w-[720px]">
         {{ projectData.title }}
       </h3>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
         <div class="flex flex-col items-start gap-8">
-          <button class="bg-[#242528] hover:bg-[#242528]/90 text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-300 hover:shadow-lg hover:scale-105 min-w-[180px]">
-            Projektbericht
+          <button class="relative bg-[#242528] text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[180px] overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500">
+            <span class="relative z-10">Projektbericht</span>
           </button>
 
           <img
@@ -35,7 +35,7 @@
             class="border-0 shadow-none bg-transparent"
           >
             <div class="p-0">
-              <h4 class="font-family-roboto font-medium text-[#1e1d1b] text-[22px] md:text-[26px] tracking-tight leading-[1.35] mb-4 md:mb-5">
+              <h4 class="font-family-roboto font-semibold text-[#1e1d1b] text-[24px] md:text-[28px] tracking-tight leading-[1.3] mb-4 md:mb-5">
                 {{ section.title }}
               </h4>
 
