@@ -11,7 +11,10 @@
     ]">
       <div class="flex items-center justify-between">
               <img
-                class="h-10 transition-all duration-300"
+                :class="[
+                  'h-10 transition-all duration-300',
+                  isScrolled ? 'invert brightness-0' : ''
+                ]"
                 alt="Logo datafabrictor"
                 src="/logo-datafabrictor.svg"
               />

@@ -30,7 +30,7 @@
                 </span>
                 <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center transition-all duration-300 ease-out">
                   <img
-                    :src="openItem === item.id ? '/expandbutton02.png' : '/expandbutton01.png'"
+                    :src="openItem === item.id ? '/expandbutton01.png' : '/expandbutton02.png'"
                     :alt="openItem === item.id ? 'Collapse' : 'Expand'"
                     class="w-full h-full object-contain transition-all duration-300"
                   />
