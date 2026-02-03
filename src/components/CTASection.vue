@@ -57,10 +57,8 @@
           ]"
         >
           <div
-            :class="[
-              'absolute inset-0 w-full h-full shadow-md overflow-hidden transition-opacity duration-500',
-              showForm ? 'opacity-0 pointer-events-none' : 'opacity-100'
-            ]"
+            v-show="!showForm"
+            class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
           >
             <img
               class="w-full h-full object-cover"
@@ -70,13 +68,11 @@
           </div>
 
           <div
-            :class="[
-              'absolute inset-0 w-full h-full bg-white shadow-md transition-opacity duration-500',
-              showForm ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
-            ]"
+            v-show="showForm"
+            class="absolute inset-0 w-full h-full bg-white shadow-md z-10"
           >
             <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
-              <ContactForm @close="showForm = false" />
+              <ContactForm v-if="showForm" @close="showForm = false" />
             </div>
           </div>
         </div>
