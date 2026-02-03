@@ -2,52 +2,54 @@
   <header
     class="fixed w-full z-50 transition-all duration-300 ease-out"
     :class="isScrolled
-      ? 'top-0 bg-[#071B3A]/95 backdrop-blur-md shadow-lg py-4'
+      ? 'top-0 bg-[#071B3A]/90 backdrop-blur-md shadow-lg py-4'
       : 'top-0 bg-transparent py-6'"
   >
-    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
-      <div class="flex items-center justify-between">
-        <img
-          class="transition-all duration-300 ease-out"
-          :class="isScrolled ? 'h-10' : 'h-14'"
-          alt="Logo datafabrictor"
-          src="/logo-datafabrictor.svg"
-        />
+    <div class="max-w-[1440px] mx-auto px-12">
+      <div class="flex items-center justify-between gap-12">
+        <div class="flex items-center gap-20 flex-1">
+          <img
+            class="transition-all duration-300 ease-out"
+            :class="isScrolled ? 'h-10' : 'h-12'"
+            alt="Logo datafabrictor"
+            src="/logo-datafabrictor.svg"
+          />
 
-        <nav class="hidden lg:flex items-center gap-12 xl:gap-14">
-          <a
-            v-for="(item, index) in navigationItems"
-            :key="`nav-${index}`"
-            :href="item.href"
-            class="flex items-center cursor-pointer group relative"
-          >
-            <span
-              :class="[
-                'font-family-jakarta relative transition-all duration-300',
-                item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white',
-                'tracking-wide uppercase text-sm xl:text-[15px]'
-              ]"
+          <nav class="hidden lg:flex items-center gap-10 flex-1 justify-end">
+            <a
+              v-for="(item, index) in navigationItems"
+              :key="`nav-${index}`"
+              :href="item.href"
+              class="flex items-center cursor-pointer group relative"
             >
-              {{ item.label }}
               <span
                 :class="[
-                  'absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out',
-                  item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                  'font-family-jakarta relative transition-all duration-300',
+                  item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white',
+                  'tracking-wide uppercase text-sm'
                 ]"
-              ></span>
-            </span>
-          </a>
-        </nav>
+              >
+                {{ item.label }}
+                <span
+                  :class="[
+                    'absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out',
+                    item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                  ]"
+                ></span>
+              </span>
+            </a>
+          </nav>
+        </div>
 
         <button
-          class="hidden md:flex items-center gap-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-7 py-2.5"
+          class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-10"
         >
           <img
             class="w-5 h-5"
             alt="Language"
             src="/language.svg"
           />
-          <span class="font-family-jakarta font-medium text-white text-sm xl:text-[15px]">
+          <span class="font-family-jakarta font-medium text-white text-sm">
             DE
           </span>
         </button>

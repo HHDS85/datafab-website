@@ -10,34 +10,34 @@
         />
       </div>
 
-      <div class="relative w-full max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24 pt-48 pb-20 z-10 h-full flex flex-col">
-        <div class="mb-6">
-          <p class="font-family-jakarta font-medium text-white/95 text-sm tracking-[0.15em] uppercase">
+      <div class="relative w-full max-w-[1440px] mx-auto px-12 pt-48 pb-20 z-10 h-full flex flex-col">
+        <div class="mb-4">
+          <p class="font-family-jakarta font-medium text-white/95 text-xs tracking-[0.15em] uppercase">
             HERZLICH WILLKOMMEN
           </p>
         </div>
 
-        <h1 class="font-family-roboto font-light text-white text-7xl xl:text-8xl tracking-tight leading-[1.1] mb-14 max-w-[900px]">
+        <h1 class="font-family-roboto font-light text-white text-7xl tracking-tight leading-[1.1] mb-12 max-w-[800px]">
           Wir transformieren
           technische
           Herausforderungen in
           greifbare Erfolge.
         </h1>
 
-        <div class="flex gap-6 mb-auto">
-          <button class="font-family-jakarta font-normal text-lg xl:text-xl bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-12 h-14">
+        <div class="flex gap-5 mb-auto">
+          <button class="font-family-jakarta font-normal text-lg bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-12">
             Alle Cases einsehen
           </button>
 
-          <button class="font-family-jakarta font-normal text-lg xl:text-xl border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-12 h-14 backdrop-blur-sm">
+          <button class="font-family-jakarta font-normal text-lg border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-12 backdrop-blur-sm">
             Termin buchen
           </button>
         </div>
 
-        <div class="flex justify-end items-end mt-auto pt-16">
-          <div class="max-w-[700px]">
-            <div class="min-h-[90px] mb-8">
-              <p class="font-family-jakarta font-normal text-white text-xl text-right leading-[1.6]">
+        <div class="flex justify-end items-end mt-auto pt-12">
+          <div class="max-w-[600px]">
+            <div class="min-h-[80px] mb-6">
+              <p class="font-family-jakarta font-normal text-white text-lg text-right leading-[1.6]">
                 <span class="font-bold">{{ currentHighlight.title }}</span>
                 <span> {{ currentHighlight.text }}</span>
               </p>

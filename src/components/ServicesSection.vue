@@ -1,18 +1,18 @@
 <template>
-  <section ref="sectionRef" id="leistungen" class="relative w-full py-28 xl:py-32 scroll-animate">
-    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
-      <div class="mb-16 flex items-start justify-between">
+  <section ref="sectionRef" id="leistungen" class="relative w-full py-24 scroll-animate">
+    <div class="max-w-[1440px] mx-auto px-12">
+      <div class="mb-14 flex items-start justify-between">
         <div>
-          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm xl:text-[15px] tracking-[0.05em] uppercase mb-8">
+          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase mb-6">
             SERVICES
           </p>
-          <h2 class="font-family-roboto font-light text-[#273247] text-6xl xl:text-7xl tracking-tight leading-[1.15]">
+          <h2 class="font-family-roboto font-light text-[#273247] text-6xl tracking-tight leading-[1.15]">
             Unsere Leistungen
             <br />
             im Überblick
           </h2>
         </div>
-        <div class="hidden lg:flex items-center justify-between gap-14 mt-auto mb-2">
+        <div class="hidden lg:flex items-center justify-between gap-14 mt-auto mb-1">
           <button
             @click="scrollLeft"
             class="nav-arrow nav-arrow-left w-10 h-10 flex items-center justify-center transition-all duration-300"
@@ -28,24 +28,24 @@
         </div>
       </div>
 
-      <div class="relative mb-16 -mr-8 lg:-mr-16 xl:-mr-20 2xl:-mr-24">
-        <div ref="scrollContainer" class="hidden lg:flex gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
+      <div class="relative mb-14 -mr-12">
+        <div ref="scrollContainer" class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
           <div
             v-for="(service, index) in servicesData"
             :key="index"
-            class="bg-[#273248] min-h-[400px] xl:min-h-[420px] flex flex-col flex-shrink-0 w-[320px] xl:w-[360px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+            class="bg-[#273248] min-h-[380px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
-            <div class="p-9 xl:p-10 pb-8 flex flex-col h-full">
-              <div class="mb-5">
-                <span class="font-family-jakarta font-normal text-white/60 text-xl">
+            <div class="p-8 pb-7 flex flex-col h-full">
+              <div class="mb-4">
+                <span class="font-family-jakarta font-normal text-white/60 text-lg">
                   {{ service.number }}
                 </span>
               </div>
-              <div class="flex flex-col gap-6">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl xl:text-2xl leading-[1.4] whitespace-pre-line min-h-[60px] flex items-start">
+              <div class="flex flex-col gap-5">
+                <h3 class="font-family-jakarta font-semibold text-white text-xl leading-[1.4] whitespace-pre-line h-16 flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base xl:text-lg leading-[1.6]">
+                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6]">
                   {{ service.description }}
                 </p>
               </div>
