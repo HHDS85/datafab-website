@@ -193,9 +193,9 @@
             </div>
           </div>
 
-          <div class="flex justify-end items-end pr-6 lg:pr-12 xl:pr-16 2xl:pr-20 pb-6 lg:pb-12 xl:pb-16 2xl:pb-20">
-            <div class="max-w-[420px] lg:max-w-[480px] xl:max-w-[520px]">
-              <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
+          <div class="flex justify-end items-end px-6 lg:px-12 xl:px-16 2xl:px-20 pb-8 lg:pb-10 xl:pb-12">
+            <div class="max-w-[420px] lg:max-w-[480px] xl:max-w-[540px]">
+              <p class="font-family-jakarta font-normal text-white text-base lg:text-lg xl:text-xl text-right leading-[1.65]">
                 <span class="font-bold">Streaming-Dienste</span>
                 <span> – Netflix verarbeitet täglich über 15 Petabyte an Daten für personalisierte Empfehlungen und Content-Streaming.</span>
               </p>

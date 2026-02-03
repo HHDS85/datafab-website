@@ -58,7 +58,7 @@
         >
           <div
             v-show="!showForm"
-            class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
+            class="absolute inset-0 w-full h-full shadow-md overflow-hidden z-0"
           >
             <img
               class="w-full h-full object-cover"
@@ -69,10 +69,10 @@
 
           <div
             v-show="showForm"
-            class="absolute inset-0 w-full h-full bg-white shadow-md z-10"
+            class="absolute inset-0 w-full h-full bg-white shadow-md z-20"
           >
             <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
-              <ContactForm v-if="showForm" @close="showForm = false" />
+              <ContactForm @close="showForm = false" />
             </div>
           </div>
         </div>
