@@ -1,5 +1,4 @@
 <template>
-  <TheHeader />
   <HeroSection />
   <WelcomeSection />
   <ServicesSection />
@@ -11,7 +10,6 @@
 </template>
 
 <script setup>
-import TheHeader from '@/components/layout/TheHeader.vue';
 import TheFooter from '@/components/layout/TheFooter.vue';
 import HeroSection from '@/components/sections/HeroSection.vue';
 import WelcomeSection from '@/components/WelcomeSection.vue';
