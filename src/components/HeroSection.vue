@@ -2,7 +2,7 @@
   <section class="relative w-full px-6 lg:px-12 xl:px-16 pt-6">
     <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden rounded-3xl">
       <div class="relative w-full min-h-[90vh]">
-        <div class="absolute inset-0 w-full h-full">
+        <div class="absolute inset-0 w-full h-full rounded-3xl overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
           <img
             class="w-full h-full object-cover object-center"

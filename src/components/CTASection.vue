@@ -17,7 +17,7 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <button
               @click="showForm = true"
-              class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300"
+              class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300 rounded-lg"
             >
               Kontaktformular
             </button>
@@ -26,7 +26,7 @@
               href="https://wa.me/4940609272772"
               target="_blank"
               rel="noopener noreferrer"
-              class="h-11 px-10 font-family-jakarta font-normal text-base border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 flex items-center justify-center gap-2 transition-all duration-300"
+              class="h-11 px-10 font-family-jakarta font-normal text-base border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 flex items-center justify-center gap-2 transition-all duration-300 rounded-lg"
             >
               <img
                 class="w-4 h-4"
@@ -39,7 +39,10 @@
         </div>
 
         <div
-          class="relative w-full h-[680px] md:h-[750px] lg:h-[820px] order-1 lg:order-2"
+          :class="[
+            'relative w-full order-1 lg:order-2 transition-all duration-700 ease-out',
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[480px] md:h-[520px]'
+          ]"
           style="perspective: 2000px;"
         >
           <div
@@ -48,7 +51,7 @@
             style="transform-style: preserve-3d;"
           >
             <div
-              class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
+              class="absolute inset-0 w-full h-full shadow-md overflow-hidden rounded-lg"
               style="backface-visibility: hidden;"
             >
               <img
@@ -59,10 +62,10 @@
             </div>
 
             <div
-              class="absolute inset-0 w-full h-full bg-white shadow-md"
+              class="absolute inset-0 w-full h-full bg-white shadow-md rounded-lg"
               style="backface-visibility: hidden; transform: rotateY(180deg);"
             >
-              <div class="w-full h-full p-8 overflow-y-auto">
+              <div class="w-full h-full p-8">
                 <ContactForm @close="showForm = false" />
               </div>
             </div>
