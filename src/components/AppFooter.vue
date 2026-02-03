@@ -1,25 +1,25 @@
 <template>
-  <footer class="relative w-full bg-[#273248] py-14 sm:py-16 md:py-18 lg:py-20">
-    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 md:gap-14 lg:gap-16 mb-12 sm:mb-14 md:mb-16">
-        <div class="flex flex-col gap-5 sm:gap-6">
+  <footer class="relative w-full bg-[#273248] py-20">
+    <div class="max-w-[1440px] mx-auto px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-16">
+        <div class="flex flex-col gap-6">
           <img
-            class="w-[160px] sm:w-[170px] md:w-[180px] h-auto brightness-0 invert"
+            class="w-[180px] h-auto brightness-0 invert"
             alt="Footer logo"
             src="/footerlogo.svg"
           />
-          <p class="font-family-jakarta font-normal text-white/60 text-sm sm:text-[15px] md:text-base leading-[1.7] max-w-[280px]">
+          <p class="font-family-jakarta font-normal text-white/60 text-[15px] leading-[1.7] max-w-[280px]">
             Ihr Partner für innovative und maßgeschneiderte Digitalisierungsstrategien.
           </p>
         </div>
 
-        <div class="flex flex-col gap-4 sm:gap-5">
-          <h3 class="font-family-jakarta font-semibold text-white text-base sm:text-lg">
+        <div class="flex flex-col gap-5">
+          <h3 class="font-family-jakarta font-semibold text-white text-base">
             Kontakt
           </h3>
-          <div class="flex flex-col gap-3 sm:gap-3.5">
+          <div class="flex flex-col gap-3.5">
             <div class="flex flex-col gap-2">
-              <address class="font-family-jakarta font-normal text-white/80 text-sm sm:text-[15px] md:text-base leading-[1.6] not-italic">
+              <address class="font-family-jakarta font-normal text-white/80 text-[15px] leading-[1.6] not-italic">
                 Rathausallee 70<br />
                 22846 Norderstedt
               </address>
@@ -28,9 +28,9 @@
                   :href="googleMapsUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 font-family-jakarta font-medium text-white/70 text-xs sm:text-sm hover:text-white transition-colors group"
+                  class="inline-flex items-center gap-1.5 font-family-jakarta font-medium text-white/70 text-xs hover:text-white transition-colors group"
                 >
-                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                   Google Maps
@@ -40,9 +40,9 @@
                   :href="appleMapsUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 font-family-jakarta font-medium text-white/70 text-xs sm:text-sm hover:text-white transition-colors group"
+                  class="inline-flex items-center gap-1.5 font-family-jakarta font-medium text-white/70 text-xs hover:text-white transition-colors group"
                 >
-                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                   Apple Maps
@@ -51,9 +51,9 @@
             </div>
             <a
               href="mailto:info@data-fabricator.com"
-              class="font-family-jakarta font-normal text-white/80 text-sm sm:text-[15px] md:text-base hover:text-white transition-colors inline-flex items-center gap-2 group"
+              class="font-family-jakarta font-normal text-white/80 text-[15px] hover:text-white transition-colors inline-flex items-center gap-2 group"
             >
-              <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
               info@data-fabricator.com
@@ -61,18 +61,18 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-4 sm:gap-5">
-          <h3 class="font-family-jakarta font-semibold text-white text-base sm:text-lg">
+        <div class="flex flex-col gap-5">
+          <h3 class="font-family-jakarta font-semibold text-white text-base">
             Links
           </h3>
-          <nav class="flex flex-col gap-2.5 sm:gap-3">
+          <nav class="flex flex-col gap-3">
             <component
               v-for="(link, index) in legalLinks"
               :key="`legal-${index}`"
               :is="link.to ? 'router-link' : 'a'"
               :to="link.to"
               :href="link.href"
-              class="font-family-jakarta font-normal text-white/70 text-sm sm:text-[15px] md:text-base hover:text-white transition-colors w-fit"
+              class="font-family-jakarta font-normal text-white/70 text-[15px] hover:text-white transition-colors w-fit"
             >
               {{ link.label }}
             </component>
@@ -80,10 +80,10 @@
         </div>
       </div>
 
-      <div class="h-px bg-white/10 mb-5 sm:mb-6"></div>
+      <div class="h-px bg-white/10 mb-6"></div>
 
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="font-family-jakarta font-normal text-white/40 text-xs sm:text-sm text-center sm:text-left">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="font-family-jakarta font-normal text-white/40 text-xs text-center md:text-left">
           © {{ currentYear }} Data Fabricator GmbH. Alle Rechte vorbehalten.
         </p>
         <div class="flex items-center gap-4">
@@ -92,7 +92,7 @@
             class="text-white/40 hover:text-white/70 transition-colors"
             aria-label="LinkedIn"
           >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </a>

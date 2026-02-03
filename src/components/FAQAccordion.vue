@@ -1,13 +1,13 @@
 <template>
-  <section ref="sectionRef" id="faq" class="relative w-full py-16 sm:py-20 md:py-24 lg:py-28 scroll-animate">
-    <div class="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 md:gap-20">
-        <div class="flex flex-col gap-6 sm:gap-7 md:gap-8">
-          <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl sm:text-5xl md:text-6xl lg:text-[64px] tracking-tight leading-[1.15]">
+  <section ref="sectionRef" id="faq" class="relative w-full py-24 scroll-animate">
+    <div class="max-w-[1440px] mx-auto px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div class="flex flex-col gap-8">
+          <h2 class="font-family-roboto font-light text-[#1e1d1b] text-6xl tracking-tight leading-[1.15]">
             FAQ
           </h2>
 
-          <p class="font-family-jakarta font-normal text-[#0f0e0e] text-base sm:text-lg md:text-xl lg:text-[21px] leading-[1.7] max-w-md">
+          <p class="font-family-jakarta font-normal text-[#0f0e0e] text-lg leading-[1.7] max-w-md">
             Weiterführende und ausführliche Informationen findest du auf
             unserer FAQ-Seite.
           </p>
@@ -22,13 +22,13 @@
             >
               <button
                 @click="toggleItem(item.id)"
-                class="w-full py-5 sm:py-6 flex items-center justify-between text-left group transition-all duration-200"
+                class="w-full py-6 flex items-center justify-between text-left group transition-all duration-200"
                 :aria-expanded="openItem === item.id"
               >
-                <span class="font-family-jakarta font-medium text-[#1e1e1e] text-lg sm:text-xl md:text-[22px] tracking-tight leading-normal pr-4 group-hover:text-[#273247] transition-colors duration-200">
+                <span class="font-family-jakarta font-medium text-[#1e1e1e] text-xl tracking-tight leading-normal pr-4 group-hover:text-[#273247] transition-colors duration-200">
                   {{ item.question }}
                 </span>
-                <div class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center transition-all duration-300 ease-out">
+                <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center transition-all duration-300 ease-out">
                   <img
                     :src="openItem === item.id ? '/expandicon2.svg' : '/expandicon1.svg'"
                     :alt="openItem === item.id ? 'Collapse' : 'Expand'"
@@ -42,8 +42,8 @@
                 :class="{ 'accordion-open': openItem === item.id }"
               >
                 <div class="accordion-inner">
-                  <div class="pb-5 sm:pb-6 pr-10 sm:pr-12">
-                    <p class="font-family-jakarta font-normal text-[#1e1d1b]/80 text-base sm:text-lg md:text-[19px] leading-[1.65]">
+                  <div class="pb-6 pr-12">
+                    <p class="font-family-jakarta font-normal text-[#1e1d1b]/80 text-base leading-[1.65]">
                       {{ item.answer }}
                     </p>
                   </div>

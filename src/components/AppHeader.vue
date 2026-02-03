@@ -1,9 +1,9 @@
 <template>
   <header
-    class="sticky top-0 w-full z-50 transition-all duration-300 ease-out"
+    class="fixed w-full z-50 transition-all duration-300 ease-out"
     :class="isScrolled
-      ? 'bg-[#071B3A]/95 backdrop-blur-md shadow-lg py-4'
-      : 'bg-[#071B3A]/80 backdrop-blur-sm py-5'"
+      ? 'top-0 bg-[#071B3A]/90 backdrop-blur-md shadow-lg py-4'
+      : 'top-0 bg-transparent py-6'"
   >
     <div class="max-w-[1440px] mx-auto px-12">
       <div class="flex items-center justify-between gap-12">
