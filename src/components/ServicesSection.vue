@@ -130,8 +130,8 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { servicesData } from '@/data/services';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { services as servicesData } from '@/data/services.data';
+import { useScrollAnimation } from '@/composables';
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);

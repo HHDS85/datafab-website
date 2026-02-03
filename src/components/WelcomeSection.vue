@@ -43,7 +43,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { useScrollAnimation } from '@/composables';
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);

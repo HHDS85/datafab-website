@@ -54,8 +54,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import { projectData } from '@/data/projects';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { project as projectData } from '@/data/projects.data';
+import { useScrollAnimation } from '@/composables';
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);

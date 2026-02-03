@@ -73,8 +73,8 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { testimonialsData } from '@/data/testimonials';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { testimonials as testimonialsData } from '@/data/testimonials.data';
+import { useScrollAnimation } from '@/composables';
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);

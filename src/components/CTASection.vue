@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { useScrollAnimation } from '@/composables';
 import ContactForm from './ContactForm.vue';
 
 const sectionRef = ref(null);

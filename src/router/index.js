@@ -1,19 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
-import ImpressumView from '@/views/ImpressumView.vue';
+import { ROUTE_NAMES, ROUTE_PATHS, SPACING } from '@/constants';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: ROUTE_PATHS.HOME,
+      name: ROUTE_NAMES.HOME,
+      component: () => import('@/views/HomeView.vue')
     },
     {
-      path: '/impressum',
-      name: 'impressum',
-      component: ImpressumView
+      path: ROUTE_PATHS.IMPRESSUM,
+      name: ROUTE_NAMES.IMPRESSUM,
+      component: () => import('@/views/ImpressumView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -21,7 +20,7 @@ const router = createRouter({
       return {
         el: to.hash,
         behavior: 'smooth',
-        top: 100
+        top: SPACING.SCROLL_OFFSET
       };
     }
     if (savedPosition) {

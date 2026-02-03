@@ -59,8 +59,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import { faqsData } from '@/data/faqs';
-import { useScrollAnimation } from '@/composables/useScrollAnimation';
+import { faqs as faqsData } from '@/data/faqs.data';
+import { useScrollAnimation } from '@/composables';
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);

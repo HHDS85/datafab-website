@@ -1,17 +1,19 @@
 <template>
-    <HeroSection />
-    <WelcomeSection />
-    <ServicesSection />
-    <ProjectShowcase />
-    <CTASection />
-    <TestimonialsCarousel />
-    <FAQAccordion />
-    <AppFooter />
+  <TheHeader />
+  <HeroSection />
+  <WelcomeSection />
+  <ServicesSection />
+  <ProjectShowcase />
+  <CTASection />
+  <TestimonialsCarousel />
+  <FAQAccordion />
+  <TheFooter />
 </template>
 
 <script setup>
-import AppFooter from '@/components/AppFooter.vue';
-import HeroSection from '@/components/HeroSection.vue';
+import TheHeader from '@/components/layout/TheHeader.vue';
+import TheFooter from '@/components/layout/TheFooter.vue';
+import HeroSection from '@/components/sections/HeroSection.vue';
 import WelcomeSection from '@/components/WelcomeSection.vue';
 import ServicesSection from '@/components/ServicesSection.vue';
 import ProjectShowcase from '@/components/ProjectShowcase.vue';
