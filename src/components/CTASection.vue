@@ -53,7 +53,7 @@
         <div
           :class="[
             'relative transition-all duration-700 ease-out',
-            showForm ? 'min-h-[680px] md:min-h-[750px] lg:min-h-[820px]' : 'min-h-[400px] lg:min-h-[500px]'
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
           ]"
           style="perspective: 2000px;"
         >
