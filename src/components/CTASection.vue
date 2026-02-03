@@ -41,7 +41,7 @@
         <div
           :class="[
             'relative w-full order-1 lg:order-2 transition-all duration-700 ease-out',
-            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[480px] md:h-[520px]'
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] md:h-[450px] lg:h-[500px]'
           ]"
           style="perspective: 2000px;"
         >
