@@ -56,29 +56,29 @@
             showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
           ]"
         >
-          <Transition name="flip" mode="out-in">
-            <div
-              v-if="!showForm"
-              key="image"
-              class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
-            >
-              <img
-                class="w-full h-full object-cover"
-                alt="Kontakt img"
-                src="/kontakt-img.png"
-              />
-            </div>
+          <div
+            :class="[
+              'absolute inset-0 w-full h-full shadow-md overflow-hidden transition-opacity duration-500',
+              showForm ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            ]"
+          >
+            <img
+              class="w-full h-full object-cover"
+              alt="Kontakt img"
+              src="/kontakt-img.png"
+            />
+          </div>
 
-            <div
-              v-else
-              key="form"
-              class="absolute inset-0 w-full h-full bg-white shadow-md"
-            >
-              <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
-                <ContactForm @close="showForm = false" />
-              </div>
+          <div
+            :class="[
+              'absolute inset-0 w-full h-full bg-white shadow-md transition-opacity duration-500',
+              showForm ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
+            ]"
+          >
+            <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
+              <ContactForm @close="showForm = false" />
             </div>
-          </Transition>
+          </div>
         </div>
       </div>
     </div>
@@ -103,20 +103,5 @@ useScrollAnimation(sectionRef);
 
 .font-family-roboto {
   font-family: 'Roboto', Helvetica, sans-serif;
-}
-
-.flip-enter-active,
-.flip-leave-active {
-  transition: all 0.6s ease;
-}
-
-.flip-enter-from {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.flip-leave-to {
-  opacity: 0;
-  transform: scale(0.9);
 }
 </style>
