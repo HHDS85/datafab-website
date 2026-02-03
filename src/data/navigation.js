@@ -5,14 +5,16 @@ export const navigationItems = [
     href: '#start'
   },
   {
-    label: 'UNTERNEHMEN',
-    hasDropdown: true,
-    href: '#unternehmen'
-  },
-  {
     label: 'LEISTUNGEN',
     hasDropdown: true,
+    icon: '/expandicon1.svg',
     href: '#leistungen'
+  },
+  {
+    label: 'REFERENZEN',
+    hasDropdown: true,
+    icon: '/expandicon2.svg',
+    href: '#referenzen'
   },
   {
     label: 'FAQ',

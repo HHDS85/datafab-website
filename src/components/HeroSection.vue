@@ -10,64 +10,46 @@
       isScrolled ? 'px-6 lg:px-12 xl:px-16' : 'px-10 lg:px-16 xl:px-20 2xl:px-24'
     ]">
       <div class="flex items-center justify-between">
-              <div class="flex flex-col">
-                <img
-                  :class="[
-                    'transition-all duration-300',
-                    isScrolled ? 'h-8' : 'h-10'
-                  ]"
-                  alt="Logo datafabrictor"
-                  src="/logo-datafabrictor.svg"
-                />
-                <p
-                  :class="[
-                    'font-family-jakarta text-xs mt-1 transition-all duration-300',
-                    isScrolled ? 'text-[#071B3A]/60' : 'text-white/80'
-                  ]"
-                >
-                  Real Time Data Aggregation and Presentation
-                </p>
-              </div>
+              <img
+                class="h-10 transition-all duration-300"
+                alt="Logo datafabrictor"
+                src="/logo-datafabrictor.svg"
+              />
 
-              <nav class="hidden lg:flex items-center gap-10">
+              <nav class="hidden lg:flex items-center gap-8">
                 <a
                   v-for="(item, index) in navigationItems"
                   :key="`nav-${index}`"
                   :href="item.href"
-                  class="flex items-center gap-2 cursor-pointer group relative"
+                  class="flex items-center cursor-pointer group relative"
                 >
                   <span
                     :class="[
-                      'font-family-jakarta relative transition-all duration-300 font-medium',
+                      'font-family-jakarta relative transition-all duration-300',
                       isScrolled
-                        ? (item.active ? 'text-[#071B3A]' : 'text-[#071B3A]/70 group-hover:text-[#071B3A]')
-                        : (item.active ? 'text-white' : 'text-white/95 group-hover:text-white'),
-                      'uppercase text-sm'
+                        ? (item.active ? 'font-bold text-[#071B3A]' : 'font-normal text-[#071B3A]/70 group-hover:text-[#071B3A]')
+                        : (item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white'),
+                      'tracking-wide uppercase text-sm'
                     ]"
                   >
                     {{ item.label }}
+                    <span
+                      :class="[
+                        'absolute -bottom-1 left-0 h-[2px] transition-all duration-300 ease-out',
+                        isScrolled ? 'bg-[#071B3A]' : 'bg-white',
+                        item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                      ]"
+                    ></span>
                   </span>
-                  <svg
-                    v-if="item.hasDropdown"
-                    :class="[
-                      'w-4 h-4 transition-all duration-300',
-                      isScrolled ? 'text-[#071B3A]/70' : 'text-white/95'
-                    ]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                  </svg>
                 </a>
               </nav>
 
               <button
                 :class="[
-                  'hidden md:flex items-center gap-2.5 transition-all duration-300 px-6 h-10 rounded-full border',
+                  'hidden md:flex items-center gap-2 transition-all duration-300 px-6 h-9 rounded-lg',
                   isScrolled
-                    ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white border-[#071B3A]'
-                    : 'bg-[#1a1f2e]/90 hover:bg-[#252b3d] text-white border-white/20'
+                    ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white'
+                    : 'bg-[#242528] hover:bg-[#323438] text-white'
                 ]"
               >
                 <img
@@ -75,8 +57,8 @@
                   alt="Language"
                   src="/language.svg"
                 />
-                <span class="font-family-jakarta font-medium text-sm uppercase">
-                  ENG
+                <span class="font-family-jakarta font-medium text-sm">
+                  DE
                 </span>
               </button>
 
@@ -134,39 +116,38 @@
             >
               <span
                 :class="[
-                  'font-family-jakarta text-base transition-colors duration-200 font-medium uppercase',
+                  'font-family-jakarta text-base transition-colors duration-200',
                   isScrolled
-                    ? (item.active ? 'text-[#071B3A]' : 'text-[#071B3A]/70 group-hover:text-[#071B3A]')
-                    : (item.active ? 'text-white' : 'text-white/80 group-hover:text-white')
+                    ? (item.active ? 'font-bold text-[#071B3A]' : 'font-normal text-[#071B3A]/70 group-hover:text-[#071B3A]')
+                    : (item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white')
                 ]"
               >
                 {{ item.label }}
               </span>
               <svg
-                v-if="item.hasDropdown"
                 :class="[
-                  'w-4 h-4 transition-all duration-200',
-                  isScrolled ? 'text-[#071B3A]/60' : 'text-white/60'
+                  'w-4 h-4 transform group-hover:translate-x-1 transition-all duration-200',
+                  isScrolled ? 'text-[#071B3A]/40 group-hover:text-[#071B3A]/80' : 'text-white/40 group-hover:text-white/80'
                 ]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
 
             <div
               :class="[
-                'mt-5 flex items-center justify-center gap-2.5 px-5 py-2.5 transition-all duration-200 rounded-full border',
+                'mt-5 flex items-center justify-center gap-2 px-5 py-2.5 transition-all duration-200 rounded',
                 isScrolled
-                  ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white border-[#071B3A]'
-                  : 'bg-[#1a1f2e]/90 hover:bg-[#252b3d] text-white border-white/20'
+                  ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white'
+                  : 'bg-[#242528] hover:bg-[#323438] text-white'
               ]"
             >
               <img class="w-4 h-4" alt="Language" src="/language.svg" />
-              <span class="font-family-jakarta font-medium text-sm uppercase">
-                ENG
+              <span class="font-family-jakarta font-medium text-sm">
+                DE
               </span>
             </div>
           </nav>
@@ -278,7 +259,7 @@ const navigationItems = computed(() => {
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 200;
 
-  const sections = ['unternehmen', 'leistungen', 'faq', 'kontakt'];
+  const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
   let currentSection = '';
 
   for (const section of sections) {
