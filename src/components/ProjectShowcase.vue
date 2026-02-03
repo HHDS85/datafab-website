@@ -1,53 +1,50 @@
 <template>
-  <section ref="sectionRef" id="referenzen" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
-    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
-      <div class="text-left mb-5 md:mb-6">
-        <span class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px]">
+  <section ref="sectionRef" id="referenzen" class="relative w-full py-28 xl:py-32 scroll-animate">
+    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
+      <div class="text-left mb-8">
+        <span class="font-family-jakarta font-medium text-[#1e1d1b] text-sm xl:text-[15px] tracking-[0.05em] uppercase">
           REFERENZEN
         </span>
       </div>
 
-      <h2 class="font-family-roboto font-light text-[#1e1d1b] text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.15] mb-8 md:mb-10">
+      <h2 class="font-family-roboto font-light text-[#1e1d1b] text-5xl xl:text-6xl tracking-tight leading-[1.15] mb-12">
         Letzte Projekte
       </h2>
 
-      <h3 class="font-family-roboto font-semibold text-[#1e1d1b] text-3xl md:text-4xl lg:text-[44px] tracking-tight leading-[1.2] mb-12 md:mb-16 max-w-full md:max-w-[720px]">
+      <h3 class="font-family-roboto font-semibold text-[#1e1d1b] text-5xl xl:text-6xl tracking-tight leading-[1.2] mb-20 max-w-[900px]">
         {{ projectData.title }}
       </h3>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
-        <div class="flex flex-col items-start gap-8">
-          <button class="relative bg-[#242528] text-white rounded-[22px] h-[43px] px-7 font-family-jakarta font-normal text-lg leading-[27px] tracking-normal transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[180px] overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500">
-            <span class="relative z-10">Projektbericht</span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-28 items-start">
+        <div class="flex flex-col items-start gap-10">
+          <button class="bg-[#242528] text-white hover:bg-[#323438] h-14 px-12 font-family-jakarta font-normal text-lg xl:text-xl transition-all duration-300">
+            Projektbericht
           </button>
 
           <img
-            class="w-full h-auto rounded-lg shadow-sm"
+            class="w-full h-auto"
             alt="Project image"
             :src="projectData.image"
           />
         </div>
 
-        <div class="flex flex-col gap-10 md:gap-12">
+        <div class="flex flex-col gap-14">
           <div
             v-for="(section, index) in projectData.sections"
             :key="index"
-            class="border-0 shadow-none bg-transparent"
           >
-            <div class="p-0">
-              <h4 class="font-family-roboto font-semibold text-[#1e1d1b] text-[24px] md:text-[28px] tracking-tight leading-[1.3] mb-4 md:mb-5">
-                {{ section.title }}
-              </h4>
+            <h4 class="font-family-roboto font-semibold text-[#1e1d1b] text-3xl xl:text-4xl tracking-tight leading-[1.3] mb-6">
+              {{ section.title }}
+            </h4>
 
-              <p class="font-family-jakarta font-normal text-[#1e1d1b]/75 text-[15px] md:text-[17px] leading-[1.75] tracking-[-0.01em]">
-                {{ section.content }}
-              </p>
+            <p class="font-family-jakarta font-normal text-[#1e1d1b]/75 text-lg xl:text-xl leading-[1.75]">
+              {{ section.content }}
+            </p>
 
-              <div
-                v-if="index < projectData.sections.length - 1"
-                class="mt-8 md:mt-10 h-px bg-gray-200"
-              />
-            </div>
+            <div
+              v-if="index < projectData.sections.length - 1"
+              class="mt-10 h-px bg-gray-200"
+            />
           </div>
         </div>
       </div>

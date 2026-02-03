@@ -2,7 +2,7 @@
   <div class="relative w-full">
     <button
       @click="$emit('close')"
-      class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
+      class="absolute -top-2 -right-2 w-10 h-10 bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
       aria-label="Schließen"
     >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@
             v-model="formData.firstName"
             type="text"
             required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
+            class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
             placeholder="Max"
           />
         </div>
@@ -32,7 +32,7 @@
             v-model="formData.lastName"
             type="text"
             required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
+            class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
             placeholder="Mustermann"
           />
         </div>
@@ -46,7 +46,7 @@
           v-model="formData.company"
           type="text"
           required
-          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
+          class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
           placeholder="Muster GmbH"
         />
       </div>
@@ -60,7 +60,7 @@
             v-model="formData.email"
             type="email"
             required
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
+            class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
             placeholder="max@mustermann.de"
           />
         </div>
@@ -72,7 +72,7 @@
           <input
             v-model="formData.phone"
             type="tel"
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
+            class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base"
             placeholder="+49 123 456789"
           />
         </div>
@@ -85,7 +85,7 @@
         <select
           v-model="formData.topic"
           required
-          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base appearance-none bg-white cursor-pointer"
+          class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base appearance-none bg-white cursor-pointer"
         >
           <option value="">Bitte wählen...</option>
           <option value="digitalization">Digitalisierungsberatung / Strategie</option>
@@ -105,7 +105,7 @@
           v-model="formData.description"
           required
           rows="4"
-          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base resize-none"
+          class="w-full px-4 py-3 border border-gray-300 focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-base resize-none"
           placeholder="Beschreiben Sie Ihr Vorhaben in 3-8 Sätzen..."
         ></textarea>
         <p class="font-family-jakarta text-xs text-gray-500">
@@ -135,27 +135,27 @@
         aria-hidden="true"
       />
 
-      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+      <div class="flex gap-4 pt-4">
         <button
           @click="handleSubmit"
           type="submit"
           :disabled="isSubmitting"
-          class="relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal bg-[#242528] text-white transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
+          class="h-12 px-10 font-family-jakarta font-normal text-lg bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <span class="relative z-10">{{ isSubmitting ? 'Wird gesendet...' : 'Unverbindlich anfragen' }}</span>
+          {{ isSubmitting ? 'Wird gesendet...' : 'Unverbindlich anfragen' }}
         </button>
 
         <button
           @click="$emit('close')"
           type="button"
-          class="h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-lg leading-[27px] tracking-normal border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 transition-all duration-500 ease-out hover:shadow-[0_6px_20px_rgba(39,50,71,0.15)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[180px]"
+          class="h-12 px-10 font-family-jakarta font-normal text-lg border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 transition-all duration-300"
         >
           Zurück
         </button>
       </div>
 
       <Transition name="fade">
-        <div v-if="submitted" class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+        <div v-if="submitted" class="mt-4 p-4 bg-green-50 border border-green-200">
           <p class="font-family-jakarta text-green-800 text-sm">
             Danke! Wir melden uns i. d. R. innerhalb von 1–2 Werktagen.
           </p>
