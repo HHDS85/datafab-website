@@ -1,20 +1,20 @@
 <template>
-  <footer class="relative w-full bg-[#273248] py-20">
-    <div class="max-w-[1440px] mx-auto px-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-16">
-        <div class="flex flex-col gap-6">
+  <footer class="relative w-full bg-[#273248] py-24 xl:py-28">
+    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 xl:gap-24 mb-20">
+        <div class="flex flex-col gap-7">
           <img
-            class="w-[180px] h-auto brightness-0 invert"
+            class="w-[200px] h-auto brightness-0 invert"
             alt="Footer logo"
             src="/footerlogo.svg"
           />
-          <p class="font-family-jakarta font-normal text-white/60 text-[15px] leading-[1.7] max-w-[280px]">
+          <p class="font-family-jakarta font-normal text-white/60 text-base xl:text-[17px] leading-[1.7] max-w-[320px]">
             Ihr Partner für innovative und maßgeschneiderte Digitalisierungsstrategien.
           </p>
         </div>
 
-        <div class="flex flex-col gap-5">
-          <h3 class="font-family-jakarta font-semibold text-white text-base">
+        <div class="flex flex-col gap-6">
+          <h3 class="font-family-jakarta font-semibold text-white text-base xl:text-lg">
             Kontakt
           </h3>
           <div class="flex flex-col gap-3.5">
@@ -61,11 +61,11 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-5">
-          <h3 class="font-family-jakarta font-semibold text-white text-base">
+        <div class="flex flex-col gap-6">
+          <h3 class="font-family-jakarta font-semibold text-white text-base xl:text-lg">
             Links
           </h3>
-          <nav class="flex flex-col gap-3">
+          <nav class="flex flex-col gap-3.5">
             <component
               v-for="(link, index) in legalLinks"
               :key="`legal-${index}`"
