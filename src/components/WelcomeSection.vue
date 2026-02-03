@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionRef" class="relative w-full bg-[#F4F5F7] py-20 scroll-animate">
+  <section ref="sectionRef" class="relative w-full py-20 scroll-animate bg-cover bg-center" style="background-image: url('/welcomebackground.png');">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="mb-10">
         <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase">

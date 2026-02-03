@@ -70,6 +70,7 @@
           <div
             v-if="showForm"
             class="absolute inset-0 w-full h-full bg-white shadow-md z-20"
+            @click.stop
           >
             <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
               <ContactForm @close="showForm = false" />
