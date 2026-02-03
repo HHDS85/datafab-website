@@ -1,5 +1,5 @@
 export const projectData = {
-  title: 'Fracht-Tracking in Echtzeit: AWB Online Tool',
+  title: 'Fracht-Tracking in Echtzeit:\nAWB Online Tool',
   image: '/projectimage.png',
   sections: [
     {

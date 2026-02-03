@@ -1,20 +1,14 @@
 <template>
-  <header
-    class="fixed w-full z-50 transition-all duration-300 ease-out"
-    :class="isScrolled
-      ? 'top-0 bg-[#071B3A]/95 backdrop-blur-md shadow-lg py-4'
-      : 'top-0 bg-transparent py-6'"
-  >
-    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
+  <header class="fixed top-0 w-full z-50 bg-[#071B3A]/95 backdrop-blur-md shadow-lg py-3">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="flex items-center justify-between">
         <img
-          class="transition-all duration-300 ease-out"
-          :class="isScrolled ? 'h-10' : 'h-14'"
+          class="h-10"
           alt="Logo datafabrictor"
           src="/logo-datafabrictor.svg"
         />
 
-        <nav class="hidden lg:flex items-center gap-12 xl:gap-14">
+        <nav class="hidden lg:flex items-center gap-8">
           <a
             v-for="(item, index) in navigationItems"
             :key="`nav-${index}`"
@@ -25,7 +19,7 @@
               :class="[
                 'font-family-jakarta relative transition-all duration-300',
                 item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white',
-                'tracking-wide uppercase text-sm xl:text-[15px]'
+                'tracking-wide uppercase text-sm'
               ]"
             >
               {{ item.label }}
@@ -40,24 +34,24 @@
         </nav>
 
         <button
-          class="hidden md:flex items-center gap-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-7 py-2.5"
+          class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-9"
         >
           <img
-            class="w-5 h-5"
+            class="w-4 h-4"
             alt="Language"
             src="/language.svg"
           />
-          <span class="font-family-jakarta font-medium text-white text-sm xl:text-[15px]">
+          <span class="font-family-jakarta font-medium text-white text-sm">
             DE
           </span>
         </button>
 
         <button
           @click="toggleMenu"
-          class="lg:hidden flex flex-col items-center justify-center w-10 h-10 z-30 group relative"
+          class="lg:hidden flex flex-col items-center justify-center w-9 h-9 z-30 group relative"
           aria-label="Toggle menu"
         >
-          <span class="flex flex-col gap-1.5 w-6">
+          <span class="flex flex-col gap-1.5 w-5">
             <span
               class="h-0.5 w-full bg-white transition-all duration-300 ease-out transform origin-center"
               :class="isMenuOpen ? 'rotate-45 translate-y-2' : ''"
@@ -76,32 +70,32 @@
         <Transition name="slide-fade">
           <div
             v-if="isMenuOpen"
-            class="lg:hidden absolute top-full left-0 right-0 mt-2 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10"
+            class="lg:hidden absolute top-full left-0 right-0 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10"
           >
-            <nav class="flex flex-col p-6">
+            <nav class="flex flex-col p-5">
               <a
                 v-for="(item, index) in navigationItems"
                 :key="`mobile-nav-${index}`"
                 :href="item.href"
                 @click="closeMenu"
-                class="flex items-center justify-between py-4 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
+                class="flex items-center justify-between py-3.5 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
               >
                 <span
                   :class="[
                     'font-family-jakarta',
                     item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white',
-                    'text-lg transition-colors duration-200'
+                    'text-base transition-colors duration-200'
                   ]"
                 >
                   {{ item.label }}
                 </span>
-                <svg class="w-5 h-5 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
               </a>
 
-              <div class="mt-6 flex items-center justify-center gap-2 px-6 py-3 bg-[#242528] hover:bg-[#323438] transition-all duration-200">
-                <img class="w-5 h-5" alt="Language" src="/language.svg" />
+              <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-200">
+                <img class="w-4 h-4" alt="Language" src="/language.svg" />
                 <span class="font-family-jakarta font-medium text-white text-sm">
                   DE
                 </span>
@@ -119,7 +113,6 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { navigationItems as originalNavigationItems } from '@/data/navigation';
 
 const isMenuOpen = ref(false);
-const isScrolled = ref(false);
 const activeSection = ref('');
 
 const navigationItems = computed(() => {
@@ -129,9 +122,7 @@ const navigationItems = computed(() => {
   }));
 });
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50;
-
+const updateActiveSection = () => {
   const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
   let currentSection = '';
 
@@ -158,12 +149,12 @@ const closeMenu = () => {
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
+  window.addEventListener('scroll', updateActiveSection);
+  updateActiveSection();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('scroll', updateActiveSection);
 });
 </script>
 

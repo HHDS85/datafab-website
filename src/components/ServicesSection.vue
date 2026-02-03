@@ -1,51 +1,51 @@
 <template>
-  <section ref="sectionRef" id="leistungen" class="relative w-full py-28 xl:py-32 scroll-animate">
-    <div class="max-w-[1920px] mx-auto px-8 lg:px-16 xl:px-20 2xl:px-24">
-      <div class="mb-16 flex items-start justify-between">
+  <section ref="sectionRef" id="leistungen" class="relative w-full py-20 scroll-animate">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
+      <div class="mb-14 flex flex-col lg:flex-row items-start justify-between gap-8">
         <div>
-          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm xl:text-[15px] tracking-[0.05em] uppercase mb-8">
+          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-7">
             SERVICES
           </p>
-          <h2 class="font-family-roboto font-light text-[#273247] text-6xl xl:text-7xl tracking-tight leading-[1.15]">
+          <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl tracking-tight leading-[1.15]">
             Unsere Leistungen
             <br />
             im Überblick
           </h2>
         </div>
-        <div class="hidden lg:flex items-center justify-between gap-14 mt-auto mb-2">
+        <div class="hidden lg:flex items-center justify-between gap-12 mt-auto mb-2">
           <button
             @click="scrollLeft"
-            class="nav-arrow nav-arrow-left w-10 h-10 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow nav-arrow-left w-9 h-9 flex items-center justify-center transition-all duration-300"
             aria-label="Scroll left"
           >
           </button>
           <button
             @click="scrollRight"
-            class="nav-arrow nav-arrow-right w-10 h-10 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow nav-arrow-right w-9 h-9 flex items-center justify-center transition-all duration-300"
             aria-label="Scroll right"
           >
           </button>
         </div>
       </div>
 
-      <div class="relative mb-16 -mr-8 lg:-mr-16 xl:-mr-20 2xl:-mr-24">
-        <div ref="scrollContainer" class="hidden lg:flex gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
+      <div class="relative mb-14 -mr-6 lg:-mr-12 xl:-mr-16">
+        <div ref="scrollContainer" class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
           <div
             v-for="(service, index) in servicesData"
             :key="index"
-            class="bg-[#273248] min-h-[400px] xl:min-h-[420px] flex flex-col flex-shrink-0 w-[320px] xl:w-[360px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+            class="bg-[#273248] min-h-[340px] flex flex-col flex-shrink-0 w-[280px] xl:w-[300px] rounded-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
-            <div class="p-9 xl:p-10 pb-8 flex flex-col h-full">
-              <div class="mb-5">
-                <span class="font-family-jakarta font-normal text-white/60 text-xl">
+            <div class="p-7 xl:p-8 pb-7 flex flex-col h-full">
+              <div class="mb-4">
+                <span class="font-family-jakarta font-normal text-white/60 text-lg">
                   {{ service.number }}
                 </span>
               </div>
-              <div class="flex flex-col gap-6">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl xl:text-2xl leading-[1.4] whitespace-pre-line min-h-[60px] flex items-start">
+              <div class="flex flex-col gap-5">
+                <h3 class="font-family-jakarta font-semibold text-white text-lg xl:text-xl leading-[1.4] whitespace-pre-line min-h-[52px] flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base xl:text-lg leading-[1.6]">
+                <p class="font-family-jakarta font-normal text-white/75 text-sm xl:text-base leading-[1.6]">
                   {{ service.description }}
                 </p>
               </div>
@@ -65,21 +65,21 @@
               <div
                 v-for="(service, index) in servicesData"
                 :key="index"
-                class="flex-shrink-0 px-3"
+                class="flex-shrink-0 px-2"
                 :class="slideClass"
               >
-                <div class="bg-[#273248] min-h-[380px] flex flex-col">
-                  <div class="p-8 pb-7 flex flex-col h-full">
-                    <div class="mb-4">
-                      <span class="font-family-jakarta font-normal text-white/60 text-lg">
+                <div class="bg-[#273248] min-h-[340px] flex flex-col rounded-xl">
+                  <div class="p-7 pb-6 flex flex-col h-full">
+                    <div class="mb-3.5">
+                      <span class="font-family-jakarta font-normal text-white/60 text-base">
                         {{ service.number }}
                       </span>
                     </div>
-                    <div class="flex flex-col gap-5">
-                      <h3 class="font-family-jakarta font-semibold text-white text-xl leading-[1.4]">
+                    <div class="flex flex-col gap-4">
+                      <h3 class="font-family-jakarta font-semibold text-white text-lg leading-[1.4] whitespace-pre-line">
                         {{ service.title }}
                       </h3>
-                      <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6]">
+                      <p class="font-family-jakarta font-normal text-white/75 text-sm leading-[1.6]">
                         {{ service.description }}
                       </p>
                     </div>
@@ -89,35 +89,35 @@
             </div>
           </div>
 
-          <div class="flex justify-center items-center gap-4 mt-8">
+          <div class="flex justify-center items-center gap-3.5 mt-7">
             <button
               @click="prevSlide"
-              class="w-10 h-10 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
+              class="w-9 h-9 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors rounded-lg"
               :disabled="currentSlide === 0"
               :class="{ 'opacity-50 cursor-not-allowed': currentSlide === 0 }"
             >
-              <svg class="w-5 h-5 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            <div class="flex gap-2">
+            <div class="flex gap-1.5">
               <button
                 v-for="(_, index) in paginationDots"
                 :key="index"
                 @click="goToSlide(index)"
-                class="h-2 transition-all duration-300"
+                class="h-1.5 transition-all duration-300 rounded-full"
                 :class="getDotClass(index)"
               ></button>
             </div>
 
             <button
               @click="nextSlide"
-              class="w-10 h-10 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
+              class="w-9 h-9 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors rounded-lg"
               :disabled="currentSlide >= maxSlide"
               :class="{ 'opacity-50 cursor-not-allowed': currentSlide >= maxSlide }"
             >
-              <svg class="w-5 h-5 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
