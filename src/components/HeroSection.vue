@@ -3,7 +3,6 @@
     <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden rounded-3xl">
       <div class="relative w-full min-h-[90vh]">
         <div class="absolute inset-0 w-full h-full rounded-3xl overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
           <img
             class="w-full h-full object-cover object-center"
             alt="Hero background"
@@ -118,8 +117,8 @@
             </Transition>
           </header>
 
-          <div class="flex-1 px-6 lg:px-12 xl:px-16 pb-16 lg:pb-20 flex flex-col">
-            <div class="mb-6 mt-8 lg:mt-16">
+          <div class="flex-1 px-6 lg:px-12 xl:px-16 pb-16 lg:pb-20 flex flex-col relative">
+            <div class="mb-6 mt-24 lg:mt-32 xl:mt-40">
               <p class="font-family-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
                 HERZLICH WILLKOMMEN
               </p>
@@ -132,7 +131,7 @@
               greifbare Erfolge.
             </h1>
 
-            <div class="flex flex-col sm:flex-row gap-4 mb-auto">
+            <div class="flex flex-col sm:flex-row gap-4">
               <button class="font-family-jakarta font-normal text-base bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-11 rounded">
                 Alle Cases einsehen
               </button>
@@ -142,7 +141,7 @@
               </button>
             </div>
 
-            <div class="flex justify-end items-end mt-auto pt-12 lg:pt-16">
+            <div class="absolute bottom-16 lg:bottom-20 right-6 lg:right-12 xl:right-16">
               <div class="max-w-[560px]">
                 <div class="min-h-[70px] lg:min-h-[80px] mb-6">
                   <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
