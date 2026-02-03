@@ -1,8 +1,8 @@
 <template>
-  <section class="relative w-full px-6 lg:px-12 xl:px-16 pt-6">
-    <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden rounded-3xl">
+  <section class="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4 md:pt-6">
+    <div class="relative w-full max-w-[1920px] mx-auto overflow-hidden rounded-[32px] md:rounded-[40px] xl:rounded-[48px]">
       <div class="relative w-full min-h-[90vh]">
-        <div class="absolute inset-0 w-full h-full rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 w-full h-full rounded-[32px] md:rounded-[40px] xl:rounded-[48px] overflow-hidden">
           <img
             class="w-full h-full object-cover object-center"
             alt="Hero background"
@@ -45,7 +45,7 @@
               </nav>
 
               <button
-                class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-9 rounded"
+                class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-9 rounded-lg"
               >
                 <img
                   class="w-4 h-4"
@@ -117,14 +117,14 @@
             </Transition>
           </header>
 
-          <div class="flex-1 px-6 lg:px-12 xl:px-16 pb-16 lg:pb-20 flex flex-col relative">
-            <div class="mb-6 mt-24 lg:mt-32 xl:mt-40">
+          <div class="flex-1 px-6 lg:px-12 xl:px-16 2xl:px-20 pb-16 lg:pb-20 flex flex-col relative">
+            <div class="mb-5 mt-12 lg:mt-16 xl:mt-20">
               <p class="font-family-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
                 HERZLICH WILLKOMMEN
               </p>
             </div>
 
-            <h1 class="font-family-roboto font-light text-white text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.1] mb-10 max-w-[720px]">
+            <h1 class="font-family-roboto font-light text-white text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] 2xl:text-[5.5rem] tracking-tight leading-[1.1] mb-8 lg:mb-10 max-w-[720px]">
               Wir transformieren
               technische
               Herausforderungen in
@@ -132,17 +132,17 @@
             </h1>
 
             <div class="flex flex-col sm:flex-row gap-4">
-              <button class="font-family-jakarta font-normal text-base bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-11 rounded">
+              <button class="font-family-jakarta font-normal text-base bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-11 rounded-lg">
                 Alle Cases einsehen
               </button>
 
-              <button class="font-family-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-11 backdrop-blur-sm rounded">
+              <button class="font-family-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-11 backdrop-blur-sm rounded-lg">
                 Termin buchen
               </button>
             </div>
 
-            <div class="absolute bottom-8 lg:bottom-10 right-8 lg:right-10">
-              <div class="max-w-[480px] lg:max-w-[520px]">
+            <div class="absolute bottom-6 lg:bottom-8 xl:bottom-10 right-6 lg:right-8 xl:right-12 2xl:right-16">
+              <div class="max-w-[420px] lg:max-w-[480px] xl:max-w-[520px]">
                 <div class="min-h-[70px] lg:min-h-[80px] mb-4">
                   <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
                     <span class="font-bold">{{ currentHighlight.title }}</span>
