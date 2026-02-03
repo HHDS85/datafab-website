@@ -1,7 +1,19 @@
 <template>
-  <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] scroll-animate">
-    <div class="max-w-[1440px] mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+  <section
+    ref="sectionRef"
+    id="kontakt"
+    :class="[
+      'relative w-full bg-[#E8E9EB] scroll-animate transition-all duration-700 ease-out',
+      showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
+    ]"
+  >
+    <div class="max-w-[1440px] mx-auto h-full">
+      <div
+        :class="[
+          'grid grid-cols-1 lg:grid-cols-2 transition-all duration-700 ease-out',
+          showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
+        ]"
+      >
         <div class="flex flex-col justify-center gap-10 py-20 px-6 lg:px-12 xl:px-16">
           <div class="space-y-6">
             <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1]">
@@ -38,12 +50,15 @@
           </div>
         </div>
 
-        <div class="relative min-h-[400px] lg:min-h-[500px]" style="perspective: 2000px;">
+        <div
+          :class="[
+            'relative transition-all duration-700 ease-out',
+            showForm ? 'min-h-[680px] md:min-h-[750px] lg:min-h-[820px]' : 'min-h-[400px] lg:min-h-[500px]'
+          ]"
+          style="perspective: 2000px;"
+        >
           <div
-            :class="[
-              'absolute inset-0 w-full transition-all duration-700 ease-out',
-              showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-full'
-            ]"
+            class="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
             :style="{ transform: showForm ? 'rotateY(180deg)' : 'rotateY(0deg)' }"
             style="transform-style: preserve-3d;"
           >
@@ -62,7 +77,7 @@
               class="absolute inset-0 w-full h-full bg-white shadow-md"
               style="backface-visibility: hidden; transform: rotateY(180deg);"
             >
-              <div class="w-full h-full p-8 overflow-y-auto">
+              <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
                 <ContactForm @close="showForm = false" />
               </div>
             </div>
