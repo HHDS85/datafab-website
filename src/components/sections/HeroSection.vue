@@ -8,14 +8,16 @@
             alt="Hero background"
             src="/data-fab_teaser_bg.png"
           />
-          <img
-            :class="[
-              'absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1400ms] ease-out',
-              isLoaded ? 'translate-x-0' : 'translate-x-full'
-            ]"
-            alt="Hero foreground"
-            src="/data-fab_teaser_wo.png"
-          />
+          <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <img
+              :class="[
+                'w-full h-full object-cover object-center transition-transform duration-[1400ms] ease-out',
+                isLoaded ? 'translate-x-0' : 'translate-x-full'
+              ]"
+              alt="Hero foreground"
+              src="/data-fab_teaser_wo.png"
+            />
+          </div>
         </div>
 
         <div class="relative w-full h-full flex flex-col justify-between z-10 px-6 lg:px-12 xl:px-16 2xl:px-20 py-24 lg:py-28 xl:py-32">
