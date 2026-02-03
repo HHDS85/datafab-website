@@ -6,7 +6,15 @@
           <img
             class="w-full h-full object-cover object-center"
             alt="Hero background"
-            src="/datafabricator-header-desktop-01-1.png"
+            src="/data-fab_teaser_bg.png"
+          />
+          <img
+            :class="[
+              'absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1400ms] ease-out',
+              isLoaded ? 'translate-x-0' : 'translate-x-full'
+            ]"
+            alt="Hero foreground"
+            src="/data-fab_teaser_wo.png"
           />
         </div>
 
@@ -63,9 +71,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import BaseButton from '@/components/base/BaseButton.vue';
 import { useCarousel } from '@/composables';
+
+const isLoaded = ref(false);
 
 const headline = 'HERZLICH WILLKOMMEN';
 const title = 'Wir transformieren technische Herausforderungen in greifbare Erfolge.';
@@ -93,5 +103,10 @@ const { currentIndex, currentItem: currentHighlight, goTo, startAutoplay } = use
   loop: true
 });
 
-startAutoplay();
+onMounted(() => {
+  setTimeout(() => {
+    isLoaded.value = true;
+  }, 100);
+  startAutoplay();
+});
 </script>

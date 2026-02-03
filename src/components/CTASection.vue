@@ -57,7 +57,7 @@
           ]"
         >
           <div
-            v-show="!showForm"
+            v-if="!showForm"
             class="absolute inset-0 w-full h-full shadow-md overflow-hidden z-0"
           >
             <img
@@ -68,7 +68,7 @@
           </div>
 
           <div
-            v-show="showForm"
+            v-if="showForm"
             class="absolute inset-0 w-full h-full bg-white shadow-md z-20"
           >
             <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
