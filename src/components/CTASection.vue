@@ -55,16 +55,12 @@
             'relative transition-all duration-700 ease-out',
             showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
           ]"
-          style="perspective: 2000px;"
         >
-          <div
-            class="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
-            :style="{ transform: showForm ? 'rotateY(180deg)' : 'rotateY(0deg)' }"
-            style="transform-style: preserve-3d;"
-          >
+          <Transition name="flip" mode="out-in">
             <div
+              v-if="!showForm"
+              key="image"
               class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
-              style="backface-visibility: hidden;"
             >
               <img
                 class="w-full h-full object-cover"
@@ -74,14 +70,15 @@
             </div>
 
             <div
+              v-else
+              key="form"
               class="absolute inset-0 w-full h-full bg-white shadow-md"
-              style="backface-visibility: hidden; transform: rotateY(180deg);"
             >
               <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
                 <ContactForm @close="showForm = false" />
               </div>
             </div>
-          </div>
+          </Transition>
         </div>
       </div>
     </div>
@@ -106,5 +103,20 @@ useScrollAnimation(sectionRef);
 
 .font-family-roboto {
   font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 0.6s ease;
+}
+
+.flip-enter-from {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.flip-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
 }
 </style>
