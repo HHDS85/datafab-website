@@ -1,10 +1,6 @@
 <template>
   <div class="bg-white overflow-hidden w-full relative">
-    <div class="relative w-full">
-      <AppHeader />
-      <HeroSection />
-    </div>
-
+    <HeroSection />
     <WelcomeSection />
     <ServicesSection />
     <ProjectShowcase />
@@ -16,7 +12,6 @@
 </template>
 
 <script setup>
-import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
 import HeroSection from '@/components/HeroSection.vue';
 import WelcomeSection from '@/components/WelcomeSection.vue';

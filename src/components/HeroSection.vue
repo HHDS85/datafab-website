@@ -1,7 +1,7 @@
 <template>
-  <section class="relative w-full pt-14 px-6 lg:px-12 xl:px-16">
+  <section class="relative w-full px-6 lg:px-12 xl:px-16 pt-6">
     <div class="relative w-full max-w-[1440px] mx-auto overflow-hidden rounded-3xl">
-      <div class="relative w-full min-h-[85vh]">
+      <div class="relative w-full min-h-[90vh]">
         <div class="absolute inset-0 w-full h-full">
           <div class="absolute inset-0 bg-gradient-to-br from-[#071B3A]/20 to-[#0A2348]/40 z-[1]"></div>
           <img
@@ -11,50 +11,158 @@
           />
         </div>
 
-        <div class="relative w-full px-6 lg:px-12 xl:px-16 pt-24 md:pt-32 lg:pt-36 pb-16 lg:pb-20 z-10 h-full flex flex-col">
-          <div class="mb-5">
-            <p class="font-family-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
-              HERZLICH WILLKOMMEN
-            </p>
-          </div>
+        <div class="relative w-full h-full flex flex-col z-10">
+          <header class="w-full py-5 px-6 lg:px-12 xl:px-16">
+            <div class="flex items-center justify-between">
+              <img
+                class="h-10"
+                alt="Logo datafabrictor"
+                src="/logo-datafabrictor.svg"
+              />
 
-          <h1 class="font-family-roboto font-light text-white text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.1] mb-10 max-w-[720px]">
-            Wir transformieren
-            technische
-            Herausforderungen in
-            greifbare Erfolge.
-          </h1>
+              <nav class="hidden lg:flex items-center gap-8">
+                <a
+                  v-for="(item, index) in navigationItems"
+                  :key="`nav-${index}`"
+                  :href="item.href"
+                  class="flex items-center cursor-pointer group relative"
+                >
+                  <span
+                    :class="[
+                      'font-family-jakarta relative transition-all duration-300',
+                      item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white',
+                      'tracking-wide uppercase text-sm'
+                    ]"
+                  >
+                    {{ item.label }}
+                    <span
+                      :class="[
+                        'absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out',
+                        item.active ? 'w-full' : 'w-0 group-hover:w-full'
+                      ]"
+                    ></span>
+                  </span>
+                </a>
+              </nav>
 
-          <div class="flex flex-col sm:flex-row gap-4 mb-auto">
-            <button class="font-family-jakarta font-normal text-base bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-11">
-              Alle Cases einsehen
-            </button>
-
-            <button class="font-family-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-11 backdrop-blur-sm">
-              Termin buchen
-            </button>
-          </div>
-
-          <div class="flex justify-end items-end mt-auto pt-12 lg:pt-16">
-            <div class="max-w-[560px]">
-              <div class="min-h-[70px] lg:min-h-[80px] mb-6">
-                <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
-                  <span class="font-bold">{{ currentHighlight.title }}</span>
-                  <span> {{ currentHighlight.text }}</span>
-                </p>
-              </div>
-
-              <div class="flex justify-end items-center gap-2.5">
-                <button
-                  v-for="(_, index) in highlights"
-                  :key="index"
-                  @click="currentSlide = index"
-                  :class="[
-                    'h-1.5 transition-all duration-300',
-                    currentSlide === index ? 'bg-white w-10' : 'bg-white/50 hover:bg-white/70 w-1.5'
-                  ]"
-                  :aria-label="`Go to slide ${index + 1}`"
+              <button
+                class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-9 rounded"
+              >
+                <img
+                  class="w-4 h-4"
+                  alt="Language"
+                  src="/language.svg"
                 />
+                <span class="font-family-jakarta font-medium text-white text-sm">
+                  DE
+                </span>
+              </button>
+
+              <button
+                @click="toggleMenu"
+                class="lg:hidden flex flex-col items-center justify-center w-9 h-9 z-30 group relative"
+                aria-label="Toggle menu"
+              >
+                <span class="flex flex-col gap-1.5 w-5">
+                  <span
+                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out transform origin-center"
+                    :class="isMenuOpen ? 'rotate-45 translate-y-2' : ''"
+                  ></span>
+                  <span
+                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out"
+                    :class="isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'"
+                  ></span>
+                  <span
+                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out transform origin-center"
+                    :class="isMenuOpen ? '-rotate-45 -translate-y-2' : ''"
+                  ></span>
+                </span>
+              </button>
+            </div>
+
+            <Transition name="slide-fade">
+              <div
+                v-if="isMenuOpen"
+                class="lg:hidden absolute top-full left-0 right-0 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10 rounded-b-xl"
+              >
+                <nav class="flex flex-col p-5">
+                  <a
+                    v-for="(item, index) in navigationItems"
+                    :key="`mobile-nav-${index}`"
+                    :href="item.href"
+                    @click="closeMenu"
+                    class="flex items-center justify-between py-3.5 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
+                  >
+                    <span
+                      :class="[
+                        'font-family-jakarta',
+                        item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white',
+                        'text-base transition-colors duration-200'
+                      ]"
+                    >
+                      {{ item.label }}
+                    </span>
+                    <svg class="w-4 h-4 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+
+                  <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-200 rounded">
+                    <img class="w-4 h-4" alt="Language" src="/language.svg" />
+                    <span class="font-family-jakarta font-medium text-white text-sm">
+                      DE
+                    </span>
+                  </div>
+                </nav>
+              </div>
+            </Transition>
+          </header>
+
+          <div class="flex-1 px-6 lg:px-12 xl:px-16 pb-16 lg:pb-20 flex flex-col">
+            <div class="mb-6 mt-8 lg:mt-16">
+              <p class="font-family-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
+                HERZLICH WILLKOMMEN
+              </p>
+            </div>
+
+            <h1 class="font-family-roboto font-light text-white text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.1] mb-10 max-w-[720px]">
+              Wir transformieren
+              technische
+              Herausforderungen in
+              greifbare Erfolge.
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-auto">
+              <button class="font-family-jakarta font-normal text-base bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-11 rounded">
+                Alle Cases einsehen
+              </button>
+
+              <button class="font-family-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-11 backdrop-blur-sm rounded">
+                Termin buchen
+              </button>
+            </div>
+
+            <div class="flex justify-end items-end mt-auto pt-12 lg:pt-16">
+              <div class="max-w-[560px]">
+                <div class="min-h-[70px] lg:min-h-[80px] mb-6">
+                  <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
+                    <span class="font-bold">{{ currentHighlight.title }}</span>
+                    <span> {{ currentHighlight.text }}</span>
+                  </p>
+                </div>
+
+                <div class="flex justify-end items-center gap-2.5">
+                  <button
+                    v-for="(_, index) in highlights"
+                    :key="index"
+                    @click="currentSlide = index"
+                    :class="[
+                      'h-1.5 transition-all duration-300 rounded-full',
+                      currentSlide === index ? 'bg-white w-10' : 'bg-white/50 hover:bg-white/70 w-1.5'
+                    ]"
+                    :aria-label="`Go to slide ${index + 1}`"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -66,6 +174,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { navigationItems as originalNavigationItems } from '@/data/navigation';
 
 const highlights = [
   {
@@ -83,20 +192,59 @@ const highlights = [
 ];
 
 const currentSlide = ref(0);
+const isMenuOpen = ref(false);
+const activeSection = ref('');
 let autoplayInterval = null;
 
 const currentHighlight = computed(() => highlights[currentSlide.value]);
+
+const navigationItems = computed(() => {
+  return originalNavigationItems.map(item => ({
+    ...item,
+    active: activeSection.value === item.href.substring(1)
+  }));
+});
+
+const updateActiveSection = () => {
+  const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
+  let currentSection = '';
+
+  for (const section of sections) {
+    const element = document.getElementById(section);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        currentSection = section;
+        break;
+      }
+    }
+  }
+
+  activeSection.value = currentSection;
+};
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
 
 onMounted(() => {
   autoplayInterval = setInterval(() => {
     currentSlide.value = (currentSlide.value + 1) % highlights.length;
   }, 9000);
+
+  window.addEventListener('scroll', updateActiveSection);
+  updateActiveSection();
 });
 
 onUnmounted(() => {
   if (autoplayInterval) {
     clearInterval(autoplayInterval);
   }
+  window.removeEventListener('scroll', updateActiveSection);
 });
 </script>
 
@@ -107,5 +255,23 @@ onUnmounted(() => {
 
 .font-family-roboto {
   font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.slide-fade-enter-from {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateY(-5px);
+  opacity: 0;
 }
 </style>
