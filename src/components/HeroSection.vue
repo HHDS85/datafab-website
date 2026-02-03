@@ -1,18 +1,12 @@
 <template>
-  <section class="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4 md:pt-6">
-    <div class="relative w-full max-w-[1920px] mx-auto overflow-hidden rounded-[32px] md:rounded-[40px] xl:rounded-[48px]">
-      <div class="relative w-full min-h-[90vh]">
-        <div class="absolute inset-0 w-full h-full rounded-[32px] md:rounded-[40px] xl:rounded-[48px] overflow-hidden">
-          <img
-            class="w-full h-full object-cover object-center"
-            alt="Hero background"
-            src="/datafabricator-header-desktop-01-1.png"
-          />
-        </div>
-
-        <div class="relative w-full h-full flex flex-col z-10">
-          <header class="w-full py-5 px-6 lg:px-12 xl:px-16">
-            <div class="flex items-center justify-between">
+  <header
+    :class="[
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out',
+      isScrolled ? 'bg-[#071B3A]/95 backdrop-blur-xl shadow-2xl py-4' : 'bg-transparent py-5'
+    ]"
+  >
+    <div class="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <div class="flex items-center justify-between">
               <img
                 class="h-10"
                 alt="Logo datafabrictor"
@@ -79,46 +73,59 @@
               </button>
             </div>
 
-            <Transition name="slide-fade">
-              <div
-                v-if="isMenuOpen"
-                class="lg:hidden absolute top-full left-0 right-0 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10 rounded-b-xl"
+      <Transition name="slide-fade">
+        <div
+          v-if="isMenuOpen"
+          class="lg:hidden absolute top-full left-0 right-0 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10 rounded-b-xl"
+        >
+          <nav class="flex flex-col p-5">
+            <a
+              v-for="(item, index) in navigationItems"
+              :key="`mobile-nav-${index}`"
+              :href="item.href"
+              @click="closeMenu"
+              class="flex items-center justify-between py-3.5 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
+            >
+              <span
+                :class="[
+                  'font-family-jakarta',
+                  item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white',
+                  'text-base transition-colors duration-200'
+                ]"
               >
-                <nav class="flex flex-col p-5">
-                  <a
-                    v-for="(item, index) in navigationItems"
-                    :key="`mobile-nav-${index}`"
-                    :href="item.href"
-                    @click="closeMenu"
-                    class="flex items-center justify-between py-3.5 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
-                  >
-                    <span
-                      :class="[
-                        'font-family-jakarta',
-                        item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white',
-                        'text-base transition-colors duration-200'
-                      ]"
-                    >
-                      {{ item.label }}
-                    </span>
-                    <svg class="w-4 h-4 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </a>
+                {{ item.label }}
+              </span>
+              <svg class="w-4 h-4 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
 
-                  <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-200 rounded">
-                    <img class="w-4 h-4" alt="Language" src="/language.svg" />
-                    <span class="font-family-jakarta font-medium text-white text-sm">
-                      DE
-                    </span>
-                  </div>
-                </nav>
-              </div>
-            </Transition>
-          </header>
+            <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-200 rounded">
+              <img class="w-4 h-4" alt="Language" src="/language.svg" />
+              <span class="font-family-jakarta font-medium text-white text-sm">
+                DE
+              </span>
+            </div>
+          </nav>
+        </div>
+      </Transition>
+    </div>
+  </header>
 
-          <div class="flex-1 px-6 lg:px-12 xl:px-16 2xl:px-20 pb-16 lg:pb-20 flex flex-col relative">
-            <div class="mb-5 mt-12 lg:mt-16 xl:mt-20">
+  <section class="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4 md:pt-6 mt-20">
+    <div class="relative w-full max-w-[1920px] mx-auto overflow-hidden rounded-[32px] md:rounded-[40px] xl:rounded-[48px]">
+      <div class="relative w-full min-h-[90vh]">
+        <div class="absolute inset-0 w-full h-full rounded-[32px] md:rounded-[40px] xl:rounded-[48px] overflow-hidden">
+          <img
+            class="w-full h-full object-cover object-center"
+            alt="Hero background"
+            src="/datafabricator-header-desktop-01-1.png"
+          />
+        </div>
+
+        <div class="relative w-full h-full flex flex-col justify-between z-10 px-6 lg:px-12 xl:px-16 2xl:px-20 py-24 lg:py-28 xl:py-32">
+          <div class="flex-1 flex flex-col justify-center">
+            <div class="mb-5">
               <p class="font-family-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
                 HERZLICH WILLKOMMEN
               </p>
@@ -140,28 +147,28 @@
                 Termin buchen
               </button>
             </div>
+          </div>
 
-            <div class="absolute bottom-6 lg:bottom-8 xl:bottom-10 right-6 lg:right-8 xl:right-12 2xl:right-16">
-              <div class="max-w-[420px] lg:max-w-[480px] xl:max-w-[520px]">
-                <div class="min-h-[70px] lg:min-h-[80px] mb-4">
-                  <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
-                    <span class="font-bold">{{ currentHighlight.title }}</span>
-                    <span> {{ currentHighlight.text }}</span>
-                  </p>
-                </div>
+          <div class="flex justify-end items-end">
+            <div class="max-w-[420px] lg:max-w-[480px] xl:max-w-[520px]">
+              <div class="min-h-[70px] lg:min-h-[80px] mb-4">
+                <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
+                  <span class="font-bold">{{ currentHighlight.title }}</span>
+                  <span> {{ currentHighlight.text }}</span>
+                </p>
+              </div>
 
-                <div class="flex justify-end items-center gap-2.5">
-                  <button
-                    v-for="(_, index) in highlights"
-                    :key="index"
-                    @click="currentSlide = index"
-                    :class="[
-                      'h-1.5 transition-all duration-300 rounded-full',
-                      currentSlide === index ? 'bg-white w-10' : 'bg-white/50 hover:bg-white/70 w-1.5'
-                    ]"
-                    :aria-label="`Go to slide ${index + 1}`"
-                  />
-                </div>
+              <div class="flex justify-end items-center gap-2.5">
+                <button
+                  v-for="(_, index) in highlights"
+                  :key="index"
+                  @click="currentSlide = index"
+                  :class="[
+                    'h-1.5 transition-all duration-300 rounded-full',
+                    currentSlide === index ? 'bg-white w-10' : 'bg-white/50 hover:bg-white/70 w-1.5'
+                  ]"
+                  :aria-label="`Go to slide ${index + 1}`"
+                />
               </div>
             </div>
           </div>
@@ -193,6 +200,7 @@ const highlights = [
 const currentSlide = ref(0);
 const isMenuOpen = ref(false);
 const activeSection = ref('');
+const isScrolled = ref(false);
 let autoplayInterval = null;
 
 const currentHighlight = computed(() => highlights[currentSlide.value]);
@@ -204,7 +212,9 @@ const navigationItems = computed(() => {
   }));
 });
 
-const updateActiveSection = () => {
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 100;
+
   const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
   let currentSection = '';
 
@@ -235,15 +245,15 @@ onMounted(() => {
     currentSlide.value = (currentSlide.value + 1) % highlights.length;
   }, 9000);
 
-  window.addEventListener('scroll', updateActiveSection);
-  updateActiveSection();
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 });
 
 onUnmounted(() => {
   if (autoplayInterval) {
     clearInterval(autoplayInterval);
   }
-  window.removeEventListener('scroll', updateActiveSection);
+  window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
