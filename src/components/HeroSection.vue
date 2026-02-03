@@ -10,54 +10,58 @@
         />
       </div>
 
-      <div class="relative w-full max-w-[1440px] mx-auto px-12 pt-48 pb-20 z-10 h-full flex flex-col">
-        <div class="mb-4">
-          <p class="font-family-jakarta font-medium text-white/95 text-xs tracking-[0.15em] uppercase">
-            HERZLICH WILLKOMMEN
-          </p>
-        </div>
+      <div class="relative w-full px-6 md:px-12 lg:px-16 xl:px-24 pt-28 md:pt-36 lg:pt-40 xl:pt-44 pb-8 md:pb-10 lg:pb-12 z-10 h-full flex flex-col">
+      <div class="mb-3 md:mb-4">
+        <p class="font-family-jakarta font-medium text-white/90 text-xs md:text-sm xl:text-sm tracking-[0.08em] uppercase leading-[27.9px]">
+          HERZLICH WILLKOMMEN
+        </p>
+      </div>
 
-        <h1 class="font-family-roboto font-light text-white text-7xl tracking-tight leading-[1.1] mb-12 max-w-[800px]">
-          Wir transformieren
-          technische
-          Herausforderungen in
-          greifbare Erfolge.
-        </h1>
+      <h1 class="font-family-roboto font-light text-white text-3xl md:text-5xl lg:text-6xl xl:text-6xl tracking-tight leading-[1.1] mb-8 md:mb-10 xl:mb-12 max-w-[680px] drop-shadow-sm">
+        Wir transformieren
+        technische
+        Herausforderungen in
+        greifbare Erfolge.
+      </h1>
 
-        <div class="flex gap-5 mb-auto">
-          <button class="font-family-jakarta font-normal text-lg bg-[#242528] text-white hover:bg-[#323438] transition-all duration-300 px-10 h-12">
-            Alle Cases einsehen
-          </button>
+      <div class="flex flex-col sm:flex-row gap-4 mb-auto">
+        <button
+          class="group relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal bg-[#242528] text-white transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#242528] before:to-[#3a3a3d] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
+        >
+          <span class="relative z-10">Alle Cases einsehen</span>
+        </button>
 
-          <button class="font-family-jakarta font-normal text-lg border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-300 px-10 h-12 backdrop-blur-sm">
-            Termin buchen
-          </button>
-        </div>
+        <button
+          class="group relative h-[43px] px-7 rounded-[22px] font-family-jakarta font-normal text-base md:text-lg xl:text-lg leading-[27px] tracking-normal border-2 border-white text-white hover:bg-white hover:text-[#071B3A] transition-all duration-500 ease-out hover:shadow-[0_8px_30px_rgb(255,255,255,0.4)] hover:scale-[1.03] hover:-translate-y-0.5 min-w-[200px] backdrop-blur-sm hover:backdrop-blur-0"
+        >
+          <span class="relative z-10">Termin buchen</span>
+        </button>
+      </div>
 
-        <div class="flex justify-end items-end mt-auto pt-12">
-          <div class="max-w-[600px]">
-            <div class="min-h-[80px] mb-6">
-              <p class="font-family-jakarta font-normal text-white text-lg text-right leading-[1.6]">
-                <span class="font-bold">{{ currentHighlight.title }}</span>
-                <span> {{ currentHighlight.text }}</span>
-              </p>
-            </div>
+      <div class="flex justify-start md:justify-end items-end mt-auto pt-6 md:pt-8 xl:pt-10 pb-4 md:pb-6">
+        <div class="w-full md:max-w-[540px] xl:max-w-[580px] md:pr-8 lg:pr-12">
+          <div class="min-h-[60px] md:min-h-[50px] xl:min-h-[55px] mb-3 md:mb-4">
+            <p class="font-family-jakarta font-normal text-white text-sm md:text-base xl:text-base text-left md:text-right tracking-normal leading-[1.5] drop-shadow-sm">
+              <span class="font-bold">{{ currentHighlight.title }}</span>
+              <span> {{ currentHighlight.text }}</span>
+            </p>
+          </div>
 
-            <div class="flex justify-end items-center gap-3">
-              <button
-                v-for="(_, index) in highlights"
-                :key="index"
-                @click="currentSlide = index"
-                :class="[
-                  'h-2 transition-all duration-300',
-                  currentSlide === index ? 'bg-white w-12' : 'bg-white/50 hover:bg-white/70 w-2'
-                ]"
-                :aria-label="`Go to slide ${index + 1}`"
-              />
-            </div>
+          <div class="flex justify-start md:justify-end items-center gap-2">
+            <button
+              v-for="(_, index) in highlights"
+              :key="index"
+              @click="currentSlide = index"
+              :class="[
+                'h-2 rounded-full transition-all duration-300',
+                currentSlide === index ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60 w-2'
+              ]"
+              :aria-label="`Go to slide ${index + 1}`"
+            />
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </template>

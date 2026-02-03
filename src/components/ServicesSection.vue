@@ -1,51 +1,51 @@
 <template>
-  <section ref="sectionRef" id="leistungen" class="relative w-full py-24 scroll-animate">
-    <div class="max-w-[1440px] mx-auto px-12">
-      <div class="mb-14 flex items-start justify-between">
+  <section ref="sectionRef" id="leistungen" class="relative w-full py-16 md:py-20 lg:py-24 scroll-animate">
+    <div class="max-w-[1220px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
+      <div class="mb-12 md:mb-14 flex items-start justify-between">
         <div>
-          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase mb-6">
+          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-sm tracking-[0.05em] uppercase leading-[27.9px] mb-5 md:mb-6">
             SERVICES
           </p>
-          <h2 class="font-family-roboto font-light text-[#273247] text-6xl tracking-tight leading-[1.15]">
+          <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl lg:text-[56px] tracking-tight leading-[1.15]">
             Unsere Leistungen
             <br />
             im Überblick
           </h2>
         </div>
-        <div class="hidden lg:flex items-center justify-between gap-14 mt-auto mb-1">
+        <div class="hidden lg:flex items-center justify-between gap-[55px] mt-auto mb-1">
           <button
             @click="scrollLeft"
-            class="nav-arrow nav-arrow-left w-10 h-10 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow nav-arrow-left w-[42px] h-[42px] flex items-center justify-center transition-all duration-300"
             aria-label="Scroll left"
           >
           </button>
           <button
             @click="scrollRight"
-            class="nav-arrow nav-arrow-right w-10 h-10 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow nav-arrow-right w-[42px] h-[42px] flex items-center justify-center transition-all duration-300"
             aria-label="Scroll right"
           >
           </button>
         </div>
       </div>
 
-      <div class="relative mb-14 -mr-12">
+      <div class="relative mb-12 md:mb-14 -mr-6 md:-mr-8 lg:-mr-12">
         <div ref="scrollContainer" class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
           <div
             v-for="(service, index) in servicesData"
             :key="index"
-            class="bg-[#273248] min-h-[380px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+            class="bg-[#273248] rounded-[9px] min-h-[380px] flex flex-col flex-shrink-0 w-[280px] transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
             <div class="p-8 pb-7 flex flex-col h-full">
               <div class="mb-4">
-                <span class="font-family-jakarta font-normal text-white/60 text-lg">
+                <span class="font-family-jakarta font-normal text-white/60 text-lg tracking-normal leading-normal">
                   {{ service.number }}
                 </span>
               </div>
               <div class="flex flex-col gap-5">
-                <h3 class="font-family-jakarta font-semibold text-white text-xl leading-[1.4] whitespace-pre-line h-16 flex items-start">
+                <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4] whitespace-pre-line h-[64px] flex items-start">
                   {{ service.title }}
                 </h3>
-                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6]">
+                <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal">
                   {{ service.description }}
                 </p>
               </div>
@@ -68,18 +68,18 @@
                 class="flex-shrink-0 px-3"
                 :class="slideClass"
               >
-                <div class="bg-[#273248] min-h-[380px] flex flex-col">
+                <div class="bg-[#273248] rounded-[9px] min-h-[380px] flex flex-col">
                   <div class="p-8 pb-7 flex flex-col h-full">
                     <div class="mb-4">
-                      <span class="font-family-jakarta font-normal text-white/60 text-lg">
+                      <span class="font-family-jakarta font-normal text-white/60 text-lg tracking-normal leading-normal">
                         {{ service.number }}
                       </span>
                     </div>
                     <div class="flex flex-col gap-5">
-                      <h3 class="font-family-jakarta font-semibold text-white text-xl leading-[1.4]">
+                      <h3 class="font-family-jakarta font-semibold text-white text-xl tracking-normal leading-[1.4]">
                         {{ service.title }}
                       </h3>
-                      <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6]">
+                      <p class="font-family-jakarta font-normal text-white/75 text-base leading-[1.6] tracking-normal">
                         {{ service.description }}
                       </p>
                     </div>
@@ -92,7 +92,7 @@
           <div class="flex justify-center items-center gap-4 mt-8">
             <button
               @click="prevSlide"
-              class="w-10 h-10 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
               :disabled="currentSlide === 0"
               :class="{ 'opacity-50 cursor-not-allowed': currentSlide === 0 }"
             >
@@ -106,14 +106,14 @@
                 v-for="(_, index) in paginationDots"
                 :key="index"
                 @click="goToSlide(index)"
-                class="h-2 transition-all duration-300"
+                class="w-2 h-2 rounded-full transition-all duration-300"
                 :class="getDotClass(index)"
               ></button>
             </div>
 
             <button
               @click="nextSlide"
-              class="w-10 h-10 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors"
               :disabled="currentSlide >= maxSlide"
               :class="{ 'opacity-50 cursor-not-allowed': currentSlide >= maxSlide }"
             >
@@ -187,7 +187,7 @@ const paginationDots = computed(() => {
 const getDotClass = (index) => {
   return currentSlide.value === index
     ? 'bg-[#273248] w-8'
-    : 'bg-[#273248]/30 w-2';
+    : 'bg-[#273248]/30';
 };
 
 const nextSlide = () => {
