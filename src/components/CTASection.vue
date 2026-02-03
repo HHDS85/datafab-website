@@ -2,12 +2,17 @@
   <section
     ref="sectionRef"
     id="kontakt"
-    class="relative w-full bg-[#E8E9EB] scroll-animate"
+    :class="[
+      'relative w-full bg-[#E8E9EB] scroll-animate transition-all duration-700 ease-out',
+      showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
+    ]"
   >
     <div class="max-w-[1440px] mx-auto h-full">
       <div
-        v-if="!showForm"
-        class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]"
+        :class="[
+          'grid grid-cols-1 lg:grid-cols-2 transition-all duration-700 ease-out',
+          showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
+        ]"
       >
         <div class="flex flex-col justify-center gap-10 py-20 px-6 lg:px-12 xl:px-16">
           <div class="space-y-6">
@@ -23,7 +28,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4">
             <button
-              @click.stop="showForm = true"
+              @click.stop="toggleForm"
               class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300 rounded-lg"
             >
               Kontaktformular
@@ -45,23 +50,31 @@
           </div>
         </div>
 
-        <div class="relative h-[400px] lg:h-[500px]">
-          <div class="absolute inset-0 w-full h-full shadow-md overflow-hidden">
+        <div
+          :class="[
+            'relative transition-all duration-700 ease-out',
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
+          ]"
+        >
+          <div
+            v-show="!showForm"
+            class="absolute inset-0 w-full h-full shadow-md overflow-hidden z-0"
+          >
             <img
               class="w-full h-full object-cover"
               alt="Kontakt img"
               src="/kontakt-img.png"
             />
           </div>
-        </div>
-      </div>
 
-      <div
-        v-if="showForm"
-        class="w-full py-12 px-6 lg:px-12 xl:px-16"
-      >
-        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 md:p-8">
-          <ContactForm @close="showForm = false" />
+          <div
+            v-show="showForm"
+            class="absolute inset-0 w-full h-full bg-white shadow-md z-20"
+          >
+            <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
+              <ContactForm @close="closeForm" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +88,14 @@ import ContactForm from './ContactForm.vue';
 
 const sectionRef = ref(null);
 const showForm = ref(false);
+
+const toggleForm = () => {
+  showForm.value = true;
+};
+
+const closeForm = () => {
+  showForm.value = false;
+};
 
 useScrollAnimation(sectionRef);
 </script>
