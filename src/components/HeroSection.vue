@@ -141,9 +141,9 @@
               </button>
             </div>
 
-            <div class="absolute bottom-16 lg:bottom-20 right-6 lg:right-12 xl:right-16">
-              <div class="max-w-[560px]">
-                <div class="min-h-[70px] lg:min-h-[80px] mb-6">
+            <div class="absolute bottom-8 lg:bottom-10 right-8 lg:right-10">
+              <div class="max-w-[480px] lg:max-w-[520px]">
+                <div class="min-h-[70px] lg:min-h-[80px] mb-4">
                   <p class="font-family-jakarta font-normal text-white text-base lg:text-lg text-right leading-[1.6]">
                     <span class="font-bold">{{ currentHighlight.title }}</span>
                     <span> {{ currentHighlight.text }}</span>
