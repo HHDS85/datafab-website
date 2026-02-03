@@ -1,5 +1,4 @@
 <template>
-  <div class="bg-white overflow-hidden w-full relative">
     <HeroSection />
     <WelcomeSection />
     <ServicesSection />
@@ -8,7 +7,6 @@
     <TestimonialsCarousel />
     <FAQAccordion />
     <AppFooter />
-  </div>
 </template>
 
 <script setup>
