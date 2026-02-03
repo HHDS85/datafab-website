@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 w-full z-50 bg-[#071B3A]/95 backdrop-blur-md shadow-lg py-3">
+  <header class="fixed top-0 w-full z-50 backdrop-blur-md shadow-lg py-3">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="flex items-center justify-between">
         <img
