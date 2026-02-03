@@ -2,14 +2,14 @@
   <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] py-20 scroll-animate">
     <div class="container mx-auto max-w-[1440px] px-6 lg:px-12 xl:px-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20 items-start">
-        <div class="flex flex-col gap-10 order-2 lg:order-1">
+        <div class="flex flex-col gap-10 order-2 lg:order-1 max-w-[520px]">
           <div class="space-y-6">
             <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1]">
               Datenlösungen
               ohne Umwege.
             </h2>
 
-            <p class="font-family-roboto font-normal text-gray-700 text-2xl md:text-3xl leading-[1.3]">
+            <p class="font-family-roboto font-normal text-gray-700 text-xl md:text-2xl leading-[1.3]">
               Jetzt unverbindlich Kontakt aufnehmen!
             </p>
           </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div
-          class="relative w-full h-[480px] md:h-[520px] order-1 lg:order-2"
+          class="relative w-full h-[680px] md:h-[750px] lg:h-[820px] order-1 lg:order-2"
           style="perspective: 2000px;"
         >
           <div
@@ -59,10 +59,10 @@
             </div>
 
             <div
-              class="absolute inset-0 w-full h-full bg-white shadow-md overflow-hidden"
+              class="absolute inset-0 w-full h-full bg-white shadow-md"
               style="backface-visibility: hidden; transform: rotateY(180deg);"
             >
-              <div class="w-full h-full overflow-y-auto p-8">
+              <div class="w-full h-full p-8 overflow-y-auto">
                 <ContactForm @close="showForm = false" />
               </div>
             </div>
