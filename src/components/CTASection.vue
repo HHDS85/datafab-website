@@ -28,7 +28,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4">
             <button
-              @click="showForm = true"
+              @click.stop="showForm = true"
               class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300 rounded-lg"
             >
               Kontaktformular
