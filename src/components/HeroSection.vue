@@ -166,7 +166,15 @@
           <img
             class="w-full h-full object-cover object-center"
             alt="Hero background"
-            src="/datafabricator-header-desktop-01-1.png"
+            src="/data-fab_teaser_bg.png"
+          />
+          <img
+            :class="[
+              'absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[1400ms] ease-out',
+              isLoaded ? 'translate-x-0' : 'translate-x-full'
+            ]"
+            alt="Hero foreground"
+            src="/data-fab_teaser_wo.png"
           />
         </div>
 
@@ -217,6 +225,7 @@ import { navigationItems as originalNavigationItems } from '@/data/navigation';
 const isMenuOpen = ref(false);
 const activeSection = ref('');
 const isScrolled = ref(false);
+const isLoaded = ref(false);
 
 const navigationItems = computed(() => {
   return originalNavigationItems.map(item => ({
@@ -256,6 +265,10 @@ const closeMenu = () => {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
   handleScroll();
+
+  setTimeout(() => {
+    isLoaded.value = true;
+  }, 100);
 });
 
 onUnmounted(() => {
