@@ -1,14 +1,17 @@
 <template>
   <header
     :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out',
-      isScrolled ? 'bg-[#071B3A]/95 backdrop-blur-xl shadow-2xl py-4' : 'bg-transparent py-5'
+      'left-0 right-0 z-50 transition-all duration-500 ease-out',
+      isScrolled ? 'fixed top-0 bg-white/85 backdrop-blur-md shadow-sm py-3' : 'absolute top-0 bg-transparent py-5'
     ]"
   >
-    <div class="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+    <div :class="[
+      'w-full mx-auto transition-all duration-500',
+      isScrolled ? 'px-6 lg:px-12 xl:px-16' : 'px-10 lg:px-16 xl:px-20 2xl:px-24'
+    ]">
       <div class="flex items-center justify-between">
               <img
-                class="h-10"
+                class="h-10 transition-all duration-300"
                 alt="Logo datafabrictor"
                 src="/logo-datafabrictor.svg"
               />
@@ -23,14 +26,17 @@
                   <span
                     :class="[
                       'font-family-jakarta relative transition-all duration-300',
-                      item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white',
+                      isScrolled
+                        ? (item.active ? 'font-bold text-[#071B3A]' : 'font-normal text-[#071B3A]/70 group-hover:text-[#071B3A]')
+                        : (item.active ? 'font-bold text-white' : 'font-normal text-white/90 group-hover:text-white'),
                       'tracking-wide uppercase text-sm'
                     ]"
                   >
                     {{ item.label }}
                     <span
                       :class="[
-                        'absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out',
+                        'absolute -bottom-1 left-0 h-[2px] transition-all duration-300 ease-out',
+                        isScrolled ? 'bg-[#071B3A]' : 'bg-white',
                         item.active ? 'w-full' : 'w-0 group-hover:w-full'
                       ]"
                     ></span>
@@ -39,14 +45,19 @@
               </nav>
 
               <button
-                class="hidden md:flex items-center gap-2 bg-[#242528] hover:bg-[#323438] transition-all duration-300 px-6 h-9 rounded-lg"
+                :class="[
+                  'hidden md:flex items-center gap-2 transition-all duration-300 px-6 h-9 rounded-lg',
+                  isScrolled
+                    ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white'
+                    : 'bg-[#242528] hover:bg-[#323438] text-white'
+                ]"
               >
                 <img
                   class="w-4 h-4"
                   alt="Language"
                   src="/language.svg"
                 />
-                <span class="font-family-jakarta font-medium text-white text-sm">
+                <span class="font-family-jakarta font-medium text-sm">
                   DE
                 </span>
               </button>
@@ -58,16 +69,25 @@
               >
                 <span class="flex flex-col gap-1.5 w-5">
                   <span
-                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out transform origin-center"
-                    :class="isMenuOpen ? 'rotate-45 translate-y-2' : ''"
+                    :class="[
+                      'h-0.5 w-full transition-all duration-300 ease-out transform origin-center',
+                      isScrolled ? 'bg-[#071B3A]' : 'bg-white',
+                      isMenuOpen ? 'rotate-45 translate-y-2' : ''
+                    ]"
                   ></span>
                   <span
-                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out"
-                    :class="isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'"
+                    :class="[
+                      'h-0.5 w-full transition-all duration-300 ease-out',
+                      isScrolled ? 'bg-[#071B3A]' : 'bg-white',
+                      isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                    ]"
                   ></span>
                   <span
-                    class="h-0.5 w-full bg-white transition-all duration-300 ease-out transform origin-center"
-                    :class="isMenuOpen ? '-rotate-45 -translate-y-2' : ''"
+                    :class="[
+                      'h-0.5 w-full transition-all duration-300 ease-out transform origin-center',
+                      isScrolled ? 'bg-[#071B3A]' : 'bg-white',
+                      isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                    ]"
                   ></span>
                 </span>
               </button>
@@ -76,7 +96,10 @@
       <Transition name="slide-fade">
         <div
           v-if="isMenuOpen"
-          class="lg:hidden absolute top-full left-0 right-0 bg-[#071B3A]/98 backdrop-blur-xl shadow-2xl overflow-hidden border-t border-white/10 rounded-b-xl"
+          :class="[
+            'lg:hidden absolute top-full left-0 right-0 backdrop-blur-xl shadow-xl overflow-hidden border-t rounded-b-xl',
+            isScrolled ? 'bg-white/95 border-gray-200' : 'bg-[#071B3A]/98 border-white/10'
+          ]"
         >
           <nav class="flex flex-col p-5">
             <a
@@ -84,25 +107,46 @@
               :key="`mobile-nav-${index}`"
               :href="item.href"
               @click="closeMenu"
-              class="flex items-center justify-between py-3.5 border-b border-white/10 last:border-0 group hover:bg-white/5 -mx-2 px-2 transition-all duration-200"
+              :class="[
+                'flex items-center justify-between py-3.5 border-b last:border-0 group -mx-2 px-2 transition-all duration-200',
+                isScrolled
+                  ? 'border-gray-200 hover:bg-gray-100'
+                  : 'border-white/10 hover:bg-white/5'
+              ]"
             >
               <span
                 :class="[
-                  'font-family-jakarta',
-                  item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white',
-                  'text-base transition-colors duration-200'
+                  'font-family-jakarta text-base transition-colors duration-200',
+                  isScrolled
+                    ? (item.active ? 'font-bold text-[#071B3A]' : 'font-normal text-[#071B3A]/70 group-hover:text-[#071B3A]')
+                    : (item.active ? 'font-bold text-white' : 'font-normal text-white/80 group-hover:text-white')
                 ]"
               >
                 {{ item.label }}
               </span>
-              <svg class="w-4 h-4 text-white/40 group-hover:text-white/80 transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                :class="[
+                  'w-4 h-4 transform group-hover:translate-x-1 transition-all duration-200',
+                  isScrolled ? 'text-[#071B3A]/40 group-hover:text-[#071B3A]/80' : 'text-white/40 group-hover:text-white/80'
+                ]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
 
-            <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-[#242528] hover:bg-[#323438] transition-all duration-200 rounded">
+            <div
+              :class="[
+                'mt-5 flex items-center justify-center gap-2 px-5 py-2.5 transition-all duration-200 rounded',
+                isScrolled
+                  ? 'bg-[#071B3A] hover:bg-[#0a2350] text-white'
+                  : 'bg-[#242528] hover:bg-[#323438] text-white'
+              ]"
+            >
               <img class="w-4 h-4" alt="Language" src="/language.svg" />
-              <span class="font-family-jakarta font-medium text-white text-sm">
+              <span class="font-family-jakarta font-medium text-sm">
                 DE
               </span>
             </div>
@@ -112,7 +156,7 @@
     </div>
   </header>
 
-  <section class="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4 md:pt-6 mt-20">
+  <section class="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4 md:pt-6">
     <div class="relative w-full max-w-[1920px] mx-auto overflow-hidden rounded-[32px] md:rounded-[40px] xl:rounded-[48px]">
       <div class="relative w-full min-h-[90vh]">
         <div class="absolute inset-0 w-full h-full rounded-[32px] md:rounded-[40px] xl:rounded-[48px] overflow-hidden">
@@ -213,7 +257,7 @@ const navigationItems = computed(() => {
 });
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 100;
+  isScrolled.value = window.scrollY > 200;
 
   const sections = ['leistungen', 'referenzen', 'faq', 'kontakt'];
   let currentSection = '';
