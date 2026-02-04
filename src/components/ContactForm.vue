@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full" >
+  <div class="relative w-full" @click.stop>
     <button
       @click.stop="$emit('close')"
       class="absolute -top-2 -right-2 w-9 h-9 rounded-lg bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
@@ -221,6 +221,6 @@ const handleSubmit = async () => {
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  opacity: 100;
 }
 </style>
