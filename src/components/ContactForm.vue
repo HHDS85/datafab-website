@@ -216,11 +216,11 @@ const handleSubmit = async () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 20.3s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 100;
+  opacity: 0;
 }
 </style>
