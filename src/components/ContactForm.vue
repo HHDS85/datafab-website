@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full" @click.stop>
+  <div class="relative w-full" >
     <button
       @click.stop="$emit('close')"
       class="absolute -top-2 -right-2 w-9 h-9 rounded-lg bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
