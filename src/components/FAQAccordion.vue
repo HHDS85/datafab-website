@@ -30,9 +30,9 @@
                 </span>
                 <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center transition-all duration-300 ease-out">
                   <img
-                    :src="openItem === item.id ? '/expandbutton01.png' : '/expandbutton02.png'"
+                    :src="openItem === item.id ? '/expandicon2.svg' : '/expandicon1.svg'"
                     :alt="openItem === item.id ? 'Collapse' : 'Expand'"
-                    class="w-full h-full object-contain transition-all duration-300"
+                    class="w-full h-full transition-all duration-300"
                   />
                 </div>
               </button>

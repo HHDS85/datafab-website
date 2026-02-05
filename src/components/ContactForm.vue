@@ -1,7 +1,7 @@
 <template>
-  <div class="relative w-full" @click.stop>
+  <div class="relative w-full">
     <button
-      @click.stop="$emit('close')"
+      @click="$emit('close')"
       class="absolute -top-2 -right-2 w-9 h-9 rounded-lg bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
       aria-label="Schließen"
     >
@@ -137,7 +137,7 @@
 
       <div class="flex flex-col sm:flex-row gap-3 pt-3">
         <button
-          @click.stop="handleSubmit"
+          @click="handleSubmit"
           type="submit"
           :disabled="isSubmitting"
           class="h-11 px-8 font-family-jakarta font-normal text-sm bg-[#242528] text-white hover:bg-[#323438] rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -146,7 +146,7 @@
         </button>
 
         <button
-          @click.stop="$emit('close')"
+          @click="$emit('close')"
           type="button"
           class="h-11 px-8 font-family-jakarta font-normal text-sm border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 rounded-lg transition-all duration-300"
         >
@@ -216,7 +216,7 @@ const handleSubmit = async () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 20.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter-from,
