@@ -1,20 +1,8 @@
 <template>
-  <section
-    ref="sectionRef"
-    id="kontakt"
-    :class="[
-      'relative w-full bg-[#E8E9EB] scroll-animate transition-all duration-700 ease-out',
-      showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
-    ]"
-  >
-    <div class="max-w-[1440px] mx-auto h-full">
-      <div
-        :class="[
-          'grid grid-cols-1 lg:grid-cols-2 transition-all duration-700 ease-out',
-          showForm ? 'min-h-[780px] md:min-h-[850px] lg:min-h-[920px]' : 'min-h-[500px]'
-        ]"
-      >
-        <div class="flex flex-col justify-center gap-10 py-20 px-6 lg:px-12 xl:px-16">
+  <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] py-20 scroll-animate">
+    <div class="container mx-auto max-w-[1440px] px-6 lg:px-12 xl:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20 items-start">
+        <div class="flex flex-col gap-10 order-2 lg:order-1 max-w-[520px]">
           <div class="space-y-6">
             <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1]">
               Datenlösungen
@@ -52,27 +40,34 @@
 
         <div
           :class="[
-            'relative transition-all duration-700 ease-out',
-            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
+            'relative w-full order-1 lg:order-2 transition-all duration-700 ease-out',
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] md:h-[450px] lg:h-[500px]'
           ]"
+          style="perspective: 2000px;"
         >
           <div
-            v-show="!showForm"
-            class="absolute inset-0 w-full h-full shadow-md overflow-hidden"
+            class="absolute inset-0 w-full h-full transition-all duration-700 ease-out"
+            :style="{ transform: showForm ? 'rotateY(180deg)' : 'rotateY(0deg)' }"
+            style="transform-style: preserve-3d;"
           >
-            <img
-              class="w-full h-full object-cover"
-              alt="Kontakt img"
-              src="/kontakt-img.png"
-            />
-          </div>
+            <div
+              class="absolute inset-0 w-full h-full shadow-md overflow-hidden rounded-lg"
+              style="backface-visibility: hidden;"
+            >
+              <img
+                class="w-full h-full object-cover"
+                alt="Kontakt img"
+                src="/kontakt-img.png"
+              />
+            </div>
 
-          <div
-            v-show="showForm"
-            class="absolute inset-0 w-full h-full bg-white shadow-md z-10"
-          >
-            <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
-              <ContactForm v-if="showForm" @close="showForm = false" />
+            <div
+              class="absolute inset-0 w-full h-full bg-white shadow-md rounded-lg"
+              style="backface-visibility: hidden; transform: rotateY(180deg);"
+            >
+              <div class="w-full h-full p-8">
+                <ContactForm @close="showForm = false" />
+              </div>
             </div>
           </div>
         </div>
