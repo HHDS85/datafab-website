@@ -28,8 +28,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4">
             <button
-              @click="openForm"
-              type="button"
+              @click="showForm = true"
               class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300 rounded-lg"
             >
               Kontaktformular
@@ -53,23 +52,27 @@
 
         <div
           :class="[
-            'relative transition-all duration-700 ease-out flip-container',
+            'relative transition-all duration-700 ease-out',
             showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] lg:h-[500px]'
           ]"
         >
-          <div class="flip-card" :class="{ 'flipped': showForm }">
-            <div class="flip-face flip-front shadow-md overflow-hidden">
-              <img
-                class="w-full h-full object-cover"
-                alt="Kontakt img"
-                src="/kontakt-img.png"
-              />
-            </div>
+          <div
+            v-show="!showForm"
+            class="absolute inset-0 w-full h-full shadow-md overflow-hidden z-0"
+          >
+            <img
+              class="w-full h-full object-cover"
+              alt="Kontakt img"
+              src="/kontakt-img.png"
+            />
+          </div>
 
-            <div class="flip-face flip-back bg-white shadow-md">
-              <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
-                <ContactForm @close="closeForm" />
-              </div>
+          <div
+            v-show="showForm"
+            class="absolute inset-0 w-full h-full bg-white shadow-md z-20"
+          >
+            <div class="w-full h-full p-6 md:p-8 overflow-y-auto">
+              <ContactForm @close="showForm = false" />
             </div>
           </div>
         </div>
@@ -86,14 +89,6 @@ import ContactForm from './ContactForm.vue';
 const sectionRef = ref(null);
 const showForm = ref(false);
 
-const openForm = () => {
-  showForm.value = true;
-};
-
-const closeForm = () => {
-  showForm.value = false;
-};
-
 useScrollAnimation(sectionRef);
 </script>
 
@@ -104,40 +99,5 @@ useScrollAnimation(sectionRef);
 
 .font-family-roboto {
   font-family: 'Roboto', Helvetica, sans-serif;
-}
-
-.flip-container {
-  perspective: 1500px;
-}
-
-.flip-card {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.flip-card.flipped {
-  transform: rotateY(180deg);
-}
-
-.flip-face {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.flip-front {
-  z-index: 2;
-}
-
-.flip-back {
-  transform: rotateY(180deg);
-  z-index: 1;
 }
 </style>

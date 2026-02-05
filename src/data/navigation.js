@@ -2,7 +2,7 @@ export const navigationItems = [
   {
     label: 'STARTSEITE',
     active: true,
-    href: '#'
+    href: '#start'
   },
   {
     label: 'LEISTUNGEN',
