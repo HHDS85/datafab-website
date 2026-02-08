@@ -2,7 +2,7 @@
   <section ref="sectionRef" id="kontakt" class="relative w-full bg-[#E8E9EB] py-20 scroll-animate">
     <div class="container mx-auto max-w-[1440px] px-6 lg:px-12 xl:px-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20 items-start">
-        <div class="flex flex-col gap-10 order-2 lg:order-1 max-w-[520px]">
+        <div class="flex flex-col gap-10 order-2 lg:order-1 max-w-[520px] lg:h-[500px] lg:justify-center">
           <div class="space-y-6">
             <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1]">
               Datenlösungen
@@ -41,7 +41,7 @@
         <div
           :class="[
             'relative w-full order-1 lg:order-2 transition-all duration-700 ease-out',
-            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[400px] md:h-[450px] lg:h-[500px]'
+            showForm ? 'h-[680px] md:h-[750px] lg:h-[820px]' : 'h-[500px]'
           ]"
           style="perspective: 2000px;"
         >
