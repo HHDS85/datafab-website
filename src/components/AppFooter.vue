@@ -72,9 +72,12 @@
               :is="link.to ? 'router-link' : 'a'"
               :to="link.to"
               :href="link.href"
-              class="font-family-jakarta font-normal text-white/70 text-[15px] hover:text-white transition-colors w-fit"
+              class="font-family-jakarta font-normal text-white/70 text-[15px] hover:text-white transition-all duration-300 w-fit cursor-pointer group relative"
             >
-              {{ link.label }}
+              <span class="relative">
+                {{ link.label }}
+                <span class="absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+              </span>
             </component>
           </nav>
         </div>
