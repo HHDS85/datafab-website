@@ -15,15 +15,17 @@
         <div class="hidden lg:flex items-center justify-between gap-12 mt-auto mb-2">
           <button
             @click="scrollLeft"
-            class="nav-arrow nav-arrow-left w-9 h-9 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow transform rotate-180 w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
             aria-label="Scroll left"
           >
+            <img src="/testimonialnavigation-2@2x.png" alt="Previous" class="w-full h-full" />
           </button>
           <button
             @click="scrollRight"
-            class="nav-arrow nav-arrow-right w-9 h-9 flex items-center justify-center transition-all duration-300"
+            class="nav-arrow w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
             aria-label="Scroll right"
           >
+            <img src="/testimonialnavigation-2@2x.png" alt="Next" class="w-full h-full" />
           </button>
         </div>
       </div>
@@ -250,43 +252,8 @@ const handleTouchEnd = () => {
 }
 
 .nav-arrow {
-  position: relative;
   border: none;
   background: transparent;
   cursor: pointer;
-}
-
-.nav-arrow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  transition: all 0.3s ease;
-}
-
-.nav-arrow-left::before {
-  border-width: 8px 14px 8px 0;
-  border-color: transparent #1E1D1B transparent transparent;
-  margin-left: -2px;
-}
-
-.nav-arrow-right::before {
-  border-width: 8px 0 8px 14px;
-  border-color: transparent transparent transparent #9C9689;
-  margin-left: 2px;
-}
-
-.nav-arrow-left:hover::before {
-  border-color: transparent #000000 transparent transparent;
-  transform: translate(-55%, -50%);
-}
-
-.nav-arrow-right:hover::before {
-  border-color: transparent transparent transparent #7a7369;
-  transform: translate(-45%, -50%);
 }
 </style>
