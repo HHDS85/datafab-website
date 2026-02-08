@@ -6,7 +6,7 @@
           <img
             class="w-[180px] h-auto brightness-0 invert"
             alt="Data Fabricator Logo"
-            src="/df_logo_full.png"
+            src="/footerlogo.svg"
           />
           <p class="font-jakarta font-normal text-white/60 text-base leading-[1.7] max-w-[300px]">
             Ihr Partner für innovative und maßgeschneiderte Digitalisierungsstrategien.

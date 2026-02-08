@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16 mb-12 min-h-[300px]">
           <div class="flex justify-center lg:justify-start">
             <img
-              class="w-full max-w-[260px] h-auto aspect-[260/300] object-cover shadow-sm rounded-lg"
+              class="w-full max-w-[260px] h-[300px] object-cover shadow-sm rounded-lg"
               alt="Testimonial image"
               :src="currentTestimonial.image"
             />
