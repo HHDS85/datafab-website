@@ -4,34 +4,33 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20">
         <div class="flex flex-col gap-8">
           <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl tracking-tight leading-[1.15]">
-            FAQ
+            {{ t('faqs.title') }}
           </h2>
 
           <p class="font-family-jakarta font-normal text-[#0f0e0e] text-base leading-[1.7] max-w-md">
-            Weiterführende und ausführliche Informationen findest du auf
-            unserer FAQ-Seite.
+            {{ t('faqs.subtitle') }}
           </p>
         </div>
 
         <div class="flex flex-col">
           <div class="w-full">
             <div
-              v-for="(item, index) in faqsData"
-              :key="item.id"
+              v-for="(item, index) in faqItems"
+              :key="index"
               class="border-b border-[#e5e5e5]"
             >
               <button
-                @click="toggleItem(item.id)"
+                @click="toggleItem(index)"
                 class="w-full py-6 flex items-center justify-between text-left group transition-all duration-200"
-                :aria-expanded="openItem === item.id"
+                :aria-expanded="openItem === index"
               >
                 <span class="font-family-jakarta font-medium text-[#1e1e1e] text-lg md:text-xl tracking-tight leading-normal pr-3 group-hover:text-[#273247] transition-colors duration-200">
                   {{ item.question }}
                 </span>
                 <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center transition-all duration-300 ease-out">
                   <img
-                    :src="openItem === item.id ? '/expandbutton01.png' : '/expandbutton02.png'"
-                    :alt="openItem === item.id ? 'Collapse' : 'Expand'"
+                    :src="openItem === index ? '/expandbutton01.png' : '/expandbutton02.png'"
+                    :alt="openItem === index ? 'Collapse' : 'Expand'"
                     class="w-full h-full transition-all duration-300"
                   />
                 </div>
@@ -39,7 +38,7 @@
 
               <div
                 class="accordion-content"
-                :class="{ 'accordion-open': openItem === item.id }"
+                :class="{ 'accordion-open': openItem === index }"
               >
                 <div class="accordion-inner">
                   <div class="pb-6 pr-10">
@@ -58,17 +57,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { faqs as faqsData } from '@/data/faqs.data';
+import { ref, computed } from 'vue';
 import { useScrollAnimation } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
+
+const { t } = useI18n();
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 
-const openItem = ref(faqsData.find(item => item.defaultOpen)?.id || null);
+const faqItems = computed(() => t('faqs.items'));
 
-const toggleItem = (id) => {
-  openItem.value = openItem.value === id ? null : id;
+const openItem = ref(0);
+
+const toggleItem = (index) => {
+  openItem.value = openItem.value === index ? null : index;
 };
 </script>
 
