@@ -112,7 +112,7 @@
         </div>
 
         <div class="relative w-full h-full flex flex-col justify-between z-10 px-6 lg:px-12 xl:px-16 2xl:px-20 pt-32 lg:pt-36 pb-12 lg:pb-16">
-          <div class="flex-1 flex flex-col justify-center">
+          <div class="flex-1 flex flex-col justify-end pb-8">
             <div class="mb-5">
               <p class="font-jakarta font-medium text-white/95 text-xs md:text-sm tracking-[0.15em] uppercase">
                 {{ headline }}
