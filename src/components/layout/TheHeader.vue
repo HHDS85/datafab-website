@@ -9,7 +9,7 @@
           <img
             class="h-10"
             alt="Data Fabricator Logo"
-            src="/df_logo_full.png"
+            src="/logo_black.svg"
           />
 
           <nav class="hidden lg:flex items-center gap-8">

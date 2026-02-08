@@ -13,6 +13,16 @@ const router = createRouter({
       path: ROUTE_PATHS.IMPRESSUM,
       name: ROUTE_NAMES.IMPRESSUM,
       component: () => import('@/views/ImpressumView.vue')
+    },
+    {
+      path: ROUTE_PATHS.DATENSCHUTZ,
+      name: ROUTE_NAMES.DATENSCHUTZ,
+      component: () => import('@/views/DatenschutzView.vue')
+    },
+    {
+      path: ROUTE_PATHS.AGB,
+      name: ROUTE_NAMES.AGB,
+      component: () => import('@/views/AGBView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

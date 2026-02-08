@@ -1,11 +1,15 @@
 export const ROUTE_NAMES = {
   HOME: 'home',
   IMPRESSUM: 'impressum',
+  DATENSCHUTZ: 'datenschutz',
+  AGB: 'agb',
 };
 
 export const ROUTE_PATHS = {
   HOME: '/',
   IMPRESSUM: '/impressum',
+  DATENSCHUTZ: '/datenschutz',
+  AGB: '/agb',
 };
 
 export const SECTION_IDS = {

@@ -113,8 +113,8 @@ const appleMapsUrl = `https://maps.apple.com/?address=${encodeURIComponent(addre
 
 const legalLinks = [
   { label: 'Impressum', to: '/impressum' },
-  { label: 'AGB', href: '#' },
-  { label: 'Kontakt', href: '#kontakt' }
+  { label: 'Datenschutz', to: '/datenschutz' },
+  { label: 'AGB', to: '/agb' }
 ];
 </script>
 
