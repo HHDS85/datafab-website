@@ -110,26 +110,24 @@ export default {
   },
 
   projects: {
-    title: 'Unsere Projekte',
-    subtitle: 'Erfolgreiche Digitalisierungsprojekte für unsere Kunden',
-    items: {
-      pricing: {
-        title: 'Effiziente Preisgestaltung durch automatisierte Datenbeschaffung',
-        description: 'Für einen Kunden im Versicherungsbereich entwickelte Data Fabricator eine vollautomatisierte Lösung zur Abfrage von Preisvergleichsdaten aus Online-Portalen.'
-      },
-      forecasting: {
-        title: 'Interaktive Visualisierung für bessere Marktprognosen',
-        description: 'Für ein Unternehmen, das langfristige Prognosen für den europäischen Energiemarkt bereitstellt, entwickelte Data Fabricator ein maßgeschneidertes Kundenportal.'
-      },
-      portal: {
-        title: 'Kundenspezifische Datenportale für maximale Transparenz',
-        description: 'Für einen Finanzdienstleister setzte DataFabricator ein vollständig integriertes Kundenportal um. Über dieses Portal können Endkunden jederzeit auf ihre Daten zugreifen und interaktive Analysen durchführen.'
-      },
-      tracking: {
-        title: 'Fracht-Tracking in Echtzeit: AWB Online Tool',
-        challenge: 'Kunden standen vor der Herausforderung, Luftfrachtbriefe (AWBs) manuell zu verfolgen, was zeitaufwändig und fehleranfällig war. Sie benötigten ein Tool, das große Datenmengen effizient verarbeitet und eine einfache, automatisierte Lösung für das Tracking bietet.',
-        solution: 'Data Fabricator entwickelte ein AWB-Tracking-Tool, das eine automatisierte Verfolgung von AWBs ermöglicht. Es bietet ein visuelles Dashboard zur Statuskontrolle von Flügen und Sendungen mit farblicher Markierung, um Abweichungen schnell zu identifizieren. Das Tool ist mobil verfügbar und ermöglicht einen einfachen Datenimport via Excel- oder CSV-Dateien.',
-        result: 'Data Fabricator realisierte die Entwicklung des Tools, inklusive einer benutzerfreundlichen Oberfläche, die Echtzeit-Informationen zu Flügen, Buchungen und Ankünften bereitstellt. Zusätzlich wurde eine mobile Version entwickelt, um den Kunden maximale Flexibilität bei der Sendungsverfolgung zu bieten.'
+    label: 'REFERENZEN',
+    title: 'Letzte Projekte',
+    button: 'Projektbericht',
+    showcase: {
+      title: 'Fracht-Tracking in Echtzeit:\nAWB Online Tool',
+      sections: {
+        challenge: {
+          title: 'Die Ausgangslage:',
+          content: 'Kunden standen vor der Herausforderung, Luftfrachtbriefe (AWBs) manuell zu verfolgen, was zeitaufwändig und fehleranfällig war. Sie benötigten ein Tool, das große Datenmengen effizient verarbeitet und eine einfache, automatisierte Lösung für das Tracking bietet.'
+        },
+        solution: {
+          title: 'Unsere Lösung:',
+          content: 'Data Fabricator entwickelte ein AWB-Tracking-Tool, das eine automatisierte Verfolgung von AWBs ermöglicht. Es bietet ein visuelles Dashboard zur Statuskontrolle von Flügen und Sendungen mit farblicher Markierung, um Abweichungen schnell zu identifizieren. Das Tool ist mobil verfügbar und ermöglicht einen einfachen Datenimport via Excel- oder CSV-Dateien.'
+        },
+        result: {
+          title: 'Das Ergebnis:',
+          content: 'Data Fabricator realisierte die Entwicklung des Tools, inklusive einer benutzerfreundlichen Oberfläche, die Echtzeit-Informationen zu Flügen, Buchungen und Ankünften bereitstellt. Zusätzlich wurde eine mobile Version entwickelt, um den Kunden maximale Flexibilität bei der Sendungsverfolgung zu bieten.'
+        }
       }
     }
   },
@@ -146,16 +144,38 @@ export default {
   },
 
   contact: {
-    title: 'Kontaktieren Sie uns',
-    subtitle: 'Wir freuen uns auf Ihre Nachricht',
-    name: 'Name',
-    email: 'E-Mail',
-    message: 'Nachricht',
-    send: 'Nachricht senden',
-    address: 'Adresse',
-    directions: 'Anfahrt',
-    googleMaps: 'Google Maps',
-    appleMaps: 'Apple Maps'
+    title: 'Datenlösungen\nohne Umwege.',
+    subtitle: 'Jetzt unverbindlich Kontakt aufnehmen!',
+    buttonForm: 'Kontaktformular',
+    buttonWhatsApp: 'WhatsApp',
+    form: {
+      close: 'Schließen',
+      firstName: 'Vorname',
+      lastName: 'Nachname',
+      company: 'Unternehmen / Organisation',
+      email: 'E-Mail',
+      phone: 'Telefon',
+      topic: 'Thema / Anfrageart',
+      topicPlaceholder: 'Bitte wählen...',
+      topicOptions: {
+        digitalization: 'Digitalisierungsberatung / Strategie',
+        development: 'Individuelle Anwendung / Softwareentwicklung',
+        visualization: 'Datenvisualisierung / Dashboards',
+        engineering: 'Data Engineering / Schnittstellen / APIs',
+        workshop: 'Workshop / Audit / Sparring',
+        other: 'Sonstiges'
+      },
+      description: 'Kurzbeschreibung des Vorhabens',
+      descriptionPlaceholder: 'Beschreiben Sie Ihr Vorhaben in 3-8 Sätzen...',
+      descriptionHint: '3–8 Sätze reichen. Wenn vorhanden: Link zu Beispiel, Screenshots, Datenstruktur.',
+      consent: 'Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu.',
+      submit: 'Unverbindlich anfragen',
+      submitting: 'Wird gesendet...',
+      back: 'Zurück',
+      success: 'Danke! Wir melden uns i. d. R. innerhalb von 1–2 Werktagen.',
+      error: 'Bitte füllen Sie alle Pflichtfelder aus.',
+      required: '*'
+    }
   },
 
   faqs: {

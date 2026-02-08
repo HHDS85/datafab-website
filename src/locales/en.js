@@ -110,26 +110,24 @@ export default {
   },
 
   projects: {
-    title: 'Our Projects',
-    subtitle: 'Successful digitalization projects for our clients',
-    items: {
-      pricing: {
-        title: 'Efficient Pricing Through Automated Data Acquisition',
-        description: 'For a client in the insurance sector, Data Fabricator developed a fully automated solution to query price comparison data from online portals.'
-      },
-      forecasting: {
-        title: 'Interactive Visualization for Better Market Forecasts',
-        description: 'For a company providing long-term forecasts for the European energy market, Data Fabricator created a customized client portal.'
-      },
-      portal: {
-        title: 'Customized Data Portals for Maximum Transparency',
-        description: 'For a financial service provider, Data Fabricator implemented a fully integrated client portal. Through this portal, end customers can access their data at any time and perform interactive analyses.'
-      },
-      tracking: {
-        title: 'Real-Time Freight Tracking: AWB Online Tool',
-        challenge: 'Customers faced the difficulty of manually tracking Air Waybills (AWBs), which was time-consuming and error-prone. They needed a tool that could efficiently process large volumes of data and offer a simple, automated solution for tracking.',
-        solution: 'Data Fabricator developed an AWB tracking tool that enables automated tracking of AWBs. It provides a visual dashboard for status monitoring of flights and shipments, featuring color-coded indicators to quickly identify discrepancies. The tool is mobile-accessible and allows for easy data import via Excel or CSV files.',
-        result: 'Data Fabricator successfully developed the tool, including a user-friendly interface that delivers real-time information on flights, bookings, and arrivals. Additionally, a mobile version was created to offer customers maximum flexibility in shipment tracking.'
+    label: 'REFERENCES',
+    title: 'Recent Projects',
+    button: 'Project Report',
+    showcase: {
+      title: 'Real-Time Freight Tracking:\nAWB Online Tool',
+      sections: {
+        challenge: {
+          title: 'The Challenge:',
+          content: 'Customers faced the difficulty of manually tracking Air Waybills (AWBs), which was time-consuming and error-prone. They needed a tool that could efficiently process large volumes of data and offer a simple, automated solution for tracking.'
+        },
+        solution: {
+          title: 'Our Solution:',
+          content: 'Data Fabricator developed an AWB tracking tool that enables automated tracking of AWBs. It provides a visual dashboard for status monitoring of flights and shipments, featuring color-coded indicators to quickly identify discrepancies. The tool is mobile-accessible and allows for easy data import via Excel or CSV files.'
+        },
+        result: {
+          title: 'The Result:',
+          content: 'Data Fabricator successfully developed the tool, including a user-friendly interface that delivers real-time information on flights, bookings, and arrivals. Additionally, a mobile version was created to offer customers maximum flexibility in shipment tracking.'
+        }
       }
     }
   },
@@ -146,16 +144,38 @@ export default {
   },
 
   contact: {
-    title: 'Contact Us',
-    subtitle: 'We look forward to hearing from you',
-    name: 'Name',
-    email: 'Email',
-    message: 'Message',
-    send: 'Send Message',
-    address: 'Address',
-    directions: 'Directions',
-    googleMaps: 'Google Maps',
-    appleMaps: 'Apple Maps'
+    title: 'Data Solutions\nWithout Detours.',
+    subtitle: 'Get in touch with us today!',
+    buttonForm: 'Contact Form',
+    buttonWhatsApp: 'WhatsApp',
+    form: {
+      close: 'Close',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      company: 'Company / Organization',
+      email: 'Email',
+      phone: 'Phone',
+      topic: 'Subject / Request Type',
+      topicPlaceholder: 'Please select...',
+      topicOptions: {
+        digitalization: 'Digital Transformation Consulting / Strategy',
+        development: 'Custom Application / Software Development',
+        visualization: 'Data Visualization / Dashboards',
+        engineering: 'Data Engineering / Interfaces / APIs',
+        workshop: 'Workshop / Audit / Sparring',
+        other: 'Other'
+      },
+      description: 'Brief Description of Your Project',
+      descriptionPlaceholder: 'Describe your project in 3-8 sentences...',
+      descriptionHint: '3–8 sentences are sufficient. If available: link to example, screenshots, data structure.',
+      consent: 'I have read the privacy policy and agree to the processing of my information for handling this request.',
+      submit: 'Submit Inquiry',
+      submitting: 'Submitting...',
+      back: 'Back',
+      success: 'Thank you! We typically respond within 1–2 business days.',
+      error: 'Please fill in all required fields.',
+      required: '*'
+    }
   },
 
   faqs: {

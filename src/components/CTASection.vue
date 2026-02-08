@@ -4,13 +4,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20 items-start">
         <div class="flex flex-col gap-10 order-2 lg:order-1 max-w-[520px] lg:h-[500px] lg:justify-center">
           <div class="space-y-6">
-            <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1]">
-              Datenlösungen
-              ohne Umwege.
+            <h2 class="font-family-roboto font-light text-black text-4xl md:text-5xl tracking-tight leading-[1.1] whitespace-pre-line">
+              {{ t('contact.title') }}
             </h2>
 
             <p class="font-family-roboto font-normal text-gray-700 text-xl md:text-2xl leading-[1.3]">
-              Jetzt unverbindlich Kontakt aufnehmen!
+              {{ t('contact.subtitle') }}
             </p>
           </div>
 
@@ -19,7 +18,7 @@
               @click="showForm = true"
               class="h-11 px-10 font-family-jakarta font-normal text-base bg-[#242528] hover:bg-[#323438] text-white transition-all duration-300 rounded-lg"
             >
-              Kontaktformular
+              {{ t('contact.buttonForm') }}
             </button>
 
             <a
@@ -33,7 +32,7 @@
                 alt="WhatsApp icon"
                 src="/whatsappicon.svg"
               />
-              WhatsApp
+              {{ t('contact.buttonWhatsApp') }}
             </a>
           </div>
         </div>
@@ -79,8 +78,10 @@
 <script setup>
 import { ref } from 'vue';
 import { useScrollAnimation } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
 import ContactForm from './ContactForm.vue';
 
+const { t } = useI18n();
 const sectionRef = ref(null);
 const showForm = ref(false);
 

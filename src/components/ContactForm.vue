@@ -3,7 +3,7 @@
     <button
       @click="$emit('close')"
       class="absolute -top-2 -right-2 w-9 h-9 rounded-lg bg-[#273247] hover:bg-[#1e2536] text-white flex items-center justify-center transition-all duration-200 hover:scale-110 z-10 shadow-lg"
-      aria-label="Schließen"
+      :aria-label="t('contact.form.close')"
     >
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -13,7 +13,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
         <div class="flex flex-col gap-1.5">
           <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-            Vorname *
+            {{ t('contact.form.firstName') }} {{ t('contact.form.required') }}
           </label>
           <input
             v-model="formData.firstName"
@@ -26,7 +26,7 @@
 
         <div class="flex flex-col gap-1.5">
           <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-            Nachname *
+            {{ t('contact.form.lastName') }} {{ t('contact.form.required') }}
           </label>
           <input
             v-model="formData.lastName"
@@ -40,7 +40,7 @@
 
       <div class="flex flex-col gap-1.5">
         <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-          Unternehmen / Organisation *
+          {{ t('contact.form.company') }} {{ t('contact.form.required') }}
         </label>
         <input
           v-model="formData.company"
@@ -54,7 +54,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
         <div class="flex flex-col gap-1.5">
           <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-            E-Mail *
+            {{ t('contact.form.email') }} {{ t('contact.form.required') }}
           </label>
           <input
             v-model="formData.email"
@@ -67,7 +67,7 @@
 
         <div class="flex flex-col gap-1.5">
           <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-            Telefon
+            {{ t('contact.form.phone') }}
           </label>
           <input
             v-model="formData.phone"
@@ -80,36 +80,36 @@
 
       <div class="flex flex-col gap-1.5">
         <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-          Thema / Anfrageart *
+          {{ t('contact.form.topic') }} {{ t('contact.form.required') }}
         </label>
         <select
           v-model="formData.topic"
           required
           class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-sm appearance-none bg-white cursor-pointer"
         >
-          <option value="">Bitte wählen...</option>
-          <option value="digitalization">Digitalisierungsberatung / Strategie</option>
-          <option value="development">Individuelle Anwendung / Softwareentwicklung</option>
-          <option value="visualization">Datenvisualisierung / Dashboards</option>
-          <option value="engineering">Data Engineering / Schnittstellen / APIs</option>
-          <option value="workshop">Workshop / Audit / Sparring</option>
-          <option value="other">Sonstiges</option>
+          <option value="">{{ t('contact.form.topicPlaceholder') }}</option>
+          <option value="digitalization">{{ t('contact.form.topicOptions.digitalization') }}</option>
+          <option value="development">{{ t('contact.form.topicOptions.development') }}</option>
+          <option value="visualization">{{ t('contact.form.topicOptions.visualization') }}</option>
+          <option value="engineering">{{ t('contact.form.topicOptions.engineering') }}</option>
+          <option value="workshop">{{ t('contact.form.topicOptions.workshop') }}</option>
+          <option value="other">{{ t('contact.form.topicOptions.other') }}</option>
         </select>
       </div>
 
       <div class="flex flex-col gap-1.5">
         <label class="font-family-jakarta font-medium text-[#1e1d1b] text-xs">
-          Kurzbeschreibung des Vorhabens *
+          {{ t('contact.form.description') }} {{ t('contact.form.required') }}
         </label>
         <textarea
           v-model="formData.description"
           required
           rows="4"
           class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:border-[#273247] focus:ring-2 focus:ring-[#273247]/20 outline-none transition-all font-family-jakarta text-sm resize-none"
-          placeholder="Beschreiben Sie Ihr Vorhaben in 3-8 Sätzen..."
+          :placeholder="t('contact.form.descriptionPlaceholder')"
         ></textarea>
         <p class="font-family-jakarta text-xs text-gray-500">
-          3–8 Sätze reichen. Wenn vorhanden: Link zu Beispiel, Screenshots, Datenstruktur.
+          {{ t('contact.form.descriptionHint') }}
         </p>
       </div>
 
@@ -122,7 +122,7 @@
           class="mt-0.5 w-4 h-4 accent-[#273247] cursor-pointer"
         />
         <label for="consent" class="font-family-jakarta text-xs text-[#1e1d1b]/80 cursor-pointer">
-          Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. *
+          {{ t('contact.form.consent') }} {{ t('contact.form.required') }}
         </label>
       </div>
 
@@ -142,7 +142,7 @@
           :disabled="isSubmitting"
           class="h-11 px-8 font-family-jakarta font-normal text-sm bg-[#242528] text-white hover:bg-[#323438] rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {{ isSubmitting ? 'Wird gesendet...' : 'Unverbindlich anfragen' }}
+          {{ isSubmitting ? t('contact.form.submitting') : t('contact.form.submit') }}
         </button>
 
         <button
@@ -150,14 +150,14 @@
           type="button"
           class="h-11 px-8 font-family-jakarta font-normal text-sm border-2 border-[#273247] text-[#273247] hover:bg-[#273247]/5 rounded-lg transition-all duration-300"
         >
-          Zurück
+          {{ t('contact.form.back') }}
         </button>
       </div>
 
       <Transition name="fade">
-        <div v-if="submitted" class="mt-4 p-4 bg-green-50 border border-green-200">
+        <div v-if="submitted" class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
           <p class="font-family-jakarta text-green-800 text-sm">
-            Danke! Wir melden uns i. d. R. innerhalb von 1–2 Werktagen.
+            {{ t('contact.form.success') }}
           </p>
         </div>
       </Transition>
@@ -167,7 +167,9 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
+import { useI18n } from '@/composables/core/useI18n';
 
+const { t } = useI18n();
 defineEmits(['close']);
 
 const formData = reactive({
@@ -191,7 +193,7 @@ const handleSubmit = async () => {
   }
 
   if (!formData.firstName || !formData.lastName || !formData.company || !formData.email || !formData.topic || !formData.description || !formData.consent) {
-    alert('Bitte füllen Sie alle Pflichtfelder aus.');
+    alert(t('contact.form.error'));
     return;
   }
 
