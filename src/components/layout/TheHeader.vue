@@ -25,7 +25,7 @@
                   item.active ? 'font-bold text-navy-primary' : 'font-normal text-navy-primary/70 group-hover:text-navy-primary'
                 ]"
               >
-                {{ item.label }}
+                {{ t(item.labelKey || item.label) }}
                 <span
                   :class="[
                     'absolute -bottom-1 left-0 h-[2px] bg-navy-primary transition-all duration-300 ease-out',
@@ -36,12 +36,7 @@
             </a>
           </nav>
 
-          <button
-            class="hidden md:flex items-center gap-2 transition-all duration-300 px-6 h-9 rounded-lg bg-navy-primary hover:bg-navy-secondary text-white"
-          >
-            <img class="w-4 h-4" alt="Language" src="/language.svg" />
-            <span class="font-jakarta font-medium text-sm">ENG</span>
-          </button>
+          <LanguageSwitcher class="hidden md:block text-navy-primary" />
 
           <button
             @click="toggleMenu"
@@ -90,7 +85,7 @@
                     item.active ? 'font-bold text-navy-primary' : 'font-normal text-navy-primary/70 group-hover:text-navy-primary'
                   ]"
                 >
-                  {{ item.label }}
+                  {{ t(item.labelKey || item.label) }}
                 </span>
                 <svg
                   class="w-4 h-4 text-navy-primary/40 group-hover:text-navy-primary/80 transform group-hover:translate-x-1 transition-all duration-200"
@@ -102,9 +97,8 @@
                 </svg>
               </a>
 
-              <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-navy-primary hover:bg-navy-secondary text-white transition-all duration-200 rounded">
-                <img class="w-4 h-4" alt="Language" src="/language.svg" />
-                <span class="font-jakarta font-medium text-sm">ENG</span>
+              <div class="mt-5 flex items-center justify-center">
+                <LanguageSwitcher class="text-navy-primary" />
               </div>
             </nav>
           </div>
@@ -117,7 +111,10 @@
 <script setup>
 import { useNavigation } from '@/composables';
 import { navigationItems } from '@/data/navigation.data';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
+import { useI18n } from '@/composables/core/useI18n';
 
+const { t } = useI18n();
 const { isMenuOpen, isScrolled, items, toggleMenu, closeMenu } = useNavigation(navigationItems);
 </script>
 

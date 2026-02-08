@@ -9,13 +9,13 @@
             src="/footerlogo.svg"
           />
           <p class="font-jakarta font-normal text-white/60 text-sm sm:text-base leading-[1.7] max-w-[300px]">
-            Ihr Partner für innovative und maßgeschneiderte Digitalisierungsstrategien.
+            {{ t('footer.description') }}
           </p>
         </div>
 
         <div class="flex flex-col gap-5 sm:gap-6">
           <h3 class="font-jakarta font-semibold text-white text-base sm:text-lg">
-            Kontakt
+            {{ t('footer.contact') }}
           </h3>
           <div class="flex flex-col gap-3 sm:gap-3.5">
             <div class="flex flex-col gap-2">
@@ -63,7 +63,7 @@
 
         <div class="flex flex-col gap-5 sm:gap-6">
           <h3 class="font-jakarta font-semibold text-white text-base sm:text-lg">
-            Rechtliches
+            {{ t('footer.legal') }}
           </h3>
           <nav class="flex flex-col gap-3 sm:gap-3.5">
             <router-link
@@ -73,7 +73,7 @@
               class="font-jakarta font-normal text-white/70 text-sm sm:text-[15px] transition-all duration-300 w-fit cursor-pointer group relative"
             >
               <span class="relative group-hover:text-white">
-                {{ link.label }}
+                {{ t(link.labelKey) }}
                 <span class="absolute -bottom-1 left-0 h-[2px] bg-white transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
               </span>
             </router-link>
@@ -85,7 +85,7 @@
 
       <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
         <p class="font-jakarta font-normal text-white/40 text-xs sm:text-sm text-center sm:text-left">
-          © {{ currentYear }} {{ COMPANY_INFO.NAME }}. Alle Rechte vorbehalten.
+          {{ t('footer.copyright', { year: currentYear }) }}
         </p>
         <div class="flex items-center gap-4">
           <a
@@ -108,6 +108,9 @@
 <script setup>
 import { computed } from 'vue';
 import { EXTERNAL_LINKS, ROUTE_PATHS } from '@/constants';
+import { useI18n } from '@/composables/core/useI18n';
+
+const { t, locale } = useI18n();
 
 const COMPANY_INFO = {
   NAME: 'Data Fabricator GmbH',
@@ -125,9 +128,9 @@ const address = `${COMPANY_INFO.ADDRESS.STREET}, ${COMPANY_INFO.ADDRESS.CITY}, $
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 const appleMapsUrl = `https://maps.apple.com/?address=${encodeURIComponent(address)}`;
 
-const legalLinks = [
-  { label: 'Impressum', to: ROUTE_PATHS.IMPRESSUM },
-  { label: 'Datenschutz', to: ROUTE_PATHS.DATENSCHUTZ },
-  { label: 'AGB', to: ROUTE_PATHS.AGB }
-];
+const legalLinks = computed(() => [
+  { labelKey: 'nav.imprint', to: `/${locale.value}${ROUTE_PATHS.IMPRESSUM}` },
+  { labelKey: 'nav.privacy', to: `/${locale.value}${ROUTE_PATHS.DATENSCHUTZ}` },
+  { labelKey: 'nav.terms', to: `/${locale.value}${ROUTE_PATHS.AGB}` }
+]);
 </script>

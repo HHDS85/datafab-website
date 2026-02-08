@@ -2,19 +2,19 @@ import { SECTION_IDS } from '@/constants';
 
 export const navigationItems = [
   {
-    label: 'STARTSEITE',
+    labelKey: 'nav.home',
     href: `#${SECTION_IDS.START}`
   },
   {
-    label: 'LEISTUNGEN',
+    labelKey: 'nav.services',
     href: `#${SECTION_IDS.SERVICES}`
   },
   {
-    label: 'REFERENZEN',
+    labelKey: 'nav.projects',
     href: `#${SECTION_IDS.PROJECTS}`
   },
   {
-    label: 'FAQ',
-    href: `#${SECTION_IDS.FAQ}`
+    labelKey: 'nav.faq',
+    href: '#faq'
   }
 ];

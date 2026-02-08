@@ -3,38 +3,31 @@
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="mb-10">
         <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase">
-          WILLKOMMEN
+          {{ t('welcome.label') }}
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20">
         <div class="flex flex-col justify-start">
           <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl tracking-tight leading-[1.15]">
-            Herzlich Willkommen
-            <br />
-            bei Data Fabricator
+            {{ t('welcome.title') }}
           </h2>
         </div>
 
         <div class="flex flex-col justify-start gap-6">
           <p class="font-family-jakarta font-normal text-[#1e1d1b] text-base leading-[1.75]">
-            Data Fabricator ist Ihr Partner für innovative und
-            maßgeschneiderte Digitalisierungsstrategien.
-            Wir setzen auf eine enge Zusammenarbeit, um Ihre Ideen in
-            erfolgreiche digitale Lösungen zu verwandeln.
+            {{ t('welcome.intro') }}
           </p>
 
           <p class="font-family-jakarta font-normal text-[#1e1d1b] text-base leading-[1.75]">
-            Unser Leistungsspektrum reicht von der umfassenden
-            Digitalisierungsberatung über die Entwicklung individueller
-            Anwendungen bis hin zur Visualisierung komplexer Daten.
+            {{ t('welcome.description') }}
           </p>
         </div>
       </div>
 
       <div class="mt-14">
         <button class="bg-[#242528] text-white hover:bg-[#323438] h-11 px-10 font-family-jakarta font-normal text-base transition-all duration-300">
-          Über uns
+          {{ t('welcome.button') }}
         </button>
       </div>
     </div>
@@ -44,7 +37,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useScrollAnimation } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
 
+const { t } = useI18n();
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 </script>
