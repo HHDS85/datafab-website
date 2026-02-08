@@ -52,17 +52,21 @@
             <div class="flex items-center justify-between gap-12">
               <button
                 @click="previousSlide"
-                class="nav-arrow transform rotate-180 w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+                class="nav-arrow w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
                 aria-label="Previous testimonial"
               >
-                <img src="/testimonialnavigation-2@2x.png" alt="Previous" class="w-full h-full" />
+                <svg class="w-6 h-6 text-[#1e1d1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
               </button>
               <button
                 @click="nextSlide"
-                class="nav-arrow w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+                class="nav-arrow w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
                 aria-label="Next testimonial"
               >
-                <img src="/testimonialnavigation-2@2x.png" alt="Next" class="w-full h-full" />
+                <svg class="w-6 h-6 text-[#1e1d1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             </div>
           </div>

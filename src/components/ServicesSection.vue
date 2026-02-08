@@ -15,17 +15,21 @@
         <div class="hidden lg:flex items-center justify-between gap-12 mt-auto mb-2">
           <button
             @click="scrollLeft"
-            class="nav-arrow transform rotate-180 w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+            class="nav-arrow w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
             aria-label="Scroll left"
           >
-            <img src="/testimonialnavigation-2@2x.png" alt="Previous" class="w-full h-full" />
+            <svg class="w-6 h-6 text-[#273247]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
           </button>
           <button
             @click="scrollRight"
-            class="nav-arrow w-9 h-9 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+            class="nav-arrow w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
             aria-label="Scroll right"
           >
-            <img src="/testimonialnavigation-2@2x.png" alt="Next" class="w-full h-full" />
+            <svg class="w-6 h-6 text-[#273247]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
           </button>
         </div>
       </div>
@@ -94,12 +98,12 @@
           <div class="flex justify-center items-center gap-3.5 mt-7">
             <button
               @click="prevSlide"
-              class="w-9 h-9 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors rounded-lg"
+              class="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
               :disabled="currentSlide === 0"
-              :class="{ 'opacity-50 cursor-not-allowed': currentSlide === 0 }"
+              :class="{ 'opacity-30 cursor-not-allowed': currentSlide === 0 }"
             >
-              <svg class="w-4 h-4 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              <svg class="w-5 h-5 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
@@ -115,12 +119,12 @@
 
             <button
               @click="nextSlide"
-              class="w-9 h-9 flex items-center justify-center bg-[#273248]/10 hover:bg-[#273248]/20 transition-colors rounded-lg"
+              class="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
               :disabled="currentSlide >= maxSlide"
-              :class="{ 'opacity-50 cursor-not-allowed': currentSlide >= maxSlide }"
+              :class="{ 'opacity-30 cursor-not-allowed': currentSlide >= maxSlide }"
             >
-              <svg class="w-4 h-4 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <svg class="w-5 h-5 text-[#273248]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
