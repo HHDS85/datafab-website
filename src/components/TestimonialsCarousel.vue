@@ -3,11 +3,10 @@
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="mb-14">
         <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-7">
-          TESTIMONIAL
+          {{ t('testimonials.label') }}
         </p>
-        <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl tracking-tight leading-[1.15]">
-          Das sagen unsere<br />
-          Kunden und Partner
+        <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl tracking-tight leading-[1.15] whitespace-pre-line">
+          {{ t('testimonials.title') }}
         </h2>
       </div>
 
@@ -75,24 +74,34 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { testimonials as testimonialsData } from '@/data/testimonials.data';
 import { useScrollAnimation } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
+
+const { t } = useI18n();
 
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 
 const currentIndex = ref(0);
 
-const currentTestimonial = computed(() => testimonialsData[currentIndex.value]);
+const testimonialsData = computed(() => t('testimonials.items'));
+
+const currentTestimonial = computed(() => {
+  const items = testimonialsData.value;
+  return {
+    ...items[currentIndex.value],
+    image: '/testimonialimage.png'
+  };
+});
 
 const previousSlide = () => {
   currentIndex.value = currentIndex.value === 0
-    ? testimonialsData.length - 1
+    ? testimonialsData.value.length - 1
     : currentIndex.value - 1;
 };
 
 const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % testimonialsData.length;
+  currentIndex.value = (currentIndex.value + 1) % testimonialsData.value.length;
 };
 </script>
 

@@ -20,158 +20,158 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
           </svg>
-          Zurück
+          {{ t('legal.back') }}
         </router-link>
       </div>
 
       <h1 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] mb-10 md:mb-12">
-        Allgemeine Geschäftsbedingungen (B2B)
+        {{ t('legal.terms.title') }}
       </h1>
 
       <div class="space-y-8 md:space-y-10">
         <p class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7]">
-          Stand: 08.02.2026
+          {{ t('legal.terms.lastUpdated') }}
         </p>
 
         <section>
           <p class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7]">
-            Diese AGB gelten für Verträge zwischen der Data Fabricator GmbH („Auftragnehmer") und ihren Kunden („Auftraggeber"), soweit der Auftraggeber Unternehmer im Sinne des § 14 BGB ist.
+            {{ t('legal.terms.intro') }}
           </p>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            1. Geltungsbereich
+            {{ t('legal.terms.scope') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Diese AGB gelten für alle Angebote, Leistungen und Verträge des Auftragnehmers.</p>
-            <p>Abweichende Bedingungen des Auftraggebers gelten nur, wenn der Auftragnehmer ihnen schriftlich zustimmt.</p>
+            <p>{{ t('legal.terms.scopeText1') }}</p>
+            <p>{{ t('legal.terms.scopeText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            2. Leistungen & Leistungsumfang
+            {{ t('legal.terms.services') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Der konkrete Leistungsumfang ergibt sich aus Angebot, Leistungsbeschreibung, Statement of Work (SoW) oder Projektvertrag.</p>
-            <p>Der Auftragnehmer schuldet, soweit nicht ausdrücklich anders vereinbart, eine Dienstleistung (Beratung/Entwicklung nach Aufwand) und keine bestimmte wirtschaftliche Erfolgswirkung.</p>
+            <p>{{ t('legal.terms.servicesText1') }}</p>
+            <p>{{ t('legal.terms.servicesText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            3. Mitwirkungspflichten des Auftraggebers
+            {{ t('legal.terms.cooperation') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Der Auftraggeber stellt alle zur Leistungserbringung erforderlichen Informationen, Zugänge und Inhalte rechtzeitig bereit.</p>
-            <p>Verzögerungen aufgrund fehlender Mitwirkung verlängern vereinbarte Fristen angemessen; Mehraufwände können zusätzlich vergütet werden.</p>
+            <p>{{ t('legal.terms.cooperationText1') }}</p>
+            <p>{{ t('legal.terms.cooperationText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            4. Vergütung, Abrechnung, Zahlungsbedingungen
+            {{ t('legal.terms.payment') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Vergütung nach [Tagessatz / Festpreis / Retainer] gemäß Angebot.</p>
-            <p>Rechnungen sind innerhalb von [z. B. 14 Tagen] ohne Abzug fällig.</p>
-            <p>Der Auftragnehmer darf angemessene Abschlagszahlungen verlangen.</p>
-            <p>Bei Zahlungsverzug gelten die gesetzlichen Verzugszinsen; der Auftragnehmer kann Leistungen bis zur Zahlung aussetzen.</p>
+            <p>{{ t('legal.terms.paymentText1') }}</p>
+            <p>{{ t('legal.terms.paymentText2') }}</p>
+            <p>{{ t('legal.terms.paymentText3') }}</p>
+            <p>{{ t('legal.terms.paymentText4') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            5. Change Requests (Änderungen)
+            {{ t('legal.terms.changes') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Änderungen des Leistungsumfangs bedürfen der Textform.</p>
-            <p>Der Auftragnehmer bewertet Auswirkungen auf Aufwand, Zeitplan und Kosten; die Umsetzung erfolgt erst nach Freigabe durch den Auftraggeber.</p>
+            <p>{{ t('legal.terms.changesText1') }}</p>
+            <p>{{ t('legal.terms.changesText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            6. Abnahme (bei Werkleistungen)
+            {{ t('legal.terms.acceptance') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Soweit werkvertragliche Leistungen (z. B. definierte Software-Deliverables) vereinbart sind, erfolgt eine Abnahme nach Bereitstellung und angemessener Prüfzeit [z. B. 10 Werktage].</p>
-            <p>Wesentliche Mängel berechtigen zur Abnahmeverweigerung; unwesentliche Mängel nicht.</p>
+            <p>{{ t('legal.terms.acceptanceText1') }}</p>
+            <p>{{ t('legal.terms.acceptanceText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            7. Nutzungsrechte (IP) & Vorarbeiten
+            {{ t('legal.terms.ip') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Sofern nicht anders vereinbart, erhält der Auftraggeber nach vollständiger Zahlung die für den Vertragszweck erforderlichen Nutzungsrechte an den erstellten Arbeitsergebnissen.</p>
-            <p>Vorbestehende Tools, Frameworks, Bibliotheken, Templates, Know-how und allgemeine Methoden des Auftragnehmers bleiben dessen Eigentum; der Auftragnehmer kann diese weiterhin nutzen.</p>
-            <p>Open-Source-Komponenten unterliegen den jeweiligen Lizenzbedingungen.</p>
+            <p>{{ t('legal.terms.ipText1') }}</p>
+            <p>{{ t('legal.terms.ipText2') }}</p>
+            <p>{{ t('legal.terms.ipText3') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            8. Vertraulichkeit
+            {{ t('legal.terms.confidentiality') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Beide Parteien verpflichten sich zur Vertraulichkeit über als vertraulich gekennzeichnete oder erkennbar vertrauliche Informationen.</p>
-            <p>Ausgenommen sind Informationen, die öffentlich bekannt sind oder rechtmäßig von Dritten erlangt wurden.</p>
+            <p>{{ t('legal.terms.confidentialityText1') }}</p>
+            <p>{{ t('legal.terms.confidentialityText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            9. Haftung
+            {{ t('legal.terms.liability') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit.</p>
-            <p>Bei leichter Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und begrenzt auf den typischerweise vorhersehbaren Schaden.</p>
-            <p>Eine Haftung für entgangenen Gewinn, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit gesetzlich zulässig.</p>
-            <p>Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.</p>
+            <p>{{ t('legal.terms.liabilityText1') }}</p>
+            <p>{{ t('legal.terms.liabilityText2') }}</p>
+            <p>{{ t('legal.terms.liabilityText3') }}</p>
+            <p>{{ t('legal.terms.liabilityText4') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            10. Gewährleistung / Mängel
+            {{ t('legal.terms.warranty') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Bei Werkleistungen gelten die gesetzlichen Gewährleistungsrechte, soweit nicht abweichend vereinbart.</p>
-            <p>Der Auftraggeber hat Mängel unverzüglich mitzuteilen und dem Auftragnehmer Gelegenheit zur Nacherfüllung zu geben.</p>
+            <p>{{ t('legal.terms.warrantyText1') }}</p>
+            <p>{{ t('legal.terms.warrantyText2') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            11. Laufzeit & Kündigung
+            {{ t('legal.terms.termination') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Projektverträge enden mit Erbringung der vereinbarten Leistungen.</p>
-            <p>Retainer/Dauerschuldverhältnisse sind mit Frist [z. B. 4 Wochen zum Monatsende] kündbar, soweit nicht anders vereinbart.</p>
-            <p>Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.</p>
+            <p>{{ t('legal.terms.terminationText1') }}</p>
+            <p>{{ t('legal.terms.terminationText2') }}</p>
+            <p>{{ t('legal.terms.terminationText3') }}</p>
           </div>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            12. Referenznennung
+            {{ t('legal.terms.reference') }}
           </h2>
           <p class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7]">
-            Der Auftragnehmer darf den Auftraggeber als Referenz nennen (Logo/Name), sofern der Auftraggeber dem nicht in Textform widerspricht. [optional: vorherige Freigabe erforderlich]
+            {{ t('legal.terms.referenceText') }}
           </p>
         </section>
 
         <section>
           <h2 class="font-family-roboto font-medium text-[#273247] text-xl md:text-2xl tracking-tight leading-[1.2] mb-3">
-            13. Schlussbestimmungen
+            {{ t('legal.terms.final') }}
           </h2>
           <div class="font-family-jakarta text-[#1e1d1b]/70 text-sm md:text-base leading-[1.7] space-y-2">
-            <p>Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts.</p>
-            <p>Gerichtsstand ist [Hamburg / Norderstedt / Kiel], sofern der Auftraggeber Kaufmann ist.</p>
-            <p>Sollte eine Bestimmung unwirksam sein, bleibt der Vertrag im Übrigen wirksam.</p>
+            <p>{{ t('legal.terms.finalText1') }}</p>
+            <p>{{ t('legal.terms.finalText2') }}</p>
+            <p>{{ t('legal.terms.finalText3') }}</p>
           </div>
         </section>
 
@@ -181,6 +181,9 @@
 </template>
 
 <script setup>
+import { useI18n } from '@/composables/core/useI18n';
+
+const { t } = useI18n();
 </script>
 
 <style scoped>
