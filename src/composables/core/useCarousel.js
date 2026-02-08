@@ -11,8 +11,12 @@ export function useCarousel(items, options = {}) {
   const currentIndex = ref(0);
   let autoplayTimer = null;
 
-  const currentItem = computed(() => items[currentIndex.value]);
-  const totalItems = computed(() => items.length);
+  const itemsArray = computed(() => {
+    return items.value || items;
+  });
+
+  const currentItem = computed(() => itemsArray.value[currentIndex.value]);
+  const totalItems = computed(() => itemsArray.value.length);
   const hasNext = computed(() => loop || currentIndex.value < totalItems.value - 1);
   const hasPrevious = computed(() => loop || currentIndex.value > 0);
 
