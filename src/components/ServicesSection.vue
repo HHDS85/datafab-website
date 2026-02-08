@@ -1,9 +1,9 @@
 <template>
-  <section ref="sectionRef" id="leistungen" class="relative w-full py-20 scroll-animate">
+  <section ref="sectionRef" id="leistungen" class="relative w-full py-16 md:py-20 scroll-animate">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
-      <div class="mb-14 flex flex-col lg:flex-row items-start justify-between gap-8">
+      <div class="mb-10 md:mb-12 lg:mb-14 flex flex-col lg:flex-row items-start justify-between gap-6 md:gap-8">
         <div>
-          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-7">
+          <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-6 md:mb-7">
             {{ t('services.label') }}
           </p>
           <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl tracking-tight leading-[1.15]">
@@ -34,21 +34,21 @@
         </div>
       </div>
 
-      <div class="relative mb-14 -mr-6 lg:-mr-12 xl:-mr-16">
-        <div ref="scrollContainer" class="hidden lg:flex gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
+      <div class="relative mb-10 md:mb-12 lg:mb-14 -mr-6 lg:-mr-12 xl:-mr-16">
+        <div ref="scrollContainer" class="hidden lg:flex gap-4 lg:gap-5 overflow-x-auto pb-4 scrollbar-hide scroll-smooth">
           <div
             v-for="(service, index) in servicesData"
             :key="index"
-            class="bg-[#273248] min-h-[340px] flex flex-col flex-shrink-0 w-[280px] xl:w-[300px] rounded-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+            class="bg-[#273248] min-h-[320px] lg:min-h-[340px] flex flex-col flex-shrink-0 w-[260px] lg:w-[280px] xl:w-[300px] rounded-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
           >
-            <div class="p-7 xl:p-8 pb-7 flex flex-col h-full">
+            <div class="p-6 lg:p-7 xl:p-8 flex flex-col h-full">
               <div class="mb-4">
-                <span class="font-family-jakarta font-normal text-white/60 text-lg">
+                <span class="font-family-jakarta font-normal text-white/60 text-base lg:text-lg">
                   {{ service.number }}
                 </span>
               </div>
-              <div class="flex flex-col gap-5">
-                <h3 class="font-family-jakarta font-semibold text-white text-lg xl:text-xl leading-[1.4] whitespace-pre-line min-h-[52px] flex items-start">
+              <div class="flex flex-col gap-4 lg:gap-5">
+                <h3 class="font-family-jakarta font-semibold text-white text-base lg:text-lg xl:text-xl leading-[1.4] whitespace-pre-line min-h-[48px] lg:min-h-[52px] flex items-start">
                   {{ t(service.titleKey) }}
                 </h3>
                 <p class="font-family-jakarta font-normal text-white/75 text-sm xl:text-base leading-[1.6]">
@@ -74,15 +74,15 @@
                 class="flex-shrink-0 px-2"
                 :class="slideClass"
               >
-                <div class="bg-[#273248] min-h-[340px] flex flex-col rounded-xl">
-                  <div class="p-7 pb-6 flex flex-col h-full">
-                    <div class="mb-3.5">
-                      <span class="font-family-jakarta font-normal text-white/60 text-base">
+                <div class="bg-[#273248] min-h-[320px] md:min-h-[340px] flex flex-col rounded-xl shadow-lg">
+                  <div class="p-6 md:p-7 flex flex-col h-full">
+                    <div class="mb-3 md:mb-3.5">
+                      <span class="font-family-jakarta font-normal text-white/60 text-sm md:text-base">
                         {{ service.number }}
                       </span>
                     </div>
-                    <div class="flex flex-col gap-4">
-                      <h3 class="font-family-jakarta font-semibold text-white text-lg leading-[1.4] whitespace-pre-line">
+                    <div class="flex flex-col gap-3.5 md:gap-4">
+                      <h3 class="font-family-jakarta font-semibold text-white text-base md:text-lg leading-[1.4] whitespace-pre-line">
                         {{ t(service.titleKey) }}
                       </h3>
                       <p class="font-family-jakarta font-normal text-white/75 text-sm leading-[1.6]">

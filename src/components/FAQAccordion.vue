@@ -1,13 +1,13 @@
 <template>
-  <section ref="sectionRef" id="faq" class="relative w-full py-20 scroll-animate">
+  <section ref="sectionRef" id="faq" class="relative w-full py-16 md:py-20 scroll-animate">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-20">
-        <div class="flex flex-col gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 xl:gap-20">
+        <div class="flex flex-col gap-6 md:gap-8">
           <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl tracking-tight leading-[1.15]">
             {{ t('faqs.title') }}
           </h2>
 
-          <p class="font-family-jakarta font-normal text-[#0f0e0e] text-base leading-[1.7] max-w-md">
+          <p class="font-family-jakarta font-normal text-[#0f0e0e] text-sm md:text-base leading-[1.65] md:leading-[1.7] max-w-md">
             {{ t('faqs.subtitle') }}
           </p>
         </div>
