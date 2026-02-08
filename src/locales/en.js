@@ -23,9 +23,24 @@ export default {
   },
 
   hero: {
-    title: 'Innovative Digital Solutions for Your Business',
-    subtitle: 'Your partner for innovative and customized digitalization strategies.',
-    cta: 'Get Started'
+    headline: 'WELCOME',
+    title: 'We transform technical challenges into tangible success.',
+    primaryCta: 'View All Cases',
+    secondaryCta: 'Book Appointment',
+    highlights: [
+      {
+        title: 'Self-Driving Cars',
+        text: ' – A self-driving car generates up to 4 terabytes of data daily through sensors, cameras, and LIDAR technology.'
+      },
+      {
+        title: 'IoT Devices',
+        text: ' – By 2025, over 75 billion IoT devices will be in operation worldwide, continuously generating data.'
+      },
+      {
+        title: 'Streaming Services',
+        text: ' – Netflix processes over 15 petabytes of data daily for personalized recommendations and content streaming.'
+      }
+    ]
   },
 
   welcome: {
@@ -37,8 +52,35 @@ export default {
   },
 
   services: {
+    label: 'SERVICES',
     title: 'Our Services',
-    subtitle: 'Customized solutions for your digital transformation',
+    subtitle: 'Overview',
+    cards: {
+      consulting: {
+        title: 'Digital\nTransformation\nConsulting',
+        description: 'We support you from the initial idea to the finished product, creating real value for your company.'
+      },
+      development: {
+        title: 'Application\nDevelopment',
+        description: 'Cutting-edge technologies in frontend and backend guarantee maximum efficiency and reliability.'
+      },
+      visualization: {
+        title: 'Data\nVisualization',
+        description: 'With interactive dashboards and charts, we transform complex information into clear, understandable visualizations.'
+      },
+      dataAcquisition: {
+        title: 'Automated\nData Acquisition',
+        description: 'Do you need precise data? We retrieve it for you—fully automated, reliable, and of the highest quality.'
+      },
+      interfaces: {
+        title: 'Data\nInterfaces',
+        description: 'Seamless integration of third-party services and customized API development for your systems.'
+      },
+      hosting: {
+        title: 'Hosting &\nMaintenance',
+        description: 'Entrust the technical side to us. From hosting to ongoing maintenance.'
+      }
+    },
     items: {
       consulting: {
         title: 'Digital Transformation Consulting',

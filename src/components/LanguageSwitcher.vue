@@ -2,10 +2,15 @@
   <div class="relative">
     <button
       @click="toggleDropdown"
-      class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10"
+      :class="[
+        'flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 border',
+        isDark
+          ? 'bg-white/5 hover:bg-white/10 border-white/10 text-white'
+          : 'bg-navy-primary hover:bg-navy-secondary border-navy-primary text-white'
+      ]"
       aria-label="Language switcher"
     >
-      <img src="/language.svg" alt="" class="w-5 h-5" />
+      <img src="/language.svg" alt="" class="w-4 h-4" :class="{ 'brightness-0 invert': !isDark }" />
       <span class="font-family-jakarta text-sm font-medium uppercase">{{ locale }}</span>
       <svg
         class="w-4 h-4 transition-transform duration-200"
@@ -34,7 +39,7 @@
           v-for="lang in languages"
           :key="lang.code"
           @click="changeLanguage(lang.code)"
-          class="w-full px-4 py-3 text-left font-family-jakarta text-sm hover:bg-white/5 transition-colors duration-200 flex items-center justify-between"
+          class="w-full px-4 py-3 text-left font-family-jakarta text-sm text-white hover:bg-white/5 transition-colors duration-200 flex items-center justify-between"
           :class="{ 'bg-white/10': locale === lang.code }"
         >
           <span>{{ lang.name }}</span>
@@ -46,11 +51,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/composables/core/useI18n';
+
+const props = defineProps({
+  dark: {
+    type: Boolean,
+    default: false
+  }
+});
 
 const { locale, setLocale } = useI18n();
 const isOpen = ref(false);
+const isDark = computed(() => props.dark);
 
 const languages = [
   { code: 'de', name: 'Deutsch' },

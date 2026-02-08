@@ -4,12 +4,12 @@
       <div class="mb-14 flex flex-col lg:flex-row items-start justify-between gap-8">
         <div>
           <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-7">
-            SERVICES
+            {{ t('services.label') }}
           </p>
           <h2 class="font-family-roboto font-light text-[#273247] text-4xl md:text-5xl tracking-tight leading-[1.15]">
-            Unsere Leistungen
+            {{ t('services.title') }}
             <br />
-            im Überblick
+            {{ t('services.subtitle') }}
           </h2>
         </div>
         <div class="hidden lg:flex items-center justify-between gap-12 mt-auto mb-2">
@@ -45,10 +45,10 @@
               </div>
               <div class="flex flex-col gap-5">
                 <h3 class="font-family-jakarta font-semibold text-white text-lg xl:text-xl leading-[1.4] whitespace-pre-line min-h-[52px] flex items-start">
-                  {{ service.title }}
+                  {{ t(service.titleKey) }}
                 </h3>
                 <p class="font-family-jakarta font-normal text-white/75 text-sm xl:text-base leading-[1.6]">
-                  {{ service.description }}
+                  {{ t(service.descriptionKey) }}
                 </p>
               </div>
             </div>
@@ -79,10 +79,10 @@
                     </div>
                     <div class="flex flex-col gap-4">
                       <h3 class="font-family-jakarta font-semibold text-white text-lg leading-[1.4] whitespace-pre-line">
-                        {{ service.title }}
+                        {{ t(service.titleKey) }}
                       </h3>
                       <p class="font-family-jakarta font-normal text-white/75 text-sm leading-[1.6]">
-                        {{ service.description }}
+                        {{ t(service.descriptionKey) }}
                       </p>
                     </div>
                   </div>
@@ -134,7 +134,9 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { services as servicesData } from '@/data/services.data';
 import { useScrollAnimation } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
 
+const { t } = useI18n();
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 

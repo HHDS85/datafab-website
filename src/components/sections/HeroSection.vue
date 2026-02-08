@@ -13,9 +13,9 @@
         <div class="absolute top-0 left-0 right-0 z-20 px-6 lg:px-12 xl:px-16 2xl:px-20 py-6 lg:py-8">
           <div class="flex items-center justify-between">
             <img
-              class="h-10"
+              class="h-10 brightness-0 invert"
               alt="Data Fabricator Logo"
-              src="/df_logo_full.png"
+              src="/footerlogo.svg"
             />
 
             <nav class="hidden lg:flex items-center gap-8">
@@ -42,12 +42,7 @@
               </a>
             </nav>
 
-            <button
-              class="hidden md:flex items-center gap-2 transition-all duration-300 px-6 h-9 rounded-lg bg-dark-button hover:bg-dark-button-hover text-white"
-            >
-              <img class="w-4 h-4" alt="Language" src="/language.svg" />
-              <span class="font-jakarta font-medium text-sm">ENG</span>
-            </button>
+            <LanguageSwitcher :dark="true" class="hidden md:block" />
 
             <button
               @click="toggleMobileMenu"
@@ -108,9 +103,8 @@
                   </svg>
                 </a>
 
-                <div class="mt-5 flex items-center justify-center gap-2 px-5 py-2.5 bg-dark-button hover:bg-dark-button-hover text-white transition-all duration-200 rounded">
-                  <img class="w-4 h-4" alt="Language" src="/language.svg" />
-                  <span class="font-jakarta font-medium text-sm">ENG</span>
+                <div class="mt-5 flex items-center justify-center">
+                  <LanguageSwitcher :dark="true" />
                 </div>
               </nav>
             </div>
@@ -172,19 +166,23 @@
 <script setup>
 import { ref, computed } from 'vue';
 import BaseButton from '@/components/base/BaseButton.vue';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 import { useCarousel } from '@/composables';
+import { useI18n } from '@/composables/core/useI18n';
 import { navigationItems } from '@/data/navigation.data';
 
+const { t } = useI18n();
 const isMobileMenuOpen = ref(false);
 
-const headline = 'HERZLICH WILLKOMMEN';
-const title = 'Wir transformieren technische Herausforderungen in greifbare Erfolge.';
-const primaryCta = 'Alle Cases einsehen';
-const secondaryCta = 'Termin buchen';
+const headline = computed(() => t('hero.headline'));
+const title = computed(() => t('hero.title'));
+const primaryCta = computed(() => t('hero.primaryCta'));
+const secondaryCta = computed(() => t('hero.secondaryCta'));
 
 const navItems = computed(() => {
   return navigationItems.map(item => ({
     ...item,
+    label: t(item.labelKey),
     active: item.href === '#start'
   }));
 });
@@ -197,20 +195,7 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
 };
 
-const highlights = [
-  {
-    title: 'Selbstfahrende Autos',
-    text: ' – Ein selbstfahrendes Auto generiert täglich bis zu 4 Terabyte an Daten durch Sensoren, Kameras und LIDAR-Technologie.'
-  },
-  {
-    title: 'IoT-Geräte',
-    text: ' – Bis 2025 werden weltweit über 75 Milliarden IoT-Geräte in Betrieb sein und kontinuierlich Daten generieren.'
-  },
-  {
-    title: 'Streaming-Dienste',
-    text: ' – Netflix verarbeitet täglich über 15 Petabyte an Daten für personalisierte Empfehlungen und Content-Streaming.'
-  }
-];
+const highlights = computed(() => t('hero.highlights'));
 
 const { currentIndex, currentItem: currentHighlight, goTo, startAutoplay } = useCarousel(highlights, {
   autoplay: true,

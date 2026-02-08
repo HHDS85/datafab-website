@@ -1,38 +1,38 @@
 export const services = [
   {
-    id: 'digitalization',
+    id: 'consulting',
     number: '01',
-    title: 'Digitalisierungs-\nBeratung',
-    description: 'Wir begleiten Sie von der ersten Idee bis zum fertigen Produkt und schaffen echten Mehrwert für Ihr Unternehmen.'
+    titleKey: 'services.cards.consulting.title',
+    descriptionKey: 'services.cards.consulting.description'
   },
   {
     id: 'development',
     number: '02',
-    title: 'Applikations-\nEntwicklung',
-    description: 'Modernste Technologien im Frontend und Backend garantieren höchste Effizienz und Zuverlässigkeit.'
+    titleKey: 'services.cards.development.title',
+    descriptionKey: 'services.cards.development.description'
   },
   {
     id: 'visualization',
     number: '03',
-    title: 'Daten\nVisualisierung',
-    description: 'Mit interaktiven Dashboards und Charts verwandeln wir komplexe Informationen in klare, verständliche Visualisierungen.'
+    titleKey: 'services.cards.visualization.title',
+    descriptionKey: 'services.cards.visualization.description'
   },
   {
-    id: 'automation',
+    id: 'dataAcquisition',
     number: '04',
-    title: 'Automatisierte\nDatenbeschaffung',
-    description: 'Sie brauchen präzise Daten? Wir holen sie für Sie – vollautomatisch, zuverlässig und in bester Qualität.'
+    titleKey: 'services.cards.dataAcquisition.title',
+    descriptionKey: 'services.cards.dataAcquisition.description'
   },
   {
-    id: 'cloud',
+    id: 'interfaces',
     number: '05',
-    title: 'Cloud\nInfrastruktur',
-    description: 'Skalierbare und sichere Cloud-Lösungen für Ihre digitale Infrastruktur mit modernsten Technologien.'
+    titleKey: 'services.cards.interfaces.title',
+    descriptionKey: 'services.cards.interfaces.description'
   },
   {
-    id: 'api',
+    id: 'hosting',
     number: '06',
-    title: 'API\nIntegration',
-    description: 'Nahtlose Integration von Drittanbieter-Services und maßgeschneiderte API-Entwicklung für Ihre Systeme.'
+    titleKey: 'services.cards.hosting.title',
+    descriptionKey: 'services.cards.hosting.description'
   }
 ];

@@ -23,9 +23,24 @@ export default {
   },
 
   hero: {
-    title: 'Innovative Digitalisierungslösungen für Ihr Unternehmen',
-    subtitle: 'Ihr Partner für innovative und maßgeschneiderte Digitalisierungsstrategien.',
-    cta: 'Jetzt starten'
+    headline: 'HERZLICH WILLKOMMEN',
+    title: 'Wir transformieren technische Herausforderungen in greifbare Erfolge.',
+    primaryCta: 'Alle Cases einsehen',
+    secondaryCta: 'Termin buchen',
+    highlights: [
+      {
+        title: 'Selbstfahrende Autos',
+        text: ' – Ein selbstfahrendes Auto generiert täglich bis zu 4 Terabyte an Daten durch Sensoren, Kameras und LIDAR-Technologie.'
+      },
+      {
+        title: 'IoT-Geräte',
+        text: ' – Bis 2025 werden weltweit über 75 Milliarden IoT-Geräte in Betrieb sein und kontinuierlich Daten generieren.'
+      },
+      {
+        title: 'Streaming-Dienste',
+        text: ' – Netflix verarbeitet täglich über 15 Petabyte an Daten für personalisierte Empfehlungen und Content-Streaming.'
+      }
+    ]
   },
 
   welcome: {
@@ -37,8 +52,35 @@ export default {
   },
 
   services: {
+    label: 'SERVICES',
     title: 'Unsere Leistungen',
-    subtitle: 'Maßgeschneiderte Lösungen für Ihre digitale Transformation',
+    subtitle: 'im Überblick',
+    cards: {
+      consulting: {
+        title: 'Digitalisierungs-\nBeratung',
+        description: 'Wir begleiten Sie von der ersten Idee bis zum fertigen Produkt und schaffen echten Mehrwert für Ihr Unternehmen.'
+      },
+      development: {
+        title: 'Applikations-\nEntwicklung',
+        description: 'Modernste Technologien im Frontend und Backend garantieren höchste Effizienz und Zuverlässigkeit.'
+      },
+      visualization: {
+        title: 'Daten\nVisualisierung',
+        description: 'Mit interaktiven Dashboards und Charts verwandeln wir komplexe Informationen in klare, verständliche Visualisierungen.'
+      },
+      dataAcquisition: {
+        title: 'Automatisierte\nDatenbeschaffung',
+        description: 'Sie brauchen präzise Daten? Wir holen sie für Sie – vollautomatisch, zuverlässig und in bester Qualität.'
+      },
+      interfaces: {
+        title: 'Daten\nSchnittstellen',
+        description: 'Nahtlose Integration von Drittanbieter-Services und maßgeschneiderte API-Entwicklung für Ihre Systeme.'
+      },
+      hosting: {
+        title: 'Hosting &\nMaintenance',
+        description: 'Vertrauen Sie uns die technische Seite an. Vom Hosting bis zur kontinuierlichen Wartung.'
+      }
+    },
     items: {
       consulting: {
         title: 'Digitalisierungsberatung',

@@ -36,7 +36,7 @@
             </a>
           </nav>
 
-          <LanguageSwitcher class="hidden md:block text-navy-primary" />
+          <LanguageSwitcher class="hidden md:block" />
 
           <button
             @click="toggleMenu"
@@ -98,7 +98,7 @@
               </a>
 
               <div class="mt-5 flex items-center justify-center">
-                <LanguageSwitcher class="text-navy-primary" />
+                <LanguageSwitcher :dark="true" />
               </div>
             </nav>
           </div>
