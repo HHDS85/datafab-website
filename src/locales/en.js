@@ -212,23 +212,23 @@ export default {
 
   faqs: {
     title: 'Frequently Asked Questions',
-    subtitle: 'Answers to the most important questions about our services',
+    subtitle: 'Answers to common questions about our services',
     items: [
       {
-        question: 'Which programming languages do you use for development?',
-        answer: 'We primarily use Java (Spring) for the backend and JavaScript frameworks such as Vue.js with Bootstrap for the frontend.'
+        question: 'What programming languages do you use for development?',
+        answer: 'We primarily use Java (Spring) for backend development and JavaScript frameworks like Vue.js with Bootstrap for the frontend.'
       },
       {
-        question: 'Which interfaces do you offer?',
-        answer: 'We develop RESTful APIs to securely and efficiently exchange data between applications. These APIs support both JSON and XML formats.'
+        question: 'What interfaces do you offer?',
+        answer: 'We develop RESTful APIs to securely and efficiently exchange data between applications. Our APIs support both JSON and XML formats.'
       },
       {
-        question: 'Do you provide support for migrating legacy systems?',
-        answer: 'Yes, we provide full support for data and system migration from older applications to our modern solutions.'
+        question: 'Do you support legacy system migration?',
+        answer: 'Yes, we provide comprehensive support for migrating data and systems from legacy applications to modern solutions.'
       },
       {
-        question: 'How are your systems monitored and maintained?',
-        answer: 'We offer continuous monitoring and maintenance to ensure that systems function smoothly and rapid adjustments can be made when necessary.'
+        question: 'How do you monitor and maintain your systems?',
+        answer: 'We offer continuous monitoring and maintenance to ensure smooth system operation and enable quick adjustments when needed.'
       }
     ]
   },

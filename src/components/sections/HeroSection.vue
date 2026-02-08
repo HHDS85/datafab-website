@@ -128,9 +128,9 @@
                 {{ primaryCta }}
               </BaseButton>
 
-              <button class="font-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-navy-primary transition-all duration-300 h-11 px-10 backdrop-blur-sm rounded-lg">
+              <a href="#referenzen" class="font-jakarta font-normal text-base border-2 border-white text-white hover:bg-white hover:text-navy-primary transition-all duration-300 h-11 px-10 backdrop-blur-sm rounded-lg inline-flex items-center justify-center">
                 {{ secondaryCta }}
-              </button>
+              </a>
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionRef" class="relative w-full py-20 scroll-animate">
+  <section ref="sectionRef" class="relative w-full pt-20 pb-8 scroll-animate">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
       <div class="mb-14">
         <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-7">
