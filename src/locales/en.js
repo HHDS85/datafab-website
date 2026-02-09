@@ -1,4 +1,23 @@
 export default {
+  meta: {
+    home: {
+      title: 'Data Fabricator GmbH - Digital Transformation & Custom Software Solutions',
+      description: 'Your partner for innovative digitalization strategies. From consulting to application development and data visualization – we transform technical challenges into tangible success.'
+    },
+    imprint: {
+      title: 'Legal Notice - Data Fabricator GmbH',
+      description: 'Legal notice and information about Data Fabricator GmbH according to German law. All company information and contact details.'
+    },
+    privacy: {
+      title: 'Privacy Policy - Data Fabricator GmbH',
+      description: 'Privacy policy of Data Fabricator GmbH according to GDPR. Learn how we protect and process your personal data.'
+    },
+    terms: {
+      title: 'Terms & Conditions - Data Fabricator GmbH',
+      description: 'General Terms and Conditions (B2B) of Data Fabricator GmbH. Our terms govern collaboration and service delivery.'
+    }
+  },
+
   common: {
     company: 'Data Fabricator GmbH',
     contact: 'Contact',

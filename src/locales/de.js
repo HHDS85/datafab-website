@@ -1,4 +1,23 @@
 export default {
+  meta: {
+    home: {
+      title: 'Data Fabricator GmbH - Digitale Transformation & Maßgeschneiderte Softwarelösungen',
+      description: 'Ihr Partner für innovative Digitalisierungsstrategien. Von der Beratung über Application Development bis zur Datenvisualisierung – wir transformieren technische Herausforderungen in greifbare Erfolge.'
+    },
+    imprint: {
+      title: 'Impressum - Data Fabricator GmbH',
+      description: 'Impressum und rechtliche Angaben der Data Fabricator GmbH gemäß § 5 TMG. Alle Informationen zu unserem Unternehmen und Kontaktdaten.'
+    },
+    privacy: {
+      title: 'Datenschutzerklärung - Data Fabricator GmbH',
+      description: 'Datenschutzerklärung der Data Fabricator GmbH gemäß DSGVO. Erfahren Sie, wie wir Ihre persönlichen Daten schützen und verarbeiten.'
+    },
+    terms: {
+      title: 'AGB - Data Fabricator GmbH',
+      description: 'Allgemeine Geschäftsbedingungen (B2B) der Data Fabricator GmbH. Unsere AGB regeln die Zusammenarbeit und Leistungserbringung.'
+    }
+  },
+
   common: {
     company: 'Data Fabricator GmbH',
     contact: 'Kontakt',

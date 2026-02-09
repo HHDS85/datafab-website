@@ -181,8 +181,10 @@
 
 <script setup>
 import { useI18n } from '@/composables/core/useI18n';
+import { useMeta } from '@/composables';
 
 const { t } = useI18n();
+useMeta('privacy');
 </script>
 
 <style scoped>
