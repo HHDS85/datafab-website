@@ -22,7 +22,7 @@
           </button>
 
           <img
-            class="w-full h-auto rounded-lg md:rounded-xl lg:rounded-2xl shadow-md"
+            class="w-full h-auto"
             alt="Project image"
             :src="projectData.image"
           />
