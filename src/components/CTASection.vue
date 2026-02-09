@@ -22,7 +22,7 @@
             </button>
 
             <a
-              href="https://wa.me/4940609272772"
+              href="https://wa.me/49151234567"
               target="_blank"
               rel="noopener noreferrer"
               class="h-11 px-8 md:px-10 font-jakarta font-normal text-sm md:text-base border-2 border-navy-card-alt text-navy-card-alt hover:bg-navy-card-alt/5 flex items-center justify-center gap-2 transition-all duration-300 rounded-lg"
