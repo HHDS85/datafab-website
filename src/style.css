@@ -58,6 +58,14 @@
 }
 
 @layer utilities {
+  .font-jakarta {
+    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', Helvetica, sans-serif;
+  }
+
   .container-custom {
     max-width: 1440px;
     margin-left: auto;

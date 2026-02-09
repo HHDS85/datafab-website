@@ -1,11 +1,11 @@
 <template>
   <section ref="sectionRef" class="relative w-full pt-16 md:pt-20 pb-6 md:pb-8 scroll-animate">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-16">
+    <div class="max-w-container mx-auto px-6 lg:px-12 xl:px-16">
       <div class="mb-10 md:mb-12 lg:mb-14">
-        <p class="font-family-jakarta font-medium text-[#1e1d1b] text-xs tracking-[0.05em] uppercase mb-6 md:mb-7">
+        <p class="font-jakarta font-medium text-dark-primary text-xs tracking-[0.05em] uppercase mb-6 md:mb-7">
           {{ t('testimonials.label') }}
         </p>
-        <h2 class="font-family-roboto font-light text-[#1e1d1b] text-4xl md:text-5xl tracking-tight leading-[1.15] whitespace-pre-line">
+        <h2 class="font-roboto font-light text-dark-primary text-4xl md:text-5xl tracking-tight leading-[1.15] whitespace-pre-line">
           {{ t('testimonials.title') }}
         </h2>
       </div>
@@ -22,16 +22,16 @@
 
           <div class="flex flex-col justify-between">
             <div>
-              <p class="font-family-jakarta font-normal text-[#1e1d1b]/80 text-sm md:text-base leading-[1.6] md:leading-[1.7]">
+              <p class="font-jakarta font-normal text-dark-primary/80 text-sm md:text-base leading-[1.6] md:leading-[1.7]">
                 {{ currentTestimonial.quote }}
               </p>
             </div>
 
             <div class="flex flex-col gap-1.5 mt-6 md:mt-8">
-              <h3 class="font-family-roboto font-semibold text-[#1e1d1b] text-lg md:text-xl lg:text-2xl leading-[1.3]">
+              <h3 class="font-roboto font-semibold text-dark-primary text-lg md:text-xl lg:text-2xl leading-[1.3]">
                 {{ currentTestimonial.author }}
               </h3>
-              <p class="font-family-jakarta font-normal text-[#1e1d1b]/60 text-sm md:text-base leading-[1.5]">
+              <p class="font-jakarta font-normal text-dark-primary/60 text-sm md:text-base leading-[1.5]">
                 {{ currentTestimonial.position }}
               </p>
             </div>
@@ -40,11 +40,11 @@
 
         <div class="border-t border-gray-200 pt-6 md:pt-8">
           <div class="flex items-center justify-between">
-            <div class="font-family-jakarta font-normal text-2xl md:text-3xl min-w-[80px] md:min-w-[100px]">
-              <span class="font-bold text-[#242528] inline-block w-[40px] md:w-[50px] text-right">
+            <div class="font-jakarta font-normal text-2xl md:text-3xl min-w-[80px] md:min-w-[100px]">
+              <span class="font-bold text-dark-button inline-block w-[40px] md:w-[50px] text-right">
                 {{ String(currentIndex + 1).padStart(2, '0') }}
               </span>
-              <span class="text-[#1e1d1b]/50 text-lg md:text-xl">
+              <span class="text-dark-primary/50 text-lg md:text-xl">
                 /{{ String(testimonialsData.length).padStart(2, '0') }}
               </span>
             </div>
@@ -52,19 +52,19 @@
             <div class="flex items-center justify-between gap-8 md:gap-12">
               <button
                 @click="previousSlide"
-                class="nav-arrow w-9 h-9 md:w-10 md:h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+                class="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
                 aria-label="Previous testimonial"
               >
-                <svg class="w-5 h-5 md:w-6 md:h-6 text-[#1e1d1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-dark-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               <button
                 @click="nextSlide"
-                class="nav-arrow w-9 h-9 md:w-10 md:h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
+                class="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center transition-all duration-300 hover:opacity-70"
                 aria-label="Next testimonial"
               >
-                <svg class="w-5 h-5 md:w-6 md:h-6 text-[#1e1d1b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-dark-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -82,21 +82,16 @@ import { useScrollAnimation } from '@/composables';
 import { useI18n } from '@/composables/core/useI18n';
 
 const { t } = useI18n();
-
 const sectionRef = ref(null);
 useScrollAnimation(sectionRef);
 
 const currentIndex = ref(0);
-
 const testimonialsData = computed(() => t('testimonials.items'));
 
-const currentTestimonial = computed(() => {
-  const items = testimonialsData.value;
-  return {
-    ...items[currentIndex.value],
-    image: '/testimonialimage.png'
-  };
-});
+const currentTestimonial = computed(() => ({
+  ...testimonialsData.value[currentIndex.value],
+  image: '/testimonialimage.png'
+}));
 
 const previousSlide = () => {
   currentIndex.value = currentIndex.value === 0
@@ -108,19 +103,3 @@ const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % testimonialsData.value.length;
 };
 </script>
-
-<style scoped>
-.font-family-jakarta {
-  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-}
-
-.font-family-roboto {
-  font-family: 'Roboto', Helvetica, sans-serif;
-}
-
-.nav-arrow {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-</style>
